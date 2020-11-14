@@ -27,7 +27,7 @@ class Header extends Component {
 
             <div className="container-fluid">
 
-                <nav className="row no-gutters navbar navbar-expand-lg navbar-light bg-light" >
+                <nav className="row no-gutters navbar navbar-expand-lg navbar-light" >
 
                     {
                         /* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
