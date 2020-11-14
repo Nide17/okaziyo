@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: Comfortaa, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Comfortaa, Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
   line-height: 1.4;
   background-color: #ffffff;
 }
@@ -19,7 +20,7 @@ a {
 .row.navbar {
   padding: 0;
   height: 80px;
-  border-bottom: 1px solid #3c4132;
+  border-bottom: 1px solid #bdc4b3;
 }
 
 .navbar-brand {
@@ -83,4 +84,22 @@ a {
 .nav-buttons :nth-child(1) {
   color: #ffffff;
   background-color: #499167;
+}
+
+.categories {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.categories-list {
+  height: 56px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.categories a:hover {
+  text-decoration: none;
+  color: #499167;
 }

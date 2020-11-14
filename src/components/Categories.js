@@ -15,13 +15,54 @@ class Categories extends Component {
         return (
             <section className="categories">
                 <ul className="categories-list">
-                    <li><h5>Electronics</h5></li>
-                    <li><h5>Fashion</h5></li>
-                    <li><h5>Furniture</h5></li>
-                    <li><h5>Cars, Motorcycles & Bikes</h5></li>
-                    <li><h5>Books</h5></li>
-                    <li><h5>Properties</h5></li>
-                    <li><h5>Others</h5></li>
+                    <li>
+                        <a href="/#">
+                            Electronics &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/#">
+                            Fashion &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/#">
+                            Furniture &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/#">
+                            Cars, Motorcycles & Bikes &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/#">
+                            Books &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/#">
+                            Properties &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/#">
+                            Others &nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </li>
                 </ul>
             </section>
         )
