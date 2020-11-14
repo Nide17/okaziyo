@@ -16,6 +16,7 @@ a {
   text-decoration: none;
 }
 
+/* NAVBAR */
 .container-fluid,
 .row.navbar {
   padding: 0;
@@ -86,6 +87,8 @@ a {
   background-color: #499167;
 }
 
+
+/* CATEGORIES */
 .categories {
   padding-left: 50px;
   padding-right: 50px;
@@ -102,4 +105,48 @@ a {
 .categories a:hover {
   text-decoration: none;
   color: #499167;
+}
+
+
+/* PROCESSES */
+.container.processes {
+  margin: 0;
+  max-width: 100%;
+}
+
+.row.groups{
+ margin: 0 38px;
+ height: 303px;
+}
+
+.groups .process-grp {
+  text-align: center;
+  padding: 0;
+  margin-top: auto;
+  height: 220px;
+  width: 380px;
+}
+
+.process-grp h5 {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.process-grp p {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.process-grp img {
+  width: 90px;
+  height: 90px;
+  background-color: #c3ccac;
+  clip-path: circle(50% at 50% 50%);
+  margin: 0 auto;
+  display: flex;
+}
+
+.processes .groups {
+  display: flex;
+  justify-content: space-around;
 }
