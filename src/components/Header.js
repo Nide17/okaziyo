@@ -42,7 +42,7 @@ class Header extends Component {
                         </button>
 
                         <a className="navbar-brand" href="#/">
-                            <img src={logo} alt="logo"/>
+                            <img src={logo} alt="logo" />
                         </a>
                     </div>
 
@@ -52,9 +52,10 @@ class Header extends Component {
 
                     <div className={"nav-search col-7 collapse navbar-collapse" + show}>
 
-                        <form style={{width: "545px"}}>
-                        <div className="form-group row">
-                            <input className="form-control" type="search" placeholder=" What do you want to buy?" aria-label="Search" />
+                        <form style={{ width: "545px" }}>
+                            <div className="form-group row">
+                                <input className="form-control" type="search" placeholder=" What do you want to buy?" aria-label="Search" />
+                                <button type="submit"><i class="fa fa-search"></i></button>
                             </div>
                         </form>
                     </div>

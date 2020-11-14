@@ -15,7 +15,8 @@ a {
   text-decoration: none;
 }
 
-.container-fluid, .row.navbar {
+.container-fluid,
+.row.navbar {
   padding: 0;
   height: 80px;
   border-bottom: 1px solid #3c4132;
@@ -42,6 +43,27 @@ a {
 
 .nav-search form {
   height: 40px;
+}
+
+.nav-search form .form-group .form-control {
+  width: 90%;
+  height: 40px;
+  border: 1px solid #499167;
+  border-radius: 6px 0 0 6px;
+}
+
+.nav-search form .form-group button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #499167;
+  border-left: none;
+  cursor: pointer;
+  background-color: #499167;
+  color: #ffffff;
+}
+
+.nav-search form .form-group button .fa-search {
+  font-size: 24px;
 }
 
 .nav-buttons {
