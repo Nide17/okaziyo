@@ -7,9 +7,58 @@
 body {
   font-family: Comfortaa, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   line-height: 1.4;
+  background-color: #ffffff;
 }
 
 a {
   color: #333;
   text-decoration: none;
+}
+
+.container-fluid, .row.navbar {
+  padding: 0;
+  height: 80px;
+  border-bottom: 1px solid #3c4132;
+}
+
+.navbar-brand {
+  padding-left: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-brand img {
+  width: 183px;
+  height: 80px;
+}
+
+.nav-search {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-search form {
+  height: 40px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-buttons button {
+  height: 40px;
+  color: #499167;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #499167;
+}
+
+.nav-buttons :nth-child(1) {
+  color: #ffffff;
+  background-color: #499167;
 }

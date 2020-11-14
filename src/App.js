@@ -1,7 +1,7 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Header from './components/header/Header';
+// Make sure to place css after bootstrap
+import './App.css';
+import Header from './components/Header';
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from '../../logo/Logo.svg'
+import logo from '../logo/Logo.svg'
 
 class Header extends Component {
 
@@ -50,7 +50,7 @@ class Header extends Component {
                         /* <div className="collapse navbar-collapse" id="navbarTogglerDemo03"> */
                     }
 
-                    <div className={"col-7 collapse navbar-collapse" + show}>
+                    <div className={"nav-search col-7 collapse navbar-collapse" + show}>
 
                         <form style={{width: "545px"}}>
                         <div className="form-group row">
@@ -59,10 +59,10 @@ class Header extends Component {
                         </form>
                     </div>
 
-                    <div className="col-3">
-                        <button className="btn" type="button" style={{background: "#499167", borderRadius: "6px"}}>Sell now!</button>
-                        <button className="btn" type="button"  style={{background: "#FFFFFF", border: "1px solid #499167", borderRadius: "6px"}}>Sign up</button>
-                        <button className="btn" type="button" style={{background: "#FFFFFF", border: "1px solid #499167", borderRadius: "6px"}}>Login</button>
+                    <div className="nav-buttons col-3">
+                        <button className="btn" type="button">Sell now!</button>
+                        <button className="btn" type="button">Sign up</button>
+                        <button className="btn" type="button">Login</button>
                     </div>
                 </nav>
             </div>
