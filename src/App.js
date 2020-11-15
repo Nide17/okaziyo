@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Categories from './components/Categories';
 import Process from './components/Process';
 import Browse from './components/Browse';
+import Money from './components/Money';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Categories />
       <Process />
       <Browse />
+      <Money />
     </div>
   );
 }

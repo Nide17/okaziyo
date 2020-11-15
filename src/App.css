@@ -108,7 +108,8 @@ a {
 
 /* PROCESSES */
 .container.processes,
-.container.things {
+.container.things,
+.container.money {
   margin: 0;
   padding: 0;
   max-width: 100%;
@@ -277,4 +278,42 @@ margin: 30px auto;
   background-color: #499167;
   font-size: 1.1rem;
   font-weight: 800;
+}
+
+/* MONEY BACK */
+.container.money {
+  background-color: #d5d9d8;
+    padding: 54px;
+}
+
+.row.moneyRow  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+
+}
+
+.row.moneyRow h4 {
+  margin-top: 10px;
+  height: 47px;
+  font-weight: 900;
+}
+
+.row.moneyRow p {
+  margin-top: 10px;
+  height: 42px;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.row.moneyRow button {
+  margin-top: 20px;
+  height: 67px;
+  width: 364px;
+  color: #3f4531;
+  background-color: #91f9e5;
+  font-weight: 800;
+  font-size: 1.1rem
 }
