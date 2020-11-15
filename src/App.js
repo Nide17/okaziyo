@@ -5,6 +5,7 @@ import 'font-awesome/css/font-awesome.css'
 import Header from './components/Header';
 import Categories from './components/Categories';
 import Process from './components/Process';
+import Browse from './components/Browse';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Header />
       <Categories />
       <Process />
+      <Browse />
     </div>
   );
 }

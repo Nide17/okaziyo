@@ -20,22 +20,32 @@ class Process extends Component {
             <section className="container processes">
                 <div className="row groups">
 
-                    <div className="col-4 process-grp">
-                    <img src={sell} alt="sell" />
-                    <h5>Sell Something.</h5>
-                    <p>Plan. Take a few photos. Add a description. Set your price.</p>
+                    <div className="col-4">
+                        <div className="process-grp">
+                            <img src={sell} alt="sell" />
+                            <h5>Sell Something.</h5>
+                            <p>Plan. Take a few photos. Add a description. Set your price.</p>
+                        </div>
                     </div>
 
-                    <div className="col-4 process-grp">
-                        <img src={ship} alt="ship" />
-                        <h5>Ship it.</h5>
-                        <p>No meetings. Printable shipping label emailed to seller.</p>
+                    <div className="col-4">
+                        <div className="process-grp">
+                            <img src={ship} alt="ship" />
+                            <h5>Ship it.</h5>
+                            <p>No meetings. Printable shipping label emailed to seller.</p>
+                        </div>
                     </div>
 
-                    <div className="col-4 process-grp">
-                        <img src={paid} alt="paid" />
-                        <h5>Get Paid.</h5>
-                        <p>Listing is free. We only charge a small commission when your sale is complete.</p>
+                    <div className="col-4">
+                        <div className="process-grp">
+                            <img src={paid} alt="paid" />
+                            <h5>Get Paid.</h5>
+                            <p>Listing is free. We only charge a small commission when your sale is complete.</p>
+                        </div>
+                    </div>
+
+                    <div className="col-12 know-more">
+                        <button className="btn" type="button">Know More on the Process</button>
                     </div>
 
                 </div>
