@@ -106,10 +106,11 @@ a {
   color: #499167;
 }
 
-/* PROCESSES */
+/* PROCESSES & GENERAL*/
 .container.processes,
 .container.things,
-.container.money {
+.container.money, 
+.container.footer {
   margin: 0;
   padding: 0;
   max-width: 100%;
@@ -316,4 +317,66 @@ margin: 30px auto;
   background-color: #91f9e5;
   font-weight: 800;
   font-size: 1.1rem
+}
+
+/* FOOTER */
+.container.footer {
+  padding: 48px 82px;
+  background-color: #91F9E5;
+}
+
+.row.footerLinks, .row.footerSocial {
+  margin: 0;
+}
+
+h6.shops, h6.community, h6.company {
+  line-height: 28px;
+  font-weight: 700;
+}
+
+ul.shops li, ul.community li, ul.company li {
+list-style: none;
+line-height: 24px;
+font-size: 0.8rem;
+
+}
+
+.row.footerSocial {
+  padding: 38px 0 0 0;
+}
+
+.row.footerSocial .copyright{
+  display: flex;
+  align-items: center;
+}
+
+.row.footerSocial .copyright p{
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.row.footerSocial .icons i {
+  margin-left: 25px;
+}
+
+.row.footerSocial .icons i.fa {
+  border-radius: 50%;
+  font-size: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: #3F4531;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selfIcons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons h6 {
+  margin-bottom: 1.5rem;
+  font-weight: 900;
 }

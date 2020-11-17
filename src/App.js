@@ -7,6 +7,7 @@ import Categories from './components/Categories';
 import Process from './components/Process';
 import Browse from './components/Browse';
 import Money from './components/Money';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Process />
       <Browse />
       <Money />
+      <Footer />
     </div>
   );
 }
