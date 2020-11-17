@@ -20,7 +20,7 @@ a {
 .container-fluid,
 .row.navbar {
   padding: 0;
-  height: 80px;
+  /* height: 80px; */
   border-bottom: 1px solid #bdc4b3;
 }
 
@@ -45,6 +45,7 @@ a {
 
 .nav-search form {
   height: 40px;
+  width: 545px;
 }
 
 .nav-search form .form-group .form-control {
@@ -203,7 +204,7 @@ a {
   width: 180px;
   height: 384px;
   padding: 0;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -268,7 +269,7 @@ a {
 }
 
 .row.contents .load-more-holder {
-margin: 30px auto;
+  margin: 30px auto;
 }
 
 .row.contents .load-more {
@@ -283,16 +284,15 @@ margin: 30px auto;
 /* MONEY BACK */
 .container.money {
   background-color: #d5d9d8;
-    padding: 54px;
+  padding: 54px;
 }
 
-.row.moneyRow  {
+.row.moneyRow {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-
 }
 
 .row.moneyRow h4 {
@@ -315,5 +315,70 @@ margin: 30px auto;
   color: #3f4531;
   background-color: #91f9e5;
   font-weight: 800;
-  font-size: 1.1rem
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .row.navbar {
+    padding-top: 16.5px;
+    padding-bottom: 16.5px;
+    border-bottom: 1px solid #bdc4b3;
+  }
+  .navbar-toggler-holder {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+
+.navbar-light .navbar-toggler {
+    margin-left: 25px;
+    color: #499167;
+    border-color: #499167;
+    width: 38px;
+    height: 34px;
+    padding: 3px;
+}
+
+.navbar-toggler {
+    padding: .2rem .75rem;
+    font-size: 1.7rem;
+    border-radius: 6px;
+}
+
+  .nav-search {
+    /* height: fit-content; */
+    height: 200px;
+  }
+
+  .nav-buttons :nth-child(1) {
+  color: #499167;
+  background-color: #ffffff;
+}
+.nav-buttons .sellNow {
+  color: #ffffff;
+  background-color: #499167;
+}
+
+.navbar-brand-small {
+  width: 73px;
+  height: 36px;
+  margin-left: 25px;
+}
+
+.nav-buttons button.search-sm {
+  width: fit-content;
+  height: 40px;
+  border: 1px solid #fff;
+}
+
+.nav-buttons button.search-sm .fa {
+  font-size: 32px;
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+.nav-buttons button {
+    height: 32px;
+    font-size: 0.8rem;
+}
 }
