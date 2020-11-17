@@ -416,19 +416,24 @@ ul.company li {
 
   .nav-search {
     /* height: fit-content; */
-    height: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
   }
+
+  .nav-search form {
+    margin: 20px auto;
+    height: 40px;
+    width: 90%;
+
+}
 
   .nav-buttons :nth-child(1) {
     color: #499167;
     background-color: #ffffff;
   }
-
-  .nav-buttons .sellNow {
-    color: #ffffff;
-    background-color: #499167;
-  }
-
   .navbar-brand-small {
     width: 73px;
     height: 36px;
@@ -450,5 +455,29 @@ ul.company li {
   .nav-buttons button {
     height: 32px;
     font-size: 0.8rem;
+    width: 84px;
+  }
+
+  .nav-buttons .sellNow {
+    color: #ffffff;
+    background-color: #499167;
+    margin-right: 5px;
+  }
+
+  .nav-search .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.help {
+    display: flex;
+    flex-direction: row;
+  }
+  div.help .fa{
+    font-size: 20px;
+  }
+  .nav-search .nav-buttons .buy ul {
+    list-style: none;
   }
 }

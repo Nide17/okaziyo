@@ -72,12 +72,32 @@ class Header extends Component {
                             </div>
                         </form>
 
+{/* FOR MOBILE */}
                         <div className={"nav-buttons col-6 col-lg-3 d-flex d-lg-none"}>
-                            <button className="btn" type="button">Sign up</button>
-                            <button className="btn" type="button">Login</button>
+                            <button className="btn my-1" type="button">Sign up</button>
+                            <button className="btn my-1" type="button">Login</button>
+
+                            <div className="help mt-3">
+                            <i class="fa fa-question-circle mr-2"></i>
+                            <p>Help</p>
+                            </div>
+
+                            <div className="buy">
+                                <h5>Buy</h5>
+                                <ul>
+                                    <li className="item-buy mt-3">Electronics</li>
+                                    <li className="item-buy mt-3">Fashion</li>
+                                    <li className="item-buy mt-3">Furniture</li>
+                                    <li className="item-buy mt-3">Vehicles</li>
+                                    <li className="item-buy mt-3">Books</li>
+                                    <li className="item-buy mt-3">Properties</li>
+                                    <li className="item-buy mt-3">Others</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
+{/* FOR LARGE */}
                     <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex"}>
                         <button className="btn" type="button">Sell now!</button>
                         <button className="btn" type="button">Sign up</button>
