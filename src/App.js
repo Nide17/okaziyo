@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'font-awesome/css/font-awesome.css'
 import Header from './components/Header';
+
 import Categories from './components/Categories';
 import Process from './components/Process';
 import Browse from './components/Browse';
