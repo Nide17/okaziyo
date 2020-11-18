@@ -83,7 +83,7 @@ a {
   border: 1px solid #499167;
 }
 
-.nav-buttons :nth-child(1) {
+.nav-buttons .sell {
   color: #ffffff;
   background-color: #499167;
 }
@@ -127,7 +127,7 @@ a {
   height: 303px;
 }
 
-.row.groups>div {
+.row.groups > div {
   margin-top: auto;
 }
 
@@ -231,14 +231,16 @@ a {
   height: 160px;
   background-color: #c3ccac;
   /* clip-path: circle(50% at 50% 50%); */
-  clip-path: polygon(20% 0%,
-      80% 0%,
-      100% 20%,
-      100% 80%,
-      80% 100%,
-      20% 100%,
-      0% 80%,
-      0% 20%);
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
   margin: 0 auto;
   display: flex;
 }
@@ -315,13 +317,13 @@ a {
   color: #3f4531;
   background-color: #91f9e5;
   font-weight: 800;
-  font-size: 1.1rem
+  font-size: 1.1rem;
 }
 
 /* FOOTER */
 .container.footer {
   padding: 48px 82px;
-  background-color: #91F9E5;
+  background-color: #91f9e5;
 }
 
 .row.footerLinks,
@@ -342,7 +344,6 @@ ul.company li {
   list-style: none;
   line-height: 24px;
   font-size: 0.8rem;
-
 }
 
 .row.footerSocial {
@@ -368,7 +369,7 @@ ul.company li {
   font-size: 2rem;
   width: 2.75rem;
   height: 2.75rem;
-  background-color: #3F4531;
+  background-color: #3f4531;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -385,7 +386,6 @@ ul.company li {
   font-weight: 900;
 }
 
-
 @media screen and (max-width: 1023px) {
   .row.navbar {
     padding-top: 16.5px;
@@ -399,7 +399,7 @@ ul.company li {
     height: 40px;
   }
 
-  .navbar-light .navbar-toggler {
+  .navbar-light button.navbar-toggler {
     margin-left: 25px;
     color: #499167;
     border-color: #499167;
@@ -409,35 +409,39 @@ ul.company li {
   }
 
   .navbar-toggler {
-    padding: .2rem .75rem;
+    padding: 0.2rem 0.75rem;
     font-size: 1.7rem;
     border-radius: 6px;
   }
 
   .nav-search {
     /* height: fit-content; */
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.7);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    margin-top: 24px;
   }
 
   .nav-search form {
-    margin: 20px auto;
     height: 40px;
-    width: 90%;
-
-}
-
-  .nav-buttons :nth-child(1) {
-    color: #499167;
-    background-color: #ffffff;
+    width: 97%;
+    padding-right: 30px;
+    padding-left: 30px;
   }
+
   .navbar-brand-small {
     width: 73px;
     height: 36px;
     margin-left: 25px;
+  }
+
+  .nav-buttons.col-8  {
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   .nav-buttons button.search-sm {
@@ -468,16 +472,38 @@ ul.company li {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: #91f9e5;
+    margin-top: 10px;
   }
 
+   .nav-search .nav-buttons div.buy {
+     width: 100%;
+   }
   div.help {
     display: flex;
     flex-direction: row;
   }
-  div.help .fa{
+  div.help .fa {
     font-size: 20px;
   }
   .nav-search .nav-buttons .buy ul {
     list-style: none;
   }
+  .nav-buttons .item-buy {
+    color: #212529;
+  }
+  .nav-search form .form-group .form-control {
+    width: 80%;
+    height: 40px;
+  }
+
+  form .form-group.row {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+    li.item-buy i {
+      float: right;
+    }
+
 }

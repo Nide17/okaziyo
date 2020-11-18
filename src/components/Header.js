@@ -73,33 +73,34 @@ class Header extends Component {
                         </form>
 
 {/* FOR MOBILE */}
-                        <div className={"nav-buttons col-6 col-lg-3 d-flex d-lg-none"}>
+                        <div className={"nav-buttons col-8 col-lg-3 d-flex d-lg-none"}>
                             <button className="btn my-1" type="button">Sign up</button>
                             <button className="btn my-1" type="button">Login</button>
 
-                            <div className="help mt-3">
-                            <i class="fa fa-question-circle mr-2"></i>
-                            <p>Help</p>
-                            </div>
-
-                            <div className="buy">
+                            <div className="buy mt-3">
                                 <h5>Buy</h5>
                                 <ul>
-                                    <li className="item-buy mt-3">Electronics</li>
-                                    <li className="item-buy mt-3">Fashion</li>
-                                    <li className="item-buy mt-3">Furniture</li>
-                                    <li className="item-buy mt-3">Vehicles</li>
-                                    <li className="item-buy mt-3">Books</li>
-                                    <li className="item-buy mt-3">Properties</li>
-                                    <li className="item-buy mt-3">Others</li>
+                                    <li className="item-buy mt-3">Electronics<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Fashion<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Furniture<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Vehicles<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Books<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Properties<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Others<i class="fa fa-angle-right"></i></li>
                                 </ul>
                             </div>
+
+                            <div className="help mt-3">
+                                <i class="fa fa-question-circle mr-2"></i>
+                                <p>Help</p>
+                            </div>
+
                         </div>
                     </div>
 
 {/* FOR LARGE */}
                     <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex"}>
-                        <button className="btn" type="button">Sell now!</button>
+                        <button className="btn sell" type="button">Sell now!</button>
                         <button className="btn" type="button">Sign up</button>
                         <button className="btn" type="button">Login</button>
                     </div>
