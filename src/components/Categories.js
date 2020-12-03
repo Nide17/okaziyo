@@ -13,7 +13,7 @@ class Categories extends Component {
     render() {
 
         return (
-            <section className="categories">
+            <section className="categories d-none d-lg-block">
                 <ul className="categories-list">
                     <li>
                         <a href="/#">

@@ -36,7 +36,7 @@ class Header extends Component {
                                     </button> */
                     }
 
-                    <div className="col-6 col-lg-2 navbar-toggler-holder">
+                    <div className="col-6 col-lg-3 navbar-toggler-holder">
 
                         <button className="navbar-toggler" type="button" onClick={this.toggleMenu}>
                             {/* <span className="navbar-toggler-icon"></span> */}
@@ -63,7 +63,7 @@ class Header extends Component {
                         <button className="btn sellNow" type="button">Sell now!</button>
                     </div>
 
-                    <div className={"nav-search col-12 col-lg-7 collapse navbar-collapse " + show}>
+                    <div className={"nav-search col-12 col-lg-6 collapse navbar-collapse " + show}>
 
                         <form>
                             <div className="form-group row">
