@@ -20,7 +20,7 @@ class Process extends Component {
             <section className="container processes">
                 <div className="row groups">
 
-                    <div className="col-4">
+                    <div className="col-12 col-md-4">
                         <div className="process-grp">
                             <img src={sell} alt="sell" />
                             <h5>Sell Something.</h5>
@@ -28,7 +28,7 @@ class Process extends Component {
                         </div>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-12 col-md-4">
                         <div className="process-grp">
                             <img src={ship} alt="ship" />
                             <h5>Ship it.</h5>
@@ -36,7 +36,7 @@ class Process extends Component {
                         </div>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-12 col-md-4">
                         <div className="process-grp">
                             <img src={paid} alt="paid" />
                             <h5>Get Paid.</h5>
@@ -44,11 +44,14 @@ class Process extends Component {
                         </div>
                     </div>
 
+                </div>
+                
+                <div className="row know-more-container">
                     <div className="col-12 know-more">
                         <button className="btn" type="button">Know More on the Process</button>
                     </div>
-
                 </div>
+
 
             </section>
         )

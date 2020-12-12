@@ -1,3 +1,4 @@
+/* 1rem=16px */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -123,12 +124,12 @@ a {
 
 .container.processes {
   height: 437px;
-  background-color: #d5d9d8;
+  background-color: #ebf0ed;
 }
 
 .row.groups {
   margin: 0 38px;
-  height: 303px;
+  height: 70%;
 }
 
 .row.groups>div {
@@ -168,11 +169,14 @@ a {
   justify-content: space-around;
 }
 
+.know-more-container{
+  height: 30%;
+}
+
 .know-more {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 134px;
 }
 
 .know-more button {
@@ -523,5 +527,75 @@ ul.company li {
   /* section.categories {
     display: none;
   } */
+
+}
+
+@media screen and (max-width: 1024px) {
+  .container.processes {
+    height: 328px;
+  }
+
+  .row.groups {
+    margin: 0 95px;
+  }
+
+
+  .groups .process-grp {
+    height: 164px;
+    width: 260px;
+  }
+
+  .process-grp h5 {
+    font-size: 1.1rem;
+  }
+
+  .process-grp p {
+    font-size: 0.7rem;
+  }
+
+  .process-grp img {
+    width: 71px;
+    height: 73px;
+  }
+
+  .know-more button {
+    font-size: 0.9rem;
+    width: 17rem;
+    height: 3rem;
+  }
+
+  @media screen and (max-width: 414px) {
+    .container.processes {
+      height: 780px;
+    }
+
+    .row.groups {
+      margin: 0 24px;
+    }
+
+    .groups .process-grp {
+      width: 100%;
+      height: 181px;
+      padding-top: 20px;
+    }
+
+    .process-grp h5 {
+      font-size: 1.2rem;
+    }
+
+    .process-grp p {
+      font-size: 0.9rem;
+    }
+
+    .process-grp img {
+      width: 71px;
+      height: 73px;
+    }
+
+    .know-more button {
+      font-size: 0.9rem;
+      width: 15rem;
+    }
+  }
 
 }
