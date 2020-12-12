@@ -10,7 +10,7 @@ class Browse extends Component {
 
                     <div className="cards">
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -21,7 +21,7 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -32,7 +32,7 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -43,7 +43,7 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -54,7 +54,7 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -65,7 +65,7 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -76,19 +76,7 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
-                            <div className="item-holder">
-                                <div className="item">
-                                    <img src={sell} alt="sell" />
-                                    <h6>Item Name</h6>
-                                    <p className="price">Price</p>
-                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -100,18 +88,7 @@ class Browse extends Component {
                         </div>
 
 
-                        <div className="col-2 oneCard">
-                            <div className="item-holder">
-                                <div className="item">
-                                    <img src={sell} alt="sell" />
-                                    <h6>Item Name</h6>
-                                    <p className="price">Price</p>
-                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -123,7 +100,7 @@ class Browse extends Component {
                         </div>
 
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />
@@ -134,7 +111,30 @@ class Browse extends Component {
                             </div>
                         </div>
 
-                        <div className="col-2 oneCard">
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
+                            <div className="item-holder">
+                                <div className="item">
+                                    <img src={sell} alt="sell" />
+                                    <h6>Item Name</h6>
+                                    <p className="price">Price</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
+                            <div className="item-holder">
+                                <div className="item">
+                                    <img src={sell} alt="sell" />
+                                    <h6>Item Name</h6>
+                                    <p className="price">Price</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
                             <div className="item-holder">
                                 <div className="item">
                                     <img src={sell} alt="sell" />

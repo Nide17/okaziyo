@@ -30,7 +30,7 @@ a {
 }
 
 .navbar-brand {
-  padding-left: 16px;
+  padding-left: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -254,9 +254,9 @@ a {
 .cards .item h6 {
   font-weight: bold;
   width: 160px;
-  font-size: 16px;
+  font-size: 1rem;
   height: 41px;
-  padding-top: 16px;
+  padding-top: 1rem;
 }
 
 .cards .item .price {
@@ -530,6 +530,9 @@ ul.company li {
 
 }
 
+/***********/
+/* TABLET */
+/*********/
 @media screen and (max-width: 1024px) {
   .container.processes {
     height: 328px;
@@ -538,7 +541,6 @@ ul.company li {
   .row.groups {
     margin: 0 95px;
   }
-
 
   .groups .process-grp {
     height: 164px;
@@ -563,7 +565,77 @@ ul.company li {
     width: 17rem;
     height: 3rem;
   }
+  
+/* BROWSE ITEMS */
+.row.contents {
+  margin: 60px 43px 0px 43px;
+}
 
+.row.contents h4 {
+  font-size: 1.8rem;
+  padding: 6px 0;
+}
+
+.row.contents .cards {
+  margin: 0 3.6rem;
+  flex-wrap: wrap;
+}
+
+.cards .oneCard {
+  width: 11.9rem;
+}
+
+.cards .item img {
+  width: 160px;
+  height: 160px;
+}
+
+.cards .item-holder, .cards .item {
+  width: 169px;
+  height: 375px;
+}
+
+.cards .item h6, .cards .item .desc {
+  width: 100%;
+}
+
+.cards .item h6 {
+  height: 1.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.cards .item .desc {
+  height: 4rem;
+  font-size: 0.8rem;
+}
+
+.row.contents .load-more-holder {
+  margin: 1rem auto;
+}
+
+.row.contents .load-more {
+  width: 18.7rem;
+  height: 3.4rem;
+  font-size: 1.1rem;
+}
+}
+
+/***********/
+/* MOBILE */
+/*********/
+
+@media screen and (max-width: 768px) {
+  .cards .item img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+.cards .item .desc {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+}
+/* process */
   @media screen and (max-width: 414px) {
     .container.processes {
       height: 780px;
@@ -581,10 +653,12 @@ ul.company li {
 
     .process-grp h5 {
       font-size: 1.2rem;
+    text-align: center;
     }
 
     .process-grp p {
       font-size: 0.9rem;
+    text-align: center;
     }
 
     .process-grp img {
@@ -596,6 +670,57 @@ ul.company li {
       font-size: 0.9rem;
       width: 15rem;
     }
-  }
 
+    
+/* BROWSE ITEMS */
+.row.contents {
+  margin: 30px 10px 0px 10px;
+  text-align: center;
 }
+
+.row.contents h4 {
+  font-size: 1.5rem;
+  padding: 6px 0;
+}
+
+.row.contents .cards {
+  margin: 0 14px;
+  flex-wrap: wrap;
+}
+
+.cards .oneCard {
+  width: 190px;
+  height: 18rem;
+}
+
+.cards .item-holder, .cards .item {
+  width: 169px;
+  height: 19rem;
+}
+
+.cards .item h6, .cards .item .desc, .cards .item .price  {
+  width: 100%;
+  text-align: center;
+}
+
+.cards .item h6 {
+  height: 1.6rem;
+  margin-bottom: 0.9rem;
+  text-align: center;
+}
+
+.cards .item .desc {
+  height: 3.4rem;
+  font-size: .8rem;
+}
+
+.row.contents .load-more-holder {
+  margin: .8rem auto;
+}
+
+.row.contents .load-more {
+  width: 15rem;
+  height: 3.4rem;
+  font-size: 1rem;
+}
+  }

@@ -6,8 +6,8 @@ import Header from './components/Header';
 
 import Categories from './components/Categories';
 import Process from './components/Process';
-// import Browse from './components/Browse';
-// import Money from './components/Money';
+import Browse from './components/Browse';
+import Money from './components/Money';
 // import Footer from './components/Footer';
 
 const App = () => {
@@ -16,9 +16,9 @@ const App = () => {
       <Header />
       <Categories />
       <Process />
-      {/* <Browse />
+      <Browse />
       <Money />
-      <Footer /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
