@@ -765,4 +765,50 @@ ul.company li {
     font-size: 1rem;
   }
 
+  
+/* FOOTER */
+.container.footer {
+  padding: 32px 16px;
+}
+
+ul.shops li,
+ul.community li,
+ul.company li {
+  line-height: 1.4rem;
+  font-size: 0.7rem;
+}
+
+.row.footerSocial {
+  padding: 2rem 0 0 0;
+  flex-direction: column-reverse;
+}
+
+.row.footerSocial .copyright p {
+  font-size: 0.6rem;
+  margin-top:1rem;
+  text-align:center;
+}
+
+.row.footerSocial .icons i {
+  margin-left: 1.5rem;
+}
+
+.row.footerSocial .icons i.fa {
+  border-radius: 50%;
+  font-size: 1.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selfIcons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons h6 {
+  margin-bottom: 1.4rem;
+}
 }

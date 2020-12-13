@@ -10,13 +10,13 @@ class Footer extends Component {
 
                 <div className="row footerLinks">
 
-                    <div className="col-6 logo">
+                    <div className="col-12 col-md-3 logo">
                         <a className="footer-logo" href="#/">
                             <img src={logo} alt="logo" />
                         </a>
                     </div>
 
-                    <div className="col-2 shops">
+                    <div className="col-6 col-md-3 shops">
                         <h6 className="shops">Shops</h6>
                         <ul className="shops">
                             <li>Categories</li>
@@ -25,7 +25,7 @@ class Footer extends Component {
                         </ul>
                     </div>
 
-                    <div className="col-2 community">
+                    <div className="col-6 col-md-3 community">
                     <h6 className="community">Community</h6>
                         <ul className="community">
                             <li>Featured Sellers</li>
@@ -34,7 +34,7 @@ class Footer extends Component {
                         </ul>
                     </div>
 
-                    <div className="col-2 company">
+                    <div className="col-6 col-md-3 company">
                     <h6 className="company">Company</h6>
                         <ul className="company">
                             <li>About Us</li>
@@ -48,10 +48,10 @@ class Footer extends Component {
 
                 <div className="row footerSocial">
 
-                    <div className="col-6 copyright">
+                    <div className="col-12 col-xl-6 copyright">
                         <p>&copy; Okaziyo, Ltd. 2020. Browse, Buy & Sell comfortably!</p>
                     </div>
-                    <div className="col-6 icons">
+                    <div className="col-12 col-xl-6 icons">
                        <h6 className="text-center">Follow us</h6> 
                        <div className="selfIcons">
                         <i class="fa fa-twitter"></i>
