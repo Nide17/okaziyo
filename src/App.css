@@ -634,6 +634,57 @@ ul.company li {
     font-size: 1.2rem;
   }
 
+  /* FOOTER */
+.container.footer {
+  padding: 2.5rem 1.5rem;
+}
+
+ul.shops li,
+ul.community li,
+ul.company li {
+  line-height: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.row.footerSocial {
+  padding: 2rem 0 0 0;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+.row.footerSocial .copyright {
+  justify-content: center;
+}
+
+.row.footerSocial .copyright p {
+  font-size: 0.7rem;
+  margin-top: 1rem;
+}
+
+.row.footerSocial .icons i {
+  margin-left: 1.5rem;
+}
+
+.row.footerSocial .icons i.fa {
+  border-radius: 50%;
+  font-size: 1.9rem;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.icons h6 {
+  margin-bottom: 1.8rem;
+}
+
+}
+
+@media screen and (min-width: 768px)and (max-width: 1024px) {
+.selfIcons {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
 }
 
 /***********/
@@ -780,13 +831,17 @@ ul.company li {
 
 .row.footerSocial {
   padding: 2rem 0 0 0;
+  justify-content: center;
   flex-direction: column-reverse;
+}
+
+.row.footerSocial .copyright {
+  justify-content: center;
 }
 
 .row.footerSocial .copyright p {
   font-size: 0.6rem;
   margin-top:1rem;
-  text-align:center;
 }
 
 .row.footerSocial .icons i {
@@ -798,14 +853,6 @@ ul.company li {
   font-size: 1.7rem;
   width: 2.5rem;
   height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.selfIcons {
-  display: flex;
-  justify-content: space-around;
 }
 
 .icons h6 {

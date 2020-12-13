@@ -10,7 +10,7 @@ class Footer extends Component {
 
                 <div className="row footerLinks">
 
-                    <div className="col-12 col-md-3 logo">
+                    <div className="col-12 col-md-3 mb-3 logo">
                         <a className="footer-logo" href="#/">
                             <img src={logo} alt="logo" />
                         </a>
