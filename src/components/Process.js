@@ -46,7 +46,7 @@ class Process extends Component {
 
                 </div>
                 
-                <div className="row know-more-container">
+                <div className="row mx-0 know-more-container">
                     <div className="col-12 know-more">
                         <button className="btn" type="button">Know More on the Process</button>
                     </div>
