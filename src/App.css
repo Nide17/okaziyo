@@ -169,7 +169,7 @@ a {
   justify-content: space-around;
 }
 
-.know-more-container{
+.know-more-container {
   height: 30%;
 }
 
@@ -291,7 +291,7 @@ a {
 
 /* MONEY BACK */
 .container.money {
-  background-color: #d5d9d8;
+  background-color: #ebf0ed;
   padding: 54px;
 }
 
@@ -565,59 +565,75 @@ ul.company li {
     width: 17rem;
     height: 3rem;
   }
-  
-/* BROWSE ITEMS */
-.row.contents {
-  margin: 60px 43px 0px 43px;
-}
 
-.row.contents h4 {
-  font-size: 1.8rem;
-  padding: 6px 0;
-}
+  /* BROWSE ITEMS */
+  .row.contents {
+    margin: 60px 43px 0px 43px;
+  }
 
-.row.contents .cards {
-  margin: 0 3.6rem;
-  flex-wrap: wrap;
-}
+  .row.contents h4 {
+    font-size: 1.8rem;
+    padding: 6px 0;
+  }
 
-.cards .oneCard {
-  width: 11.9rem;
-}
+  .row.contents .cards {
+    margin: 0 3.6rem;
+    flex-wrap: wrap;
+  }
 
-.cards .item img {
-  width: 160px;
-  height: 160px;
-}
+  .cards .oneCard {
+    width: 11.9rem;
+  }
 
-.cards .item-holder, .cards .item {
-  width: 169px;
-  height: 375px;
-}
+  .cards .item img {
+    width: 160px;
+    height: 160px;
+  }
 
-.cards .item h6, .cards .item .desc {
-  width: 100%;
-}
+  .cards .item-holder,
+  .cards .item {
+    width: 169px;
+    height: 375px;
+  }
 
-.cards .item h6 {
-  height: 1.6rem;
-  margin-bottom: 0.9rem;
-}
+  .cards .item h6,
+  .cards .item .desc {
+    width: 100%;
+  }
 
-.cards .item .desc {
-  height: 4rem;
-  font-size: 0.8rem;
-}
+  .cards .item h6 {
+    height: 1.6rem;
+    margin-bottom: 0.9rem;
+  }
 
-.row.contents .load-more-holder {
-  margin: 1rem auto;
-}
+  .cards .item .desc {
+    height: 4rem;
+    font-size: 0.8rem;
+  }
 
-.row.contents .load-more {
-  width: 18.7rem;
-  height: 3.4rem;
-  font-size: 1.1rem;
-}
+  .row.contents .load-more-holder {
+    margin: 1rem auto;
+  }
+
+  .row.contents .load-more {
+    width: 18.7rem;
+    height: 3.4rem;
+    font-size: 1.1rem;
+  }
+
+
+  /* MONEY BACK */
+  .container.money {
+    padding: 6.25rem;
+  }
+
+  .row.moneyRow button {
+    margin-top: 20px;
+    width: 18.75rem;
+    height: 3.4rem;
+    font-size: 1.2rem;
+  }
+
 }
 
 /***********/
@@ -630,97 +646,123 @@ ul.company li {
     height: 6rem;
   }
 
-.cards .item .desc {
+  .cards .item .desc {
     font-size: 0.6rem;
     text-align: center;
   }
 }
+
 /* process */
-  @media screen and (max-width: 414px) {
-    .container.processes {
-      height: 780px;
-    }
-
-    .row.groups {
-      margin: 0 24px;
-    }
-
-    .groups .process-grp {
-      width: 100%;
-      height: 181px;
-      padding-top: 20px;
-    }
-
-    .process-grp h5 {
-      font-size: 1.2rem;
-    text-align: center;
-    }
-
-    .process-grp p {
-      font-size: 0.9rem;
-    text-align: center;
-    }
-
-    .process-grp img {
-      width: 71px;
-      height: 73px;
-    }
-
-    .know-more button {
-      font-size: 0.9rem;
-      width: 15rem;
-    }
-
-    
-/* BROWSE ITEMS */
-.row.contents {
-  margin: 30px 10px 0px 10px;
-  text-align: center;
-}
-
-.row.contents h4 {
-  font-size: 1.5rem;
-  padding: 6px 0;
-}
-
-.row.contents .cards {
-  margin: 0 14px;
-  flex-wrap: wrap;
-}
-
-.cards .oneCard {
-  width: 190px;
-  height: 18rem;
-}
-
-.cards .item-holder, .cards .item {
-  width: 169px;
-  height: 19rem;
-}
-
-.cards .item h6, .cards .item .desc, .cards .item .price  {
-  width: 100%;
-  text-align: center;
-}
-
-.cards .item h6 {
-  height: 1.6rem;
-  margin-bottom: 0.9rem;
-  text-align: center;
-}
-
-.cards .item .desc {
-  height: 3.4rem;
-  font-size: .8rem;
-}
-
-.row.contents .load-more-holder {
-  margin: .8rem auto;
-}
-
-.row.contents .load-more {
-  width: 15rem;
-  height: 3.4rem;
-  font-size: 1rem;
-}
+@media screen and (max-width: 414px) {
+  .container.processes {
+    height: 780px;
   }
+
+  .row.groups {
+    margin: 0 24px;
+  }
+
+  .groups .process-grp {
+    width: 100%;
+    height: 181px;
+    padding-top: 20px;
+  }
+
+  .process-grp h5 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .process-grp p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .process-grp img {
+    width: 71px;
+    height: 73px;
+  }
+
+  .know-more button {
+    font-size: 0.9rem;
+    width: 15rem;
+  }
+
+
+  /* BROWSE ITEMS */
+  .row.contents {
+    margin: 30px 10px 0px 10px;
+    text-align: center;
+  }
+
+  .row.contents h4 {
+    font-size: 1.5rem;
+    padding: 6px 0;
+  }
+
+  .row.contents .cards {
+    margin: 0 14px;
+    flex-wrap: wrap;
+  }
+
+  .cards .oneCard {
+    width: 190px;
+    height: 18rem;
+  }
+
+  .cards .item-holder,
+  .cards .item {
+    width: 169px;
+    height: 19rem;
+  }
+
+  .cards .item h6,
+  .cards .item .desc,
+  .cards .item .price {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cards .item h6 {
+    height: 1.6rem;
+    margin-bottom: 0.9rem;
+    text-align: center;
+  }
+
+  .cards .item .desc {
+    height: 3.4rem;
+    font-size: .8rem;
+  }
+
+  .row.contents .load-more-holder {
+    margin: .8rem auto;
+  }
+
+  .row.contents .load-more {
+    width: 15rem;
+    height: 3.4rem;
+    font-size: 1rem;
+  }
+
+
+  /* MONEY BACK */
+  .container.money {
+    padding: 1.5rem;
+  }
+
+  .row.moneyRow h4 {
+    font-size: 1.75rem;
+  }
+
+  .row.moneyRow p {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .row.moneyRow button {
+    height: 3.125rem;
+    width: 15rem;
+    font-size: 1rem;
+  }
+
+}
