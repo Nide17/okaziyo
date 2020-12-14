@@ -13,7 +13,6 @@
 
 div.row.scontents div.scards {
   margin: 0 50px;
-  padding: 0;
   text-align: left;
   width: 100%;
   display: -webkit-box;
@@ -22,27 +21,21 @@ div.row.scontents div.scards {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 div.row.scontents div.scards .oneCard {
   width: 180px;
   height: 384px;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  scroll-snap-align: start;
 }
 
 div.row.scontents div.scards .item-holder {
   width: 180px;
   height: 384px;
   background-color: #fefefe;
+  margin-top: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +45,6 @@ div.row.scontents div.scards .item-holder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 8px;
 }
 
 div.row.scontents div.scards .item {

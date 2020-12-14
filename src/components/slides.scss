@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 .container.slides {
   margin: 0;
   padding: 0;
@@ -11,32 +17,32 @@
 }
 
 div.row.scontents {
+
   div.scards {
     margin: 0 50px;
-    padding: 0;
     text-align: left;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    // white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
     // flex-wrap: wrap;
+
+
 
     .oneCard {
       width: 180px;
       height: 384px;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      scroll-snap-align: start;
     }
 
     .item-holder {
       width: 180px;
       height: 384px;
       background-color: #fefefe;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin-top: 8px;
+      @include flex-center;
     }
 
     .item {
