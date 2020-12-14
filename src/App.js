@@ -9,6 +9,7 @@ import Process from './components/Process';
 import Browse from './components/Browse';
 import Money from './components/Money';
 import Footer from './components/Footer';
+import Slides from './components/Slides';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Process />
       <Browse />
       <Money />
+      <Slides />
       <Footer />
     </div>
   );
