@@ -18,49 +18,49 @@ class Categories extends Component {
                     <li>
                         <a href="/#">
                             Electronics &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#">
                             Fashion &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#">
                             Furniture &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#">
                             Cars, Motorcycles & Bikes &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#">
                             Books &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#">
                             Properties &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#">
                             Others &nbsp;
-                            <i class="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
                         </a>
                     </li>
                 </ul>

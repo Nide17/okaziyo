@@ -41,7 +41,7 @@ class Header extends Component {
                         <button className="navbar-toggler" type="button" onClick={this.toggleMenu}>
                             {/* <span className="navbar-toggler-icon"></span> */}
                             <span>
-                                <i class="fa fa-bars"></i>
+                                <i className="fa fa-bars"></i>
                             </span>
                         </button>
 
@@ -59,7 +59,7 @@ class Header extends Component {
                     }
 
                     <div className="nav-buttons col-6 col-lg-3 d-flex d-lg-none">
-                        <button className="search-sm" type="submit"><i class="fa fa-search"></i></button>
+                        <button className="search-sm" type="submit"><i className="fa fa-search"></i></button>
                         <button className="btn sellNow" type="button">Sell now!</button>
                     </div>
 
@@ -68,7 +68,7 @@ class Header extends Component {
                         <form>
                             <div className="form-group row">
                                 <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
-                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <button type="submit"><i className="fa fa-search"></i></button>
                             </div>
                         </form>
 
@@ -80,18 +80,18 @@ class Header extends Component {
                             <div className="buy mt-3">
                                 <h5>Buy</h5>
                                 <ul>
-                                    <li className="item-buy mt-3">Electronics<i class="fa fa-angle-right"></i></li>
-                                    <li className="item-buy mt-3">Fashion<i class="fa fa-angle-right"></i></li>
-                                    <li className="item-buy mt-3">Furniture<i class="fa fa-angle-right"></i></li>
-                                    <li className="item-buy mt-3">Vehicles<i class="fa fa-angle-right"></i></li>
-                                    <li className="item-buy mt-3">Books<i class="fa fa-angle-right"></i></li>
-                                    <li className="item-buy mt-3">Properties<i class="fa fa-angle-right"></i></li>
-                                    <li className="item-buy mt-3">Others<i class="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Electronics<i className="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Fashion<i className="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Furniture<i className="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Vehicles<i className="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Books<i className="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Properties<i className="fa fa-angle-right"></i></li>
+                                    <li className="item-buy mt-3">Others<i className="fa fa-angle-right"></i></li>
                                 </ul>
                             </div>
 
                             <div className="help mt-3">
-                                <i class="fa fa-question-circle mr-2"></i>
+                                <i className="fa fa-question-circle mr-2"></i>
                                 <p>Help</p>
                             </div>
 
