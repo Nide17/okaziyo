@@ -4,19 +4,27 @@ import Logosm from '../logo/Logosm.svg'
 
 class Header extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
-            menu: false
+            menu: false,
+            isBuying: false 
         };
 
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.ChangeBuying = this.ChangeBuying.bind(this);
     }
 
     toggleMenu() {
         this.setState({
             menu: !this.state.menu
+        })
+    }
+
+    ChangeBuying() {
+        this.setState({
+            isBuying: !this.state.isBuying
         })
     }
 
@@ -60,7 +68,7 @@ class Header extends Component {
 
                     <div className="nav-buttons col-6 col-lg-3 d-flex d-lg-none">
                         <button className="search-sm" type="submit"><i className="fa fa-search"></i></button>
-                        <button className="btn sellNow" type="button">Sell now!</button>
+                        <button className="btn sell" type="button" onClick={this.ChangeBuying}>{this.state.isBuying ? 'Buy now' : 'Sell now'}</button>
                     </div>
 
                     <div className={"nav-search col-12 col-lg-6 collapse navbar-collapse " + show}>
@@ -72,7 +80,7 @@ class Header extends Component {
                             </div>
                         </form>
 
-{/* FOR MOBILE */}
+                        {/* FOR MOBILE */}
                         <div className={"nav-buttons col-8 col-lg-3 d-flex d-lg-none"}>
                             <button className="btn my-1" type="button">Sign up</button>
                             <button className="btn my-1" type="button">Login</button>
@@ -98,9 +106,9 @@ class Header extends Component {
                         </div>
                     </div>
 
-{/* FOR LARGE */}
+                    {/* FOR LARGE */}
                     <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex"}>
-                        <button className="btn sell" type="button">Sell now!</button>
+                        <button className="btn sell" type="button" onClick={this.ChangeBuying}>{this.state.isBuying ? 'Buy now!' : 'Sell now!'}</button>
                         <button className="btn" type="button">Sign up</button>
                         <button className="btn" type="button">Login</button>
                     </div>

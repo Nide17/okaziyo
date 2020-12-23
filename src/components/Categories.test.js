@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import Categories from './Categories';
 
-test('renders learn react link', () => {
+it('renders categories component', () => {
   render(<Categories />);
-  const linkElement = screen.getByText(/Electronics/);
+  
+  const linkElement = screen.getByText(/electronics/i);
   expect(linkElement).toBeInTheDocument();
 });
