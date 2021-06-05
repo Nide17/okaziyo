@@ -36,7 +36,7 @@ class Header extends Component {
 
             <div className="container-fluid">
 
-                <nav className="row no-gutters navbar navbar-expand-lg navbar-light">
+                <nav className="row navbar navbar-expand-lg navbar-light mx-0">
 
                     {
                         /* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,22 +66,27 @@ class Header extends Component {
                         /* <div className="collapse navbar-collapse" id="navbarTogglerDemo03"> */
                     }
 
-                    <div className="nav-buttons col-6 col-lg-3 d-flex d-lg-none">
-                        <button className="search-sm" type="submit"><i className="fa fa-search"></i></button>
-                        <button className="btn sell" type="button" onClick={this.ChangeBuying}>{this.state.isBuying ? 'Buy now' : 'Sell now'}</button>
+                    <div className="nav-buttons col-6 col-lg-3 d-flex d-lg-none px-0">
+                        <button className="search-sm" type="submit">
+                        <i className="fa fa-search"></i>
+                        </button>
+
+                        <button className="btn sell mr-3" type="button" onClick={this.ChangeBuying}>{this.state.isBuying ? 'Buy now' : 'Sell now'}</button>
                     </div>
 
                     <div className={"nav-search col-12 col-lg-6 collapse navbar-collapse " + show}>
 
                         <form>
-                            <div className="form-group row">
+                            <div className="form-group row mx-0">
                                 <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
-                                <button type="submit"><i className="fa fa-search"></i></button>
+                                <button type="submit">
+                                <i className="fa fa-search"></i>
+                                </button>
                             </div>
                         </form>
 
                         {/* FOR MOBILE */}
-                        <div className={"nav-buttons col-8 col-lg-3 d-flex d-lg-none"}>
+                        <div className={"nav-buttons col-8 col-lg-3 d-flex d-lg-none justify-content-around mr-4"}>
                             <button className="btn my-1" type="button">Sign up</button>
                             <button className="btn my-1" type="button">Login</button>
 
@@ -107,10 +112,10 @@ class Header extends Component {
                     </div>
 
                     {/* FOR LARGE */}
-                    <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex"}>
-                        <button className="btn sell" type="button" onClick={this.ChangeBuying}>{this.state.isBuying ? 'Buy now!' : 'Sell now!'}</button>
-                        <button className="btn" type="button">Sign up</button>
-                        <button className="btn" type="button">Login</button>
+                    <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex justify-content-around pl-0 mr-4"}>
+                        <button className="btn sell px-lg-2" type="button" onClick={this.ChangeBuying}>{this.state.isBuying ? 'Buy now!' : 'Sell now!'}</button>
+                        <button className="btn px-lg-2" type="button">Sign up</button>
+                        <button className="btn px-lg-2" type="button">Login</button>
                     </div>
                 </nav>
             </div>

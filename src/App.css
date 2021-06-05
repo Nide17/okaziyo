@@ -3,7 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body {
@@ -26,7 +25,6 @@ a {
 .container-fluid,
 .row.navbar {
   padding: 0;
-  /* height: 80px; */
   border-bottom: 1px solid #bdc4b3;
 }
 
@@ -74,13 +72,11 @@ a {
 .nav-search form .form-group button .fa-search {
   font-size: 24px;
 }
-
 .nav-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
-
 .nav-buttons button {
   height: 40px;
   color: #499167;
