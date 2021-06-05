@@ -54,11 +54,11 @@ class Footer extends Component {
                     <div className="col-12 col-xl-6 icons">
                        <h6 className="text-center">Follow us</h6> 
                        <div className="selfIcons">
-                        <i class="fa fa-twitter"></i>
-                        <i class="fa fa-facebook"></i>
-                        <i class="fa fa-linkedin"></i>
-                        <i class="fa fa-instagram"></i>
-                        <i class="fa fa-youtube"></i>
+                        <i className="fa fa-twitter"></i>
+                        <i className="fa fa-facebook"></i>
+                        <i className="fa fa-linkedin"></i>
+                        <i className="fa fa-instagram"></i>
+                        <i className="fa fa-youtube"></i>
                         </div>
                     </div>
 
