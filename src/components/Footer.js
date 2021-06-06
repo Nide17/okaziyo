@@ -6,7 +6,7 @@ class Footer extends Component {
     render() {
 
         return (
-            <section className="container footer">
+            <section className="container footer px-2">
 
                 <div className="row footerLinks">
 
@@ -51,7 +51,7 @@ class Footer extends Component {
                     <div className="col-12 col-xl-6 copyright">
                         <p>&copy; Okaziyo, Ltd. 2020. Browse, Buy & Sell comfortably!</p>
                     </div>
-                    <div className="col-12 col-xl-6 icons">
+                    <div className="col-12 col-xl-6 icons px-0">
                        <h6 className="text-center">Follow us</h6> 
                        <div className="selfIcons">
                         <i className="fa fa-twitter"></i>

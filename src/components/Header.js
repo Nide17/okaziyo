@@ -6,14 +6,15 @@ const Header = () => {
 
     const [state, setState] = useState({
         menu: false,
+        showElectronicsItems: false,
+        showFashionItems: false,
+        showFurnitureItems: false,
+        showTransportItems: false,
+        showEstateItems: false,
+        showOthersItems: false,
+        isSearchOpen: false,
         isBuying: false
     })
-
-    const toggleMenu = () => {
-        setState({
-            menu: !state.menu
-        })
-    }
 
     const ChangeBuying = () => {
         setState({
@@ -21,7 +22,69 @@ const Header = () => {
         })
     }
 
-    const show = (state.menu) ? "show" : "";
+    const openSearch = () => {
+        setState({
+            isSearchOpen: !state.isSearchOpen
+        })
+    }
+
+    const toggleMenu = () => {
+        setState({
+            menu: !state.menu,
+
+        })
+    }
+
+    const onElectronicsItemClick = () => {
+        setState({
+            showElectronicsItems: !state.showElectronicsItems,
+            menu: true
+        })
+    }
+
+    const onFashionItemClick = () => {
+        setState({
+            showFashionItems: !state.showFashionItems,
+            menu: true
+        })
+    }
+
+    const onFurnitureItemClick = () => {
+        setState({
+            showFurnitureItems: !state.showFurnitureItems,
+            menu: true
+        })
+    }
+
+    const onTransportItemClick = () => {
+        setState({
+            showTransportItems: !state.showTransportItems,
+            menu: true
+        })
+    }
+
+    const onEstateItemClick = () => {
+        setState({
+            showEstateItems: !state.showEstateItems,
+            menu: true
+        })
+    }
+
+    const onOthersItemClick = () => {
+        setState({
+            showOthersItems: !state.showOthersItems,
+            menu: true
+        })
+    }
+
+    const classNavSearch = state.menu ? "nav-search col-12 col-lg-6 collapse navbar-collapse show" : "nav-search col-12 col-lg-6 collapse navbar-collapse";
+    const classNavSearchOpen = state.isSearchOpen ? "nav-search w-100 show mt-2 mb-0 py-4" : "nav-search w-100  d-lg-none";
+    const elecBuyClass = state.showElectronicsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const fashBuyClass = state.showFashionItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const furnBuyClass = state.showFurnitureItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const transBuyClass = state.showTransportItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const estBuyClass = state.showEstateItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const othBuyClass = state.showOthersItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
 
     return (
 
@@ -29,16 +92,9 @@ const Header = () => {
 
             <nav className="row navbar navbar-expand-lg navbar-light mx-0">
 
-                {
-                    /* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
-                                </button> */
-                }
+                <div className="col-7 col-lg-3 navbar-toggler-holder px-0">
 
-                <div className="col-6 col-lg-3 navbar-toggler-holder">
-
-                    <button className="navbar-toggler" type="button" onClick={toggleMenu}>
-                        {/* <span className="navbar-toggler-icon"></span> */}
+                    <button className="navbar-toggler ml-2" type="button" onClick={toggleMenu}>
                         <span>
                             <i className="fa fa-bars"></i>
                         </span>
@@ -48,49 +104,131 @@ const Header = () => {
                         <img src={logo} alt="logo" />
                     </a>
 
-                    <a className="navbar-brand-small d-block d-lg-none" href="#/">
-                        <img src={Logosm} alt="Logosm" />
+                    <a className="navbar-brand-small d-block d-lg-none ml-1" href="#/">
+                        <img src={Logosm} alt="Logosm" width="73px" height="30px" />
                     </a>
                 </div>
 
-                {
-                    /* <div className="collapse navbar-collapse" id="navbarTogglerDemo03"> */
-                }
-
-                <div className="nav-buttons col-6 col-lg-3 d-flex d-lg-none px-0">
-                    <button className="search-sm" type="submit">
+                <div className="nav-buttons col-5 col-lg-3 d-flex d-lg-none px-0">
+                    <button className="search-sm" onClick={openSearch}>
                         <i className="fa fa-search"></i>
                     </button>
 
-                    <button className="btn sell mr-3" type="button" onClick={ChangeBuying}>{state.isBuying ? 'Buy now' : 'Sell now'}</button>
+                    <button className="btn sell mr-2 py-1 px-1" type="button" onClick={ChangeBuying}>
+                        {state.isBuying ? 'Buy now' : 'Sell now'}
+                    </button>
                 </div>
 
-                <div className={"nav-search col-12 col-lg-6 collapse navbar-collapse " + show}>
-
-                    <form>
-                        <div className="form-group row mx-0">
+                {/* SEARCH FOR LARGE*/}
+                <div className={classNavSearchOpen}>
+                    <form className="px-1">
+                        <div className="form-group row mx-1">
                             <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
                             <button type="submit">
                                 <i className="fa fa-search"></i>
                             </button>
                         </div>
                     </form>
+                </div>
+
+                <div className={classNavSearch}>
+
+                    {/* SEARCH FOR LARGE*/}
+                    <form>
+                        <div className="form-group row">
+                            <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
+                            <button type="submit"><i className="fa fa-search"></i></button>
+                        </div>
+                    </form>
 
                     {/* FOR MOBILE */}
-                    <div className={"nav-buttons col-8 col-lg-3 d-flex d-lg-none justify-content-around mr-4"}>
-                        <button className="btn my-1" type="button">Sign up</button>
-                        <button className="btn my-1" type="button">Login</button>
+                    <div className={"nav-buttons col-lg-3 d-flex d-lg-none justify-content-around mr-4 px-4"}>
+
+                        <div className="auth d-flex justify-content-around w-100">
+                            <button className="btn my-1" type="button">Sign up</button>
+                            <button className="btn my-1" type="button">Login</button>
+                        </div>
 
                         <div className="buy mt-3">
-                            <h5>Buy</h5>
-                            <ul>
-                                <li className="item-buy mt-3">Electronics<i className="fa fa-angle-right"></i></li>
-                                <li className="item-buy mt-3">Fashion<i className="fa fa-angle-right"></i></li>
-                                <li className="item-buy mt-3">Furniture<i className="fa fa-angle-right"></i></li>
-                                <li className="item-buy mt-3">Vehicles<i className="fa fa-angle-right"></i></li>
-                                <li className="item-buy mt-3">Books<i className="fa fa-angle-right"></i></li>
-                                <li className="item-buy mt-3">Properties<i className="fa fa-angle-right"></i></li>
-                                <li className="item-buy mt-3">Others<i className="fa fa-angle-right"></i></li>
+
+                            <ul className="categories-list-mobile">
+
+                                <li className={elecBuyClass} onClick={onElectronicsItemClick}>
+                                    <a href="/#">
+                                        Electronics &nbsp;
+                                    <i className="fa fa-angle-down"></i>
+                                    </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="#/">Computers & Accessories</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Phones & Accessories </a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Printers</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={fashBuyClass} onClick={onFashionItemClick}>
+                                    <a href="/#">
+                                        Fashion &nbsp;
+                                <i className="fa fa-angle-down"></i>
+                                    </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="#/">Clothes</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Shoes</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={furnBuyClass} onClick={onFurnitureItemClick}>
+                                    <a href="/#">
+                                        Furniture &nbsp;
+                                <i className="fa fa-angle-down"></i>
+                                    </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="#/">Beds</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Chairs</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Tables</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={transBuyClass} onClick={onTransportItemClick}><a href="/#">
+                                    Transport &nbsp;
+                            <i className="fa fa-angle-down"></i>
+                                </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="#/">Cars</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Motorcycles</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Bicycles</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={estBuyClass} onClick={onEstateItemClick}><a href="/#">
+                                    Real Estate &nbsp;
+                            <i className="fa fa-angle-down"></i>
+                                </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="#/">Land plots</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Houses</a></li>
+                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={othBuyClass} onClick={onOthersItemClick}><a href="/#">
+                                    Others &nbsp;
+                                <i className="fa fa-angle-down"></i>
+                                </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="#/">Miscellaneous</a></li>
+                                    </ul>
+                                </li>
+
                             </ul>
                         </div>
 
