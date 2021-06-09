@@ -14,6 +14,8 @@ import Terms from './components/others/Terms';
 import Contact from './components/others/Contact';
 import About from './components/others/About';
 import CategoriesRoutes from './CategoriesRoutes';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 const App = () => {
   return (
@@ -28,8 +30,8 @@ const App = () => {
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/disclaimer" component={Disclaimer} />
           <Route exact path="/terms" component={Terms} />
-          <Route exact path="/sign-up" component={Placeholder} />
-          <Route exact path="/login" component={Placeholder} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/feat-brands" component={Placeholder} />
           <Route exact path="/hot-deals" component={Placeholder} />
           <Route exact path="/know-more-process" component={Placeholder} />

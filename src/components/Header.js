@@ -165,10 +165,10 @@ const Header = () => {
                     <div className={"nav-buttons col-lg-3 d-flex d-lg-none justify-content-around mr-4 px-4"}>
 
                         <div className="auth d-flex justify-content-around w-100">
-                            <a href="sign-up">
-                                <button className="btn my-1" type="button">Sign up</button>
+                            <a href="/register">
+                                <button className="btn my-1" type="button">Register</button>
                             </a>
-                            <a href="login"><button className="btn my-1" type="button">Login</button></a>
+                            <a href="/login"><button className="btn my-1" type="button">Login</button></a>
                         </div>
 
                         <div className="buy mt-3">
@@ -287,10 +287,10 @@ const Header = () => {
                     <button className="btn sell px-lg-2" type="button" onClick={ChangeBuying}>
                         {state.isBuying ? 'Buy now!' : 'Sell now!'}
                     </button>
-                    <a href="sign-up">
-                        <button className="btn px-lg-2" type="button">Sign up</button>
+                    <a href="/register">
+                        <button className="btn px-lg-2" type="button">Register</button>
                     </a>
-                    <a href="login"><button className="btn px-lg-2" type="button">Login</button></a>
+                    <a href="/login"><button className="btn px-lg-2" type="button">Login</button></a>
                 </div>
             </nav>
         </div>
