@@ -6,11 +6,13 @@ class Browse extends Component {
         return (
             <section className="container things">
                 <div className="row contents">
-                    <h4 className="col-12">Browse Something to Buy</h4>
+                    <h4 className="col-12">Browse new products to buy</h4>
 
-                    <div className="popular d-flex col-12 text-left font-weight-bolder ml-md-5 pl-md-4">
-                        <h5 className="mr-3 font-weight-bolder h-6 h-md-5">Popular items to buy</h5>
-                        <p className="text-success">See all items</p>
+                    <div className="latest d-flex col-12 text-left font-weight-bolder mb-3">
+                        <h5 className="mr-3 ml-md-5 pl-md-4 font-weight-bolder h-6 h-md-5">Latest items to buy</h5>
+                        <a href="/all-products">
+                            <p className="text-success">See all items</p>
+                        </a>
                     </div>
                     <div className="cards">
 
@@ -20,7 +22,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +33,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +44,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +55,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +66,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +77,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -86,19 +88,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="col-6 col-md-3 col-xl-2 oneCard">
-                            <div className="item-holder">
-                                <div className="item">
-                                    <img src={sell} alt="sell" />
-                                    <h6>Item Name</h6>
-                                    <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -110,18 +100,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-6 col-md-3 col-xl-2 oneCard">
-                            <div className="item-holder">
-                                <div className="item">
-                                    <img src={sell} alt="sell" />
-                                    <h6>Item Name</h6>
-                                    <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +112,7 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +123,29 @@ class Browse extends Component {
                                     <img src={sell} alt="sell" />
                                     <h6>Item Name</h6>
                                     <p className="price">Price</p>
-                                    <p className="desc px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
+                            <div className="item-holder">
+                                <div className="item">
+                                    <img src={sell} alt="sell" />
+                                    <h6>Item Name</h6>
+                                    <p className="price">Price</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-6 col-md-3 col-xl-2 oneCard">
+                            <div className="item-holder">
+                                <div className="item">
+                                    <img src={sell} alt="sell" />
+                                    <h6>Item Name</h6>
+                                    <p className="price">Price</p>
+                                    <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, itaque.</p>
                                 </div>
                             </div>
                         </div>

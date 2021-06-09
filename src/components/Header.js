@@ -11,6 +11,8 @@ const Header = () => {
         showFurnitureItems: false,
         showTransportItems: false,
         showEstateItems: false,
+        showScholarshipsItems: false,
+        showJobsItems: false,
         showOthersItems: false,
         isSearchOpen: false,
         isBuying: false
@@ -70,12 +72,27 @@ const Header = () => {
         })
     }
 
+    const onScholarshipsItemClick = () => {
+        setState({
+            showScholarshipsItems: !state.showScholarshipsItems,
+            menu: true
+        })
+    }
+
+    const onJobsItemClick = () => {
+        setState({
+            showJobsItems: !state.showJobsItems,
+            menu: true
+        })
+    }
+
     const onOthersItemClick = () => {
         setState({
             showOthersItems: !state.showOthersItems,
             menu: true
         })
     }
+
 
     const classNavSearch = state.menu ? "nav-search col-12 col-lg-6 collapse navbar-collapse show" : "nav-search col-12 col-lg-6 collapse navbar-collapse";
     const classNavSearchOpen = state.isSearchOpen ? "nav-search w-100 show mt-2 mb-0 py-4" : "nav-search w-100  d-lg-none";
@@ -84,7 +101,10 @@ const Header = () => {
     const furnBuyClass = state.showFurnitureItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
     const transBuyClass = state.showTransportItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
     const estBuyClass = state.showEstateItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const schBuyClass = state.showScholarshipsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    const jobsBuyClass = state.showJobsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
     const othBuyClass = state.showOthersItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+
 
     return (
 
@@ -100,11 +120,11 @@ const Header = () => {
                         </span>
                     </button>
 
-                    <a className="navbar-brand d-none d-lg-flex" href="#/">
+                    <a className="navbar-brand d-none d-lg-flex" href="/">
                         <img src={logo} alt="logo" />
                     </a>
 
-                    <a className="navbar-brand-small d-block d-lg-none ml-1" href="#/">
+                    <a className="navbar-brand-small d-block d-lg-none ml-1" href="/">
                         <img src={Logosm} alt="Logosm" width="73px" height="30px" />
                     </a>
                 </div>
@@ -134,7 +154,7 @@ const Header = () => {
                 <div className={classNavSearch}>
 
                     {/* SEARCH FOR LARGE*/}
-                    <form>
+                    <form className="d-none d-sm-block">
                         <div className="form-group row">
                             <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
                             <button type="submit"><i className="fa fa-search"></i></button>
@@ -145,8 +165,10 @@ const Header = () => {
                     <div className={"nav-buttons col-lg-3 d-flex d-lg-none justify-content-around mr-4 px-4"}>
 
                         <div className="auth d-flex justify-content-around w-100">
-                            <button className="btn my-1" type="button">Sign up</button>
-                            <button className="btn my-1" type="button">Login</button>
+                            <a href="sign-up">
+                                <button className="btn my-1" type="button">Sign up</button>
+                            </a>
+                            <a href="login"><button className="btn my-1" type="button">Login</button></a>
                         </div>
 
                         <div className="buy mt-3">
@@ -154,87 +176,106 @@ const Header = () => {
                             <ul className="categories-list-mobile">
 
                                 <li className={elecBuyClass} onClick={onElectronicsItemClick}>
-                                    <a href="/#">
+                                    <a href="/electronics">
                                         Electronics &nbsp;
                                     <i className="fa fa-angle-down"></i>
                                     </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item px-1" href="#/">Computers & Accessories</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Phones & Accessories </a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Printers</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                        <li><a className="dropdown-item px-1" href="/computers">Computers & Accessories</a></li>
+                                        <li><a className="dropdown-item px-1" href="/phones">Phones & Accessories </a></li>
+                                        <li><a className="dropdown-item px-1" href="/printers">Printers</a></li>
+                                        <li><a className="dropdown-item px-1" href="/others-electronics">Others</a></li>
                                     </ul>
                                 </li>
 
                                 <li className={fashBuyClass} onClick={onFashionItemClick}>
-                                    <a href="/#">
+                                    <a href="/fashion">
                                         Fashion &nbsp;
                                 <i className="fa fa-angle-down"></i>
                                     </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item px-1" href="#/">Clothes</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Shoes</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                        <li><a className="dropdown-item px-1" href="/clothes">Clothes</a></li>
+                                        <li><a className="dropdown-item px-1" href="/shoes">Shoes</a></li>
+                                        <li><a className="dropdown-item px-1" href="/others-fashion">Others</a></li>
                                     </ul>
                                 </li>
 
                                 <li className={furnBuyClass} onClick={onFurnitureItemClick}>
-                                    <a href="/#">
+                                    <a href="/furniture">
                                         Furniture &nbsp;
                                 <i className="fa fa-angle-down"></i>
                                     </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item px-1" href="#/">Beds</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Chairs</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Tables</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                        <li><a className="dropdown-item px-1" href="/beds">Beds</a></li>
+                                        <li><a className="dropdown-item px-1" href="/chairs">Chairs</a></li>
+                                        <li><a className="dropdown-item px-1" href="/tables">Tables</a></li>
+                                        <li><a className="dropdown-item px-1" href="/others-furniture">Others</a></li>
                                     </ul>
                                 </li>
 
-                                <li className={transBuyClass} onClick={onTransportItemClick}><a href="/#">
+                                <li className={transBuyClass} onClick={onTransportItemClick}><a href="/transport">
                                     Transport &nbsp;
                             <i className="fa fa-angle-down"></i>
                                 </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item px-1" href="#/">Cars</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Motorcycles</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Bicycles</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                        <li><a className="dropdown-item px-1" href="/cars">Cars</a></li>
+                                        <li><a className="dropdown-item px-1" href="/motorcycles">Motorcycles</a></li>
+                                        <li><a className="dropdown-item px-1" href="/bicycles">Bicycles</a></li>
+                                        <li><a className="dropdown-item px-1" href="/others-transport">Others</a></li>
                                     </ul>
                                 </li>
 
-                                <li className={estBuyClass} onClick={onEstateItemClick}><a href="/#">
+                                <li className={estBuyClass} onClick={onEstateItemClick}><a href="/real-estate">
                                     Real Estate &nbsp;
                             <i className="fa fa-angle-down"></i>
                                 </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item px-1" href="#/">Land plots</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Houses</a></li>
-                                        <li><a className="dropdown-item px-1" href="#/">Others</a></li>
+                                        <li><a className="dropdown-item px-1" href="/plots">Land plots</a></li>
+                                        <li><a className="dropdown-item px-1" href="/houses">Houses</a></li>
+                                        <li><a className="dropdown-item px-1" href="/others-real-estate">Others</a></li>
                                     </ul>
                                 </li>
 
-                                <li className={othBuyClass} onClick={onOthersItemClick}><a href="/#">
+                                <li className={schBuyClass} onClick={onScholarshipsItemClick}><a href="/scholarships">
+                                    Scholarships &nbsp;
+                                <i className="fa fa-angle-down"></i>
+                                </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="/fully-funded">Fully funded</a></li>
+                                        <li><a className="dropdown-item px-1" href="/partially-funded">Partialy funded</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={jobsBuyClass} onClick={onJobsItemClick}><a href="/jobs">
+                                    Jobs &nbsp;
+                                <i className="fa fa-angle-down"></i>
+                                </a>
+                                    {/* dropdown */}
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item px-1" href="/full-time">Full-time</a></li>
+                                        <li><a className="dropdown-item px-1" href="/part-time">Part-time</a></li>
+                                        <li><a className="dropdown-item px-1" href="/internships">Internships</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className={othBuyClass} onClick={onOthersItemClick}><a href="/others">
                                     Others &nbsp;
                                 <i className="fa fa-angle-down"></i>
                                 </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item px-1" href="#/">Miscellaneous</a></li>
+                                        <li><a className="dropdown-item px-1" href="/tenders">Tenders</a></li>
+                                        <li><a className="dropdown-item px-1" href="/rents">Rent</a></li>
                                     </ul>
                                 </li>
 
                             </ul>
-                        </div>
-
-                        <div className="help mt-3">
-                            <i className="fa fa-question-circle mr-2"></i>
-                            <p>Help</p>
                         </div>
 
                     </div>
@@ -246,9 +287,10 @@ const Header = () => {
                     <button className="btn sell px-lg-2" type="button" onClick={ChangeBuying}>
                         {state.isBuying ? 'Buy now!' : 'Sell now!'}
                     </button>
-
-                    <button className="btn px-lg-2" type="button">Sign up</button>
-                    <button className="btn px-lg-2" type="button">Login</button>
+                    <a href="sign-up">
+                        <button className="btn px-lg-2" type="button">Sign up</button>
+                    </a>
+                    <a href="login"><button className="btn px-lg-2" type="button">Login</button></a>
                 </div>
             </nav>
         </div>

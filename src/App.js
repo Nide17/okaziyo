@@ -1,25 +1,43 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Make sure to place css after bootstrap
 import './App.css';
 import 'font-awesome/css/font-awesome.css'
 import Header from './components/Header';
 
-import Categories from './components/Categories';
-import Process from './components/Process';
-import Browse from './components/Browse';
-import Money from './components/Money';
 import Footer from './components/Footer';
-// import Slides from './components/Slides';
+import Main from './Main';
+import Placeholder from './components/others/Placeholder';
+import Disclaimer from './components/others/Disclaimer';
+import Privacy from './components/others/Privacy';
+import Terms from './components/others/Terms';
+import Contact from './components/others/Contact';
+import About from './components/others/About';
+import CategoriesRoutes from './CategoriesRoutes';
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Categories />
-      <Process />
-      <Browse />
-      <Money />
-      {/* <Slides /> */}
+      <Router>
+        <Header />
+
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/disclaimer" component={Disclaimer} />
+          <Route exact path="/terms" component={Terms} />
+          <Route exact path="/sign-up" component={Placeholder} />
+          <Route exact path="/login" component={Placeholder} />
+          <Route exact path="/feat-brands" component={Placeholder} />
+          <Route exact path="/hot-deals" component={Placeholder} />
+          <Route exact path="/know-more-process" component={Placeholder} />
+
+          {/* Categories */}
+          <CategoriesRoutes />
+        </Switch>
+      </Router>
       <Footer />
     </div>
   );

@@ -11,7 +11,7 @@ class Footer extends Component {
                 <div className="row footerLinks">
 
                     <div className="col-12 col-md-3 mb-3 logo">
-                        <a className="footer-logo" href="#/">
+                        <a className="footer-logo" href="/">
                             <img src={logo} alt="logo" />
                         </a>
                     </div>
@@ -19,27 +19,25 @@ class Footer extends Component {
                     <div className="col-6 col-md-3 shops">
                         <h6 className="shops">Shops</h6>
                         <ul className="shops">
-                            <li>Categories</li>
-                            <li>Featured Brands</li>
-                            <li>Hot Deals</li>
+                            <li><a href="/feat-brands">Featured Brands</a></li>
+                            <li><a href="/hot-deals">Hot Deals</a></li>
                         </ul>
                     </div>
 
                     <div className="col-6 col-md-3 community">
-                    <h6 className="community">Community</h6>
+                        <h6 className="community">Community</h6>
                         <ul className="community">
-                            <li>Featured Sellers</li>
-                            <li>Terms of Use</li>
-                            <li>Live Events</li>
+                            <li><a href="/disclaimer">Disclaimer</a></li>
+                            <li><a href="/privacy">Privacy policy</a></li>
+                            <li><a href="/terms">Terms of use</a></li>
                         </ul>
                     </div>
 
                     <div className="col-6 col-md-3 company">
-                    <h6 className="company">Company</h6>
+                        <h6 className="company">Company</h6>
                         <ul className="company">
-                            <li>About Us</li>
-                            <li>Contact Us</li>
-                            <li>History</li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,16 +47,16 @@ class Footer extends Component {
                 <div className="row footerSocial">
 
                     <div className="col-12 col-xl-6 copyright">
-                        <p>&copy; Okaziyo, Ltd. 2020. Browse, Buy & Sell comfortably!</p>
+                        <p>&copy; Okaziyo, Ltd. 2021. Browse, Buy & Sell comfortably!</p>
                     </div>
                     <div className="col-12 col-xl-6 icons px-0">
-                       <h6 className="text-center">Follow us</h6> 
-                       <div className="selfIcons">
-                        <i className="fa fa-twitter"></i>
-                        <i className="fa fa-facebook"></i>
-                        <i className="fa fa-linkedin"></i>
-                        <i className="fa fa-instagram"></i>
-                        <i className="fa fa-youtube"></i>
+                        <h6 className="text-center">Follow us</h6>
+                        <div className="selfIcons">
+                            <a href="twitter.com"><i className="fa fa-twitter"></i></a>
+                            <a href="facebook.com"><i className="fa fa-facebook"></i></a>
+                            <a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
+                            <a href="instagram.com"><i className="fa fa-instagram"></i></a>
+                            <a href="youtube.com"><i className="fa fa-youtube"></i></a>
                         </div>
                     </div>
 

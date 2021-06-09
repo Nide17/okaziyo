@@ -121,8 +121,14 @@ a {
     top: calc(100% + 10px) !important;
   }
 
+  .categories-list .category-item:hover .fa-angle-down:before {
+    content: "\f106";
+  }
+
   .categories-list .category-item .dropdown-menu {
-    margin-top: 0;
+    margin-top: -10px;
+    transition: 0.3s;
+    min-width: 7rem;
   }
 }
 
@@ -249,7 +255,7 @@ a {
 
 .cards .oneCard {
   width: 180px;
-  height: 384px;
+  height: 350px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -258,7 +264,7 @@ a {
 
 .cards .item-holder {
   width: 180px;
-  height: 384px;
+  height: 350px;
   background-color: #fefefe;
   display: flex;
   justify-content: center;
@@ -290,16 +296,12 @@ a {
 
 .cards .item h6 {
   font-weight: bold;
-  width: 160px;
   font-size: 1rem;
-  height: 41px;
   padding-top: 1rem;
 }
 
 .cards .item .price {
   color: #499167;
-  height: 20px;
-  width: 70px;
   font-size: 18px;
   font-weight: 600;
   line-height: 18px;
@@ -307,7 +309,6 @@ a {
 }
 
 .cards .item .desc {
-  height: 68px;
   width: 160px;
   font-size: 14px;
   line-height: 18px;
@@ -319,7 +320,6 @@ a {
 
 .row.contents .load-more {
   width: 153px;
-  height: 55px;
   color: #ffffff;
   background-color: #499167;
   font-size: 1.1rem;
@@ -342,13 +342,11 @@ a {
 
 .row.moneyRow h4 {
   margin-top: 10px;
-  height: 47px;
   font-weight: 900;
 }
 
 .row.moneyRow p {
   margin-top: 10px;
-  height: 42px;
   font-size: 1.4rem;
   font-weight: 500;
 }
@@ -365,7 +363,7 @@ a {
 
 /* FOOTER */
 .container.footer {
-  padding: 48px 82px;
+  padding: 24px 82px;
   background-color: #91f9e5;
 }
 
@@ -389,10 +387,6 @@ ul.company li {
   font-size: 0.8rem;
 }
 
-.row.footerSocial {
-  padding: 38px 0 0 0;
-}
-
 .row.footerSocial .copyright {
   display: flex;
   align-items: center;
@@ -405,6 +399,22 @@ ul.company li {
 
 .row.footerSocial .icons i {
   margin-left: 25px;
+}
+
+/* reset focus border on any input */
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
 }
 
 .row.footerSocial .icons i.fa {
@@ -555,11 +565,6 @@ ul.company li {
     float: right;
   }
 
-  /* CATEGORIES */
-  /* section.categories {
-    display: none;
-  } */
-
 }
 
 /***********/
@@ -625,7 +630,7 @@ ul.company li {
   .cards .item-holder,
   .cards .item {
     width: 169px;
-    height: 375px;
+    height: 100%;
   }
 
   .cards .item h6,
@@ -634,12 +639,10 @@ ul.company li {
   }
 
   .cards .item h6 {
-    height: 1.6rem;
     margin-bottom: 0.9rem;
   }
 
   .cards .item .desc {
-    height: 4rem;
     font-size: 0.8rem;
   }
 
@@ -649,14 +652,13 @@ ul.company li {
 
   .row.contents .load-more {
     width: 18.7rem;
-    height: 3.4rem;
     font-size: 1.1rem;
   }
 
 
   /* MONEY BACK */
   .container.money {
-    padding: 6.25rem;
+    padding: 2rem;
   }
 
   .row.moneyRow button {
@@ -683,7 +685,7 @@ ul.company li {
   }
 
   .row.footerSocial {
-    padding: 2rem 0 0 0;
+    padding: 1.6rem 0 0 0;
     justify-content: center;
     flex-direction: column-reverse;
   }
@@ -723,14 +725,41 @@ ul.company li {
   }
 }
 
+/*****************/
+/* SMALL TABLET */
+/***************/
+
+@media screen and (max-width: 768px) {
+  .row.contents .cards {
+    margin: 0 .5rem;
+    flex-wrap: wrap;
+  }
+
+  .cards .oneCard {
+    width: 9rem;
+    padding-left: 5px;
+    height: 250px;
+  }
+
+  .cards .item h6,
+  .cards .item .desc,
+  .cards .item .price {
+    text-align: center;
+  }
+
+  .container.money {
+    padding: 1.5rem;
+  }
+}
+
 /***********/
 /* MOBILE */
 /*********/
 
 @media screen and (max-width: 768px) {
   .cards .item img {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
   }
 
   .cards .item .desc {
@@ -742,7 +771,7 @@ ul.company li {
 /* process */
 @media screen and (max-width: 414px) {
   .container.processes {
-    height: 780px;
+    height: 640px;
   }
 
   .row.groups {
@@ -770,6 +799,10 @@ ul.company li {
     height: 73px;
   }
 
+  .know-more-container {
+    height: 45%;
+  }
+
   .know-more button {
     font-size: 0.9rem;
     width: 15rem;
@@ -787,28 +820,29 @@ ul.company li {
     padding: 6px 0;
   }
 
-    .row.contents h5 {
-      font-size: .9rem;
-    }
+  .row.contents h5 {
+    font-size: .9rem;
+  }
 
-        .row.contents p {
-          font-size: .7rem;
-        }
+  .row.contents p {
+    font-size: .7rem;
+  }
 
   .row.contents .cards {
-    margin: 0 14px;
+    margin: 0;
     flex-wrap: wrap;
   }
 
   .cards .oneCard {
     width: 190px;
-    height: 18rem;
+    height: fit-content;
   }
 
   .cards .item-holder,
   .cards .item {
-    width: 140px;
-    height: 14rem;
+    padding: .2rem;
+    width: 100%;
+    height: 100%;
   }
 
   .cards .item h6,
@@ -820,13 +854,11 @@ ul.company li {
   }
 
   .cards .item h6 {
-    height: 1rem;
     margin-bottom: 0.9rem;
     text-align: center;
   }
 
   .cards .item .desc {
-    height: 3.4rem;
     font-size: .7rem;
   }
 
@@ -836,7 +868,6 @@ ul.company li {
 
   .row.contents .load-more {
     width: 15rem;
-    height: 3.4rem;
     font-size: .9rem;
   }
 
@@ -847,7 +878,7 @@ ul.company li {
   }
 
   .row.moneyRow h4 {
-        font-size: 1.3rem;
+    font-size: 1.3rem;
   }
 
   .row.moneyRow p {
@@ -880,7 +911,7 @@ ul.company li {
   }
 
   .row.footerSocial {
-    padding: 2rem 0 0 0;
+    padding: .6rem 0 0 0;
     justify-content: center;
     flex-direction: column-reverse;
   }
@@ -907,5 +938,9 @@ ul.company li {
 
   .icons h6 {
     margin-bottom: 1.4rem;
+  }
+
+  .about .w-50 {
+    width: 100% !important;
   }
 }
