@@ -3,7 +3,7 @@ import React from 'react'
 const Disclaimer = () => {
     return (
         <section className="container things">
-            <div className="row px-md-5 mx-3 text-left">
+            <div className="row px-md-5 pt-3 mx-3 text-left">
                 <h1>Disclaimer for Okaziyo</h1>
 
                 <p>If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at okaziyo.com@gmail.com.</p>

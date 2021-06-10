@@ -9,7 +9,7 @@ const About = () => {
     return (
         <div>
             <div className="jumbotron m-md-5 py-0 text-center">
-                <h1 className="display-5 font-weight-bold">Okaziyo</h1>
+                <h1 className="display-5 pt-3 font-weight-bold">Okaziyo</h1>
                 <p className="lead">
                     Okaziyo is a web application that helps people to buy, sell or rent anything. It gives people good time to search, plan and decide what to buy, sell or rent. It also gives information about jobs and scholarships and tenders.
                 </p>
@@ -25,7 +25,7 @@ const About = () => {
                     <h5 className="text-center mb-md-5 mt-0 pt-0 font-weight-bolder">About the author</h5>
                 </div>
 
-                <div className="col-sm-12 d-flex justify-content-center align-items-center">
+                <div className="col-sm-12 px-2 d-flex flex-column flex-sm-row justify-content-center align-items-center">
                     <img className="card-img-top w-50" src={parmenide} alt="card-img" />
 
                     <div className="card-body">

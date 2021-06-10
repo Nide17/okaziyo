@@ -39,7 +39,7 @@ const Contact = () => {
     return (
         <div>
             <div className="jumbotron m-md-5 py-0 text-center text-center">
-                <h1 className="display-5 font-weight-bold">Let's connect!</h1>
+                <h1 className="display-5 pt-4 font-weight-bold">Let's connect!</h1>
                 <p className="lead">
                     Okaziyo is a web application that helps people to buy, sell or rent anything. It gives people good time to search, plan and decide what to buy, sell or rent. It also gives information about jobs and scholarships and tenders.
                 </p>
@@ -58,18 +58,16 @@ const Contact = () => {
 
                     <form onSubmit={onContact}>
                         <div className="form-group">
-                            <input type="text" class="form-control" name="contact_name" placeholder="Name" minLength="4" maxLength="30" onChange={onChangeHandler} value={state.contact_name} required />
+                            <input type="text" className="form-control" name="contact_name" placeholder="Name" minLength="4" maxLength="30" onChange={onChangeHandler} value={state.contact_name} required />
                         </div>
                         <div className="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Email" onChange={onChangeHandler} value={state.email} required />
+                            <input type="email" className="form-control" name="email" placeholder="Email" onChange={onChangeHandler} value={state.email} required />
                         </div>
 
-                        <div className="row form-group">
-                            <div className="col">
-                                <input type="textarea" class="form-control" name="message" placeholder="Message" minLength="10" maxLength="300" onChange={onChangeHandler} value={state.message} required />
-                            </div>
+                        <div className="form-group">
+                                <textarea className="form-control" name="message" placeholder="Message" minLength="10" maxLength="300" onChange={onChangeHandler} value={state.message} required />
                         </div>
-                        <button className="btn btn-primary">Submit</button>
+                        <button className="btn btn-primary mt-2">Submit</button>
                     </form>
 
                 </div>

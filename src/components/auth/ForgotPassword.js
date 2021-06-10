@@ -37,7 +37,7 @@ const ForgotPassword = ({ error, sendResetLink }) => {
 
     return (
         <div className="container forgot-password mt-4">
-            <div className="row mt-5 d-block text-center">
+            <div className="row mt-5 mx-1 d-block text-center">
 
                 {showSent ?
                     <h6 className="font-weight-bold my-5 py-5 text-success">

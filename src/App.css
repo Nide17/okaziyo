@@ -21,6 +21,16 @@ a {
   font-size: 0.9em;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.list-unstyled {
+  padding-left: 5px;
+  list-style: inside;
+}
+
 /* NAVBAR */
 .container-fluid,
 .row.navbar {
@@ -780,6 +790,25 @@ a.forgot-password {
 
 /* process */
 @media screen and (max-width: 414px) {
+  h1 {
+    font-size: 1.5rem !important;
+    font-weight: 900;
+  }
+h2 {
+  font-size: 1.2rem !important;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.1rem !important;
+  font-weight: 900;
+}
+
+  p,
+  li {
+    font-size: .7rem !important;
+  }
+
   .container.processes {
     height: 640px;
   }
@@ -826,12 +855,12 @@ a.forgot-password {
   }
 
   .row.contents h4 {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     padding: 6px 0;
   }
 
   .row.contents h5 {
-    font-size: .9rem;
+    font-size: .8rem;
   }
 
   .row.contents p {
@@ -931,8 +960,9 @@ a.forgot-password {
   }
 
   .row.footerSocial .copyright p {
-    font-size: 0.6rem;
+    font-size: 0.6rem!important;
     margin-top: 1rem;
+    text-align: center;
   }
 
   .row.footerSocial .icons i {
@@ -942,8 +972,8 @@ a.forgot-password {
   .row.footerSocial .icons i.fa {
     border-radius: 50%;
     font-size: 1.7rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .icons h6 {

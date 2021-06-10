@@ -8,9 +8,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/electronics">
-                        Electronics &nbsp;
+                        Electronics</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -23,9 +22,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/fashion">
-                        Fashion &nbsp;
+                        Fashion</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -37,9 +35,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/furniture">
-                        Furniture &nbsp;
+                        Furniture</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -52,9 +49,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/transport">
-                        Transport &nbsp;
+                        Transport</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -67,9 +63,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/real-estate">
-                        Real Estate &nbsp;
+                        Real Estate</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -81,9 +76,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/scholarships">
-                        Scholarships &nbsp;
+                        Scholarships</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -94,9 +88,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/jobs">
-                        Jobs &nbsp;
+                        Jobs</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">
@@ -108,9 +101,8 @@ const Categories = () => {
 
                 <li className="category-item dropdown">
                     <a href="/others">
-                        Others &nbsp;
+                        Others</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                    </a>
 
                     {/* dropdown */}
                     <ul className="dropdown-menu">

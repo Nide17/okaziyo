@@ -177,9 +177,8 @@ const Header = () => {
 
                                 <li className={elecBuyClass} onClick={onElectronicsItemClick}>
                                     <a href="/electronics">
-                                        Electronics &nbsp;
+                                        Electronics</a> &nbsp;
                                     <i className="fa fa-angle-down"></i>
-                                    </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/computers">Computers & Accessories</a></li>
@@ -191,9 +190,8 @@ const Header = () => {
 
                                 <li className={fashBuyClass} onClick={onFashionItemClick}>
                                     <a href="/fashion">
-                                        Fashion &nbsp;
+                                        Fashion</a> &nbsp;
                                 <i className="fa fa-angle-down"></i>
-                                    </a>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/clothes">Clothes</a></li>
@@ -204,9 +202,9 @@ const Header = () => {
 
                                 <li className={furnBuyClass} onClick={onFurnitureItemClick}>
                                     <a href="/furniture">
-                                        Furniture &nbsp;
+                                        Furniture</a> &nbsp;
                                 <i className="fa fa-angle-down"></i>
-                                    </a>
+
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/beds">Beds</a></li>
@@ -217,9 +215,9 @@ const Header = () => {
                                 </li>
 
                                 <li className={transBuyClass} onClick={onTransportItemClick}><a href="/transport">
-                                    Transport &nbsp;
+                                    Transport</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                                </a>
+
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/cars">Cars</a></li>
@@ -230,9 +228,9 @@ const Header = () => {
                                 </li>
 
                                 <li className={estBuyClass} onClick={onEstateItemClick}><a href="/real-estate">
-                                    Real Estate &nbsp;
+                                    Real Estate</a> &nbsp;
                             <i className="fa fa-angle-down"></i>
-                                </a>
+
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/plots">Land plots</a></li>
@@ -242,9 +240,9 @@ const Header = () => {
                                 </li>
 
                                 <li className={schBuyClass} onClick={onScholarshipsItemClick}><a href="/scholarships">
-                                    Scholarships &nbsp;
+                                    Scholarships</a> &nbsp;
                                 <i className="fa fa-angle-down"></i>
-                                </a>
+
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/fully-funded">Fully funded</a></li>
@@ -253,9 +251,9 @@ const Header = () => {
                                 </li>
 
                                 <li className={jobsBuyClass} onClick={onJobsItemClick}><a href="/jobs">
-                                    Jobs &nbsp;
+                                    Jobs</a> &nbsp;
                                 <i className="fa fa-angle-down"></i>
-                                </a>
+
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/full-time">Full-time</a></li>
@@ -265,9 +263,8 @@ const Header = () => {
                                 </li>
 
                                 <li className={othBuyClass} onClick={onOthersItemClick}><a href="/others">
-                                    Others &nbsp;
-                                <i className="fa fa-angle-down"></i>
-                                </a>
+                                    Others</a> &nbsp;
+                                    <i className="fa fa-angle-down"></i>
                                     {/* dropdown */}
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item px-1" href="/tenders">Tenders</a></li>

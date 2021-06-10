@@ -5,7 +5,7 @@ const Terms = () => {
         <section className="container things">
             <div className="row px-md-5 mx-3">
                 <div>
-                    <h2 className="mt-4">
+                    <h2 className="pt-3">
                         <strong>Terms and Conditions</strong></h2>
 
                     <p>Welcome to okaziyo.com!</p>
