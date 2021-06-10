@@ -16,6 +16,9 @@ import About from './components/others/About';
 import CategoriesRoutes from './CategoriesRoutes';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import ForgotPassword from './components/auth/ForgotPassword';
+import ResetPassword from './components/auth/ResetPassword';
+import Unsubscribe from './components/auth/Unsubscribe';
 
 const App = () => {
   return (
@@ -27,14 +30,21 @@ const App = () => {
           <Route exact path="/" component={Main} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/know-more-process" component={Placeholder} />
+
+          {/* auth */}
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/unsubscribe" component={Unsubscribe} />
+          <Route exact path="/forgot-password" component={ForgotPassword} />
+          <Route exact path="/reset-password" component={ResetPassword} />
+
+          {/* footer */}
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/disclaimer" component={Disclaimer} />
           <Route exact path="/terms" component={Terms} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
           <Route exact path="/feat-brands" component={Placeholder} />
           <Route exact path="/hot-deals" component={Placeholder} />
-          <Route exact path="/know-more-process" component={Placeholder} />
 
           {/* Categories */}
           <CategoriesRoutes />
