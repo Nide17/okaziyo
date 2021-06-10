@@ -21,7 +21,7 @@ const Unsubscribe = ({ auth, deleteSubscriber }) => {
 
                 {unsubscribed ?
                     <h6 className="font-weight-bold my-5 py-5 text-success">
-                        You have unsubscribed from Quiz Blog! you will no longer receive updates.
+                        You have unsubscribed from Okaziyo! you will no longer receive updates.
                     </h6> :
 
                     <h6 className="font-weight-bold my-5 py-5 text-dark">
