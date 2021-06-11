@@ -22,7 +22,7 @@ const UserSchema = new Schema({
   role: {
     type: String,
     required: true,
-    default: 'Visitor'
+    default: 'Admin'
   },
   date_registered: {
     type: Date,

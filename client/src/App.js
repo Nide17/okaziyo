@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Make sure to place css after bootstrap
@@ -21,9 +22,21 @@ import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
 import Homepage from './components/dashboard/Homepage';
 
+// REDUX
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import { loadUser } from './redux/auth/auth.actions'
+
 const App = () => {
+
+        useEffect(() => {
+        store.dispatch(loadUser())
+    }, []);
+
   return (
     <div className="App">
+
+      <Provider store={store}>
       <Router>
         <Header />
 
@@ -55,6 +68,9 @@ const App = () => {
         </Switch>
       </Router>
       <Footer />
+
+      </Provider>
+
     </div>
   );
 }
