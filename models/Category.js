@@ -19,12 +19,12 @@ const CategorySchema = new Schema({
     type: Date,
     default: Date.now
   },
-  products: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'product'
-    }
-  ],
+  // items: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'item'
+  //   }
+  // ],
   creator: {
     type: Schema.Types.ObjectId,
     ref: 'user',

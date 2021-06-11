@@ -28,6 +28,12 @@ const ItemSchema = new Schema({
     required: true,
     default: Date.now
   },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'category',
+    unique: true,
+    default: 'Others'
+  },
   creator: {
     type: Schema.Types.ObjectId,
     ref: 'user',
