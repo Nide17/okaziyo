@@ -31,6 +31,11 @@ const Login = () => {
     return (
         <div className="container">
             <div className="mt-5 w-50 mx-auto">
+
+                <div className="mb-4 text-center">
+                    <i className="fa fa-unlock"></i>
+                </div>
+
                 <h1 className="text-center">Login</h1>
 
                 <form onSubmit={onSubmitHandler}>

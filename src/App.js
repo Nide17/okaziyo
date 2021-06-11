@@ -19,6 +19,7 @@ import Register from './components/auth/Register';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
+import Homepage from './components/dashboard/Homepage';
 
 const App = () => {
   return (
@@ -48,6 +49,9 @@ const App = () => {
 
           {/* Categories */}
           <CategoriesRoutes />
+
+          {/* Dashboard */}
+          <Route exact path="/dashboard" component={Homepage} />
         </Switch>
       </Router>
       <Footer />
