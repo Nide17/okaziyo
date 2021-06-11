@@ -2,8 +2,11 @@
 
 # dependencies
 */node_modules
+/node_modules
 */.pnp
+/.pnp
 *.pnp.js
+.pnp.js
 
 # testing
 /coverage
@@ -26,9 +29,8 @@
 * copy.json
 * copy.md
 
-
-/client/src/components/questions/* copy.js
-/client/src/components/questions/* copy 1.js
-/client/src/components/questions/* cop 2.js
-/client/src/components/questions/* copy 3.js
-/client/src/components/questions/* copy 4.js
+/client/src/components/* copy.js
+/client/src/components/* copy 1.js
+/client/src/components/* cop 2.js
+/client/src/components/* copy 3.js
+/client/src/components/* copy 4.js
