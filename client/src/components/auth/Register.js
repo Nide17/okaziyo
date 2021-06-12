@@ -4,7 +4,7 @@ import { register } from '../../redux/auth/auth.actions';
 import { clearErrors } from '../../redux/error/error.actions'
 import PropTypes from 'prop-types';
 
-const Register = ({ error }) => {
+const Register = ({ register, error }) => {
 
     const [state, setState] = useState({
         // initialy doesn't show
@@ -69,13 +69,13 @@ const Register = ({ error }) => {
                     <div className="form-group">
 
                         <label htmlFor="name" className="font-weight-bold">Name</label>
-                        <input type="text" name="name" value={state.name} placeholder="Name ..." className="form-control mb-3" onChange={onChangeHandler} />
+                        <input type="text" name="name" value={state.name || ''} placeholder="Name ..." className="form-control mb-3" onChange={onChangeHandler} />
 
                         <label htmlFor="email" className="font-weight-bold">Email</label>
-                        <input type="email" name="email" value={state.email} placeholder="Email ..." className="form-control mb-3" onChange={onChangeHandler} />
+                        <input type="email" name="email" value={state.email || ''} placeholder="Email ..." className="form-control mb-3" onChange={onChangeHandler} />
 
                         <label htmlFor="password" className="font-weight-bold">Password</label>
-                        <input type="password" name="password" value={state.password} placeholder="Password ..." className="form-control mb-3" onChange={onChangeHandler} />
+                        <input type="password" name="password" value={state.password || ''} placeholder="Password ..." className="form-control mb-3" onChange={onChangeHandler} />
 
                         <button className="btn btn-warning btn-block" style={{ marginTop: '2rem' }}>Register</button>
 

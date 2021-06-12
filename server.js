@@ -35,6 +35,9 @@ connectDB().catch(err => console.error(err))
 // Bring in routes from the api
 //Use routes / All requests going to the api/categories goes the categories variable at the top categories.js file
 app.use('/api/categories', require('./routes/api/categories'));
+app.use('/api/items', require('./routes/api/items'));
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 
 //Edit for deployment || serve static assets if in production
