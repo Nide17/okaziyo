@@ -443,6 +443,7 @@ input[type=number]:focus,
 .row.footerSocial .icons i.fa {
   border-radius: 50%;
   font-size: 2rem;
+  font-weight: 200;
   width: 2.75rem;
   height: 2.75rem;
   background-color: #3f4531;
@@ -450,6 +451,7 @@ input[type=number]:focus,
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'FontAwesome';
 }
 
 .selfIcons {

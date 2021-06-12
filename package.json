@@ -29,6 +29,7 @@
     "heroku": "^7.54.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.13",
-    "nodemailer": "^6.6.1"
+    "nodemailer": "^6.6.1",
+    "react-loading": "^2.0.3"
   }
 }

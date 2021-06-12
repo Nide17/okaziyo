@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 // Make sure to place css after bootstrap
 import './App.css';
 import 'font-awesome/css/font-awesome.css'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ProtectedRoute from './components/auth/ProtectedRoute';
+// import ProtectedRoute from './components/auth/ProtectedRoute';
 import Main from './Main';
 import Placeholder from './components/others/Placeholder';
 import Disclaimer from './components/others/Disclaimer';
@@ -21,17 +22,13 @@ import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
 import Homepage from './components/dashboard/Homepage';
+import Logout from './components/auth/Logout'
 
 // REDUX
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import { loadUser } from './redux/auth/auth.actions'
 
 const App = () => {
-
-  useEffect(() => {
-    store.dispatch(loadUser())
-  }, []);
 
   return (
     <div className="App">
@@ -60,11 +57,13 @@ const App = () => {
             <Route exact path="/feat-brands" component={Placeholder} />
             <Route exact path="/hot-deals" component={Placeholder} />
 
+            {/* Dashboard */}
+            <Route exact path="/dashboard" component={Homepage} />
+            <Route exact path="/logout" component={Logout} />
+            {/* <ProtectedRoute exact path="/dashboard" component={Homepage} /> */}
+
             {/* Categories */}
             <CategoriesRoutes />
-
-            {/* Dashboard */}
-            <ProtectedRoute path="/dashboard" component={Homepage} />
           </Switch>
         </Router>
         <Footer />
