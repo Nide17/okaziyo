@@ -1,33 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux';
+import { register } from '../../redux/auth/auth.actions';
+import { clearErrors } from '../../redux/error/error.actions'
+import PropTypes from 'prop-types';
 
-const Register = () => {
+const Register = ({ error }) => {
 
     const [state, setState] = useState({
         // initialy doesn't show
         name: '',
         email: '',
-        password: ''
+        password: '',
+        msg: null
     })
 
+    useEffect(() => {
+
+        if (error.id !== null) {
+
+            // Check for register error
+            if (error.id === 'REGISTER_FAIL') {
+                setState({ msg: error.msg.msg });
+            } else {
+                setState({ msg: null });
+            }
+        }
+    }, [error])
+
     const onChangeHandler = e => {
-        setState({ [e.target.name]: e.target.value });
+        setState({ ...state, [e.target.name]: e.target.value });
     };
 
     const onSubmitHandler = e => {
         e.preventDefault();
 
-        const { email, password } = state;
+        const { name, email, password } = state;
 
         // Create user object
-        const user = {
-            name: '',
+        const newUser = {
+            name,
             email,
             password
         };
 
-        // Attempt to login
-        // props.login(user);
-        console.log(user);
+        // Attempt to register
+        register(newUser);
+
+        // Reset
+        setState({
+            name: '',
+            email: '',
+            password: ''
+        })
     }
 
     return (
@@ -35,18 +59,23 @@ const Register = () => {
             <div className="mt-5 w-50 mx-auto">
                 <h1 className="text-center">Register</h1>
 
+                {state.msg ? (
+                    <div className="alert alert-danger">
+                        {state.msg}
+                    </div>) : null}
+
                 <form onSubmit={onSubmitHandler}>
 
                     <div className="form-group">
 
                         <label htmlFor="name" className="font-weight-bold">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Name ..." className="form-control mb-3" onChange={onChangeHandler} />
+                        <input type="text" name="name" value={state.name} placeholder="Name ..." className="form-control mb-3" onChange={onChangeHandler} />
 
                         <label htmlFor="email" className="font-weight-bold">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Email ..." className="form-control mb-3" onChange={onChangeHandler} />
+                        <input type="email" name="email" value={state.email} placeholder="Email ..." className="form-control mb-3" onChange={onChangeHandler} />
 
                         <label htmlFor="password" className="font-weight-bold">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password ..." className="form-control mb-3" onChange={onChangeHandler} />
+                        <input type="password" name="password" value={state.password} placeholder="Password ..." className="form-control mb-3" onChange={onChangeHandler} />
 
                         <button className="btn btn-warning btn-block" style={{ marginTop: '2rem' }}>Register</button>
 
@@ -62,4 +91,13 @@ const Register = () => {
     )
 }
 
-export default Register
+Register.propTypes = {
+    error: PropTypes.object,
+    register: PropTypes.func.isRequired,
+    clearErrors: PropTypes.func.isRequired,
+}
+
+// Map  state props
+const mapStateToProps = state => ({ error: state.errorReducer });
+
+export default connect(mapStateToProps, { register, clearErrors })(Register);
