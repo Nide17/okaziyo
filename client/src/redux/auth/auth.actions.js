@@ -110,8 +110,8 @@ export const login = ({ email, password }) =>
         dispatch({
           type: LOGIN_SUCCESS,
           payload: res.data
-        })
-      )
+        }),
+        window.location.href = "/dashboard")
       .catch(err => {
         dispatch(
           returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL')
