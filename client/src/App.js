@@ -21,6 +21,7 @@ import Register from './components/auth/Register';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
+import Subscribe from './components/auth/Subscribe';
 import Homepage from './components/dashboard/Homepage';
 import Logout from './components/auth/Logout'
 
@@ -47,6 +48,7 @@ const App = () => {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/unsubscribe" component={Unsubscribe} />
+            <Route exact path="/subscribe" component={Subscribe} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
             <Route exact path="/reset-password" component={ResetPassword} />
 

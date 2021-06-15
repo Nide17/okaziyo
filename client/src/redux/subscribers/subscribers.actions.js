@@ -1,4 +1,4 @@
-import { SUBSCRIBETONEWSLETTER, SET_SUBSCRIBERS, SUBSCRIBE_FAIL, DELETE_SUBSCRIBER, DELETE_SUBSCRIBER_FAIL, SUBSCRIBERS_LOADING } from "./subscribers.types";
+import { SUBSCRIBETONEWSLETTER, GET_SUBSCRIBERS, SUBSCRIBE_FAIL, DELETE_SUBSCRIBER, DELETE_SUBSCRIBER_FAIL, SUBSCRIBERS_LOADING } from "./subscribers.types";
 import axios from 'axios';
 
 import { tokenConfig } from '../auth/auth.actions'
@@ -15,7 +15,7 @@ export const setSubscribers = () => async (dispatch, getState) => {
       .get('/api/subscribers', tokenConfig(getState))
       .then(res =>
         dispatch({
-          type: SET_SUBSCRIBERS,
+          type: GET_SUBSCRIBERS,
           payload: res.data,
         }),
       )
@@ -36,7 +36,7 @@ export const subscribeToNewsLetter = (subscribedUser) => async (dispatch) => {
         })
       )
   } catch (err) {
-    dispatch(returnErrors(err.response.data, err.response.status, 'SUBSCRIBE_FAIL'));
+    dispatch(returnErrors(err.response && err.response.data, err.response.status, 'SUBSCRIBE_FAIL'));
     dispatch({ type: SUBSCRIBE_FAIL })
   }
 };

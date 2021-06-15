@@ -18,7 +18,6 @@ const subscribersReducer = (state = INITIAL_STATE, action) => {
 
     case SUBSCRIBETONEWSLETTER:
       return {
-        ...state,
         subscribedUsers: [...state.subscribedUsers, action.payload]
       };
 
