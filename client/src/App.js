@@ -60,6 +60,8 @@ const App = () => {
             {/* Dashboard */}
             <Route exact path="/dashboard" component={Homepage} />
             <Route exact path="/logout" component={Logout} />
+            <Route exact path="/all-products" component={Placeholder} />
+            <Route path="/slickItem" component={Placeholder} />
             {/* <ProtectedRoute exact path="/dashboard" component={Homepage} /> */}
 
             {/* Categories */}
