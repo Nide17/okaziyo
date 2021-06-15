@@ -3,8 +3,6 @@ const router = express.Router();
 
 // Category Model
 const Category = require('../../models/Category');
-// const Question = require('../../models/Question');
-// const Quiz = require('../../models/Quiz');
 
 const { auth, authRole } = require('../../middleware/auth');
 

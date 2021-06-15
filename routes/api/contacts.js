@@ -102,7 +102,7 @@ router.put('/:id', async (req, res) => {
 
   try {
 
-    // Update the Quiz on Contact updating
+    // Update the Contact on Contact updating
     const contact = await Contact.updateOne(
       { "_id": req.params.id },
       { $push: { "replies": req.body } },
