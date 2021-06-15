@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { returnErrors } from '../error/error.actions'
-import { USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, REGISTER_SUCCESS, REGISTER_FAIL, GET_USERS, UPDATE_USER, DELETE_USER, UPDATE_USER_FAIL, DELETE_USER_FAIL, USERS_LOADING, RESET_PASSWORD, FORGOT_PASSWORD, UNEXISTING_EMAIL } from "./auth.types";
+import { USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, REGISTER_SUCCESS, REGISTER_FAIL, GET_USERS, UPDATE_USER, DELETE_USER, UPDATE_USER_FAIL, DELETE_USER_FAIL, USERS_LOADING, RESET_PASSWORD, FORGOT_PASSWORD, UNEXISTING_EMAIL, RESET_FAIL } from "./auth.types";
 
 
 //HELPER FUNCTION TO GET THE TOKEN - SETUP CONFIG/headers and token
@@ -141,7 +141,7 @@ export const updateUser = updatedUser => async (dispatch, getState) => {
           type: UPDATE_USER,
           payload: updatedUser
         }),
-        alert('Updated Successfully!'))
+        alert('Updated successfully!'))
 
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'UPDATE_USER_FAIL'));
@@ -183,7 +183,8 @@ export const sendNewPassword = updatePsw => async (dispatch) => {
         }))
 
   } catch (err) {
-    dispatch(returnErrors(err.response.data, err.response.status));
+    dispatch(returnErrors(err.response.data, err.response.status, 'RESET_FAIL'));
+    dispatch({ type: RESET_FAIL })
   }
 }
 
@@ -192,7 +193,7 @@ export const sendNewPassword = updatePsw => async (dispatch) => {
 export const deleteUser = id => async (dispatch, getState) => {
 
   try {
-    if (window.confirm("This User will be deleted permanently!")) {
+    if (window.confirm("This user will be deleted permanently!")) {
       await axios
         .delete(`/api/users/${id}`, tokenConfig(getState))
         .then(() =>

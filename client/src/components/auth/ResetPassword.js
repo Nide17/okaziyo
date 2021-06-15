@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux';
+import { sendNewPassword } from '../../redux/auth/auth.actions';
+import PropTypes from 'prop-types';
 
-const ResetPassword = ({ sendNewPassword }) => {
+const ResetPassword = ({ sendNewPassword, error }) => {
 
     const [newPasswords, setNewPasswords] = useState({
         password: '',
@@ -10,41 +13,67 @@ const ResetPassword = ({ sendNewPassword }) => {
     const [errorsState, setErrorsState] = useState([])
 
     const onChangeHandler = e => {
-        setErrorsState([]);
         setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value });
     };
+
+    useEffect(() => {
+
+        if (error.id !== null) {
+
+            // Check for register error
+            if (error.id === 'RESET_FAIL') {
+                setErrorsState({ msg: error.msg.msg });
+            } else {
+                setErrorsState({ msg: null });
+            }
+        }
+    }, [error])
 
     const onSubmitHandler = e => {
         e.preventDefault();
 
-        // const { password, password1 } = newPasswords;
+        console.log(error);
+        
+        const { password, password1 } = newPasswords;
 
-        // // Simple validation
-        // if (!password || !password1) {
-        //     setErrorsState(['Fill empty fields!']);
-        //     return
-        // }
+        // Simple validation
+        const pswdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-        // else if (password !== password1) {
-        //     setErrorsState(['Passwords must match!']);
-        //     return
-        // }
+        if (!password || !password1) {
+            setErrorsState(['Fill empty fields!']);
+            return
+        }
 
-        // // Exploit token and userId from URL
-        // const queryString = window.location.search;
-        // const urlParams = new URLSearchParams(queryString);
-        // const token = urlParams.get('token')
-        // const userId = urlParams.get('id')
+        else if (!pswdRegex.test(password)) {
+            setErrorsState(['Password should be greater than 7 and having special characters, number, and uppercase and lowercase letters']);
+            return
+        }
 
-        // // Create new pswd object
-        // const updatePsw = {
-        //     userId,
-        //     token,
-        //     password
-        // };
+        else if (password !== password1) {
+            setErrorsState(['Passwords must match!']);
+            return
+        }
 
-        // // Attempt to reset
-        // sendNewPassword(updatePsw);
+        else if (error.id === 'RESET_FAIL') {
+            setErrorsState([error.msg.msg]);
+            return
+        }
+
+        // Exploit token and userId from URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const token = urlParams.get('token')
+        const userId = urlParams.get('id')
+
+        // Create new pswd object
+        const updatePsw = {
+            userId,
+            token,
+            password
+        };
+
+        // Attempt to reset
+        sendNewPassword(updatePsw);
         setShowResetSuccess(true)
     }
 
@@ -67,7 +96,7 @@ const ResetPassword = ({ sendNewPassword }) => {
 
                             {errorsState.length > 0 ?
                                 errorsState.map(err =>
-                                    <div className="alert alert-danger" key={Math.floor(Math.random() * 1000)}>
+                                    <div className="alert alert-danger mx-auto p-1 w-50" key={Math.floor(Math.random() * 1000)}>
                                         {err}
                                     </div>) :
                                 null
@@ -101,4 +130,11 @@ const ResetPassword = ({ sendNewPassword }) => {
     )
 }
 
-export default ResetPassword;
+ResetPassword.propTypes = {
+    error: PropTypes.object
+}
+
+// Map  state props
+const mapStateToProps = state => ({ error: state.errorReducer });
+
+export default connect(mapStateToProps, { sendNewPassword })(ResetPassword);

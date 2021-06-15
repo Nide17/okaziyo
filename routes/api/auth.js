@@ -198,16 +198,10 @@ router.post('/reset-password', async (req, res) => {
   const { userId, token, password } = req.body;
 
   let passwordResetToken = await PswdResetToken.findOne({ userId });
-
-  if (!passwordResetToken) {
-    throw new Error("Invalid or expired password reset token");
-  }
+  if (!passwordResetToken) throw Error('Invalid or expired password reset token');
 
   const isValid = await bcrypt.compare(token, passwordResetToken.token);
-
-  if (!isValid) {
-    throw new Error("Invalid or expired password reset token");
-  }
+  if (!isValid) throw Error('Invalid or expired password reset token');
 
   // Create salt and hash
   const salt = await bcrypt.genSalt(10);

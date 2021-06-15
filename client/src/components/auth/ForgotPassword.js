@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux';
+import { sendResetLink } from '../../redux/auth/auth.actions';
+import PropTypes from 'prop-types';
 
 const ForgotPassword = ({ error, sendResetLink }) => {
 
@@ -7,31 +10,43 @@ const ForgotPassword = ({ error, sendResetLink }) => {
     const [errorsState, setErrorsState] = useState([])
 
     const onChangeHandler = e => {
-        setErrorsState([]);
         setFEmail({ [e.target.name]: e.target.value });
     };
+
+    useEffect(() => {
+
+        if (error.id !== null) {
+
+            // Check for register error
+            if (error.id === 'UNEXISTING_EMAIL') {
+                setErrorsState({ msg: error.msg.msg });
+            } else {
+                setErrorsState({ msg: null });
+            }
+        }
+    }, [error])
 
     const onSubmitHandler = e => {
         e.preventDefault();
 
-        // // VALIDATE
-        // const emailTest = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+        // VALIDATE
+        const emailTest = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-        // if (!fEmail.email) {
-        //     setErrorsState(['Please provide your email!']);
-        //     return
-        // }
-        // else if (!emailTest.test(fEmail.email)) {
-        //     setErrorsState(['Please provide a valid email!']);
-        //     return
-        // }
-        // else if (error.id === 'UNEXISTING_EMAIL') {
-        //     setErrorsState([error.msg.msg]);
-        //     return
-        // }
+        if (!fEmail.email) {
+            setErrorsState(['Please provide your email!']);
+            return
+        }
+        else if (!emailTest.test(fEmail.email)) {
+            setErrorsState(['Please provide a valid email!']);
+            return
+        }
+        else if (error.id === 'UNEXISTING_EMAIL') {
+            setErrorsState([error.msg.msg]);
+            return
+        }
 
-        // // Attempt to send link
-        // sendResetLink(fEmail);
+        // Attempt to send link
+        sendResetLink(fEmail);
         setShowSent(true)
     }
 
@@ -53,7 +68,7 @@ const ForgotPassword = ({ error, sendResetLink }) => {
 
                             {errorsState.length > 0 ?
                                 errorsState.map(err =>
-                                    <div className="alert alert-danger" key={Math.floor(Math.random() * 1000)}>
+                                    <div className="alert alert-danger mx-auto p-1 w-50" key={Math.floor(Math.random() * 1000)}>
                                         {err}
                                     </div>) :
                                 null
@@ -67,7 +82,7 @@ const ForgotPassword = ({ error, sendResetLink }) => {
                                     onChange={onChangeHandler} />
                             </div>
 
-                            <button  className="btn btn-sm btn-info mt-4 d-block mx-auto">Search</button>
+                            <button className="btn btn-sm btn-info mt-4 d-block mx-auto">Send Link</button>
 
                         </form>
 
@@ -80,4 +95,11 @@ const ForgotPassword = ({ error, sendResetLink }) => {
     )
 }
 
-export default ForgotPassword;
+ForgotPassword.propTypes = {
+    error: PropTypes.object
+}
+
+// Map  state props
+const mapStateToProps = state => ({ error: state.errorReducer });
+
+export default connect(mapStateToProps, { sendResetLink })(ForgotPassword);
