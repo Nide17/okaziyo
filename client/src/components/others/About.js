@@ -8,7 +8,7 @@ import whatsapp from '../../images/whatsapp.svg';
 const About = () => {
     return (
         <div>
-            <div className="jumbotron m-md-5 py-0 text-center">
+            <div className="jumbotron m-md-5 py-1 text-center">
                 <h1 className="display-5 pt-3 font-weight-bold">Okaziyo</h1>
                 <p className="lead">
                     Okaziyo is a web application that helps people to buy, sell or rent anything. It gives people good time to search, plan and decide what to buy, sell or rent. It also gives information about jobs and scholarships and tenders.

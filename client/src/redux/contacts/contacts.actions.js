@@ -32,10 +32,9 @@ export const sendMsg = (contactMsg) => async (dispatch) => {
         dispatch({
           type: ADD_CONTACT,
           payload: res.data
-        }),
-        alert('Sent Successfully!')
-      )
-  } catch (err) {
+        }), alert('Sent successfully!'))}
+        
+  catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'ADD_CONTACT_FAIL'));
     dispatch({ type: ADD_CONTACT_FAIL })
   }
@@ -52,7 +51,7 @@ export const replyContact = (idToUpdate, reply) => async (dispatch, getState) =>
           type: REPLY_CONTACT,
           payload: reply
         }),
-        alert('Replied Successfully!'))
+        alert('Replied successfully!'))
 
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'REPLY_CONTACT_FAIL'));
@@ -72,7 +71,7 @@ export const deleteContact = id => async (dispatch, getState) => {
             type: DELETE_CONTACT,
             payload: id
           }),
-          alert('Deleted Successfully!'))
+          alert('Deleted successfully!'))
     }
 
   } catch (err) {
