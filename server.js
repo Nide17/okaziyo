@@ -39,6 +39,7 @@ app.use('/api/items', require('./routes/api/items'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/subscribers', require('./routes/api/subscribers'));
+app.use('/api/contacts', require('./routes/api/contacts'));
 
 
 //Edit for deployment || serve static assets if in production

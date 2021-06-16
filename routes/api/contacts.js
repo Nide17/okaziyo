@@ -82,7 +82,8 @@ router.post("/", async (req, res) => {
 // @route Private: accessed by logged in user
 
 //:id placeholder, findId=we get it from the parameter in url
-router.get('/:id', authRole(['Admin']), (req, res) => {
+// router.get('/:id', authRole(['Admin']), (req, res) => {
+router.get('/:id', (req, res) => {
 
   //Find the Contact by id
   Contact.findById(req.params.id)
