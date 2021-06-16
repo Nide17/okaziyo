@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import { register } from '../../redux/auth/auth.actions';
-import { clearErrors } from '../../redux/error/error.actions'
 import PropTypes from 'prop-types';
 
 const Register = ({ register, error }) => {
@@ -15,7 +14,6 @@ const Register = ({ register, error }) => {
     })
 
     useEffect(() => {
-
         if (error.id !== null) {
 
             // Check for register error
@@ -94,10 +92,9 @@ const Register = ({ register, error }) => {
 Register.propTypes = {
     error: PropTypes.object,
     register: PropTypes.func.isRequired,
-    clearErrors: PropTypes.func.isRequired,
 }
 
 // Map  state props
 const mapStateToProps = state => ({ error: state.errorReducer });
 
-export default connect(mapStateToProps, { register, clearErrors })(Register);
+export default connect(mapStateToProps, { register })(Register);

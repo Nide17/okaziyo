@@ -18,22 +18,15 @@ const ResetPassword = ({ sendNewPassword, error }) => {
 
     useEffect(() => {
 
-        if (error.id !== null) {
-
-            // Check for register error
-            if (error.id === 'RESET_FAIL') {
-                setErrorsState({ msg: error.msg.msg });
-            } else {
-                setErrorsState({ msg: null });
-            }
-        }
+        setErrorsState({ msg: error });
     }, [error])
 
     const onSubmitHandler = e => {
         e.preventDefault();
 
-        console.log(error);
-        
+        console.log(errorsState)
+        console.log(errorsState)
+
         const { password, password1 } = newPasswords;
 
         // Simple validation
@@ -80,6 +73,7 @@ const ResetPassword = ({ sendNewPassword, error }) => {
     return (
 
         <div className="container forgot-password mt-4">
+            {console.log(errorsState)}
             <div className="row mt-5 mx-1 d-block text-center">
 
                 {showResetSuccess ?

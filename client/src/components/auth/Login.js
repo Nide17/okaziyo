@@ -3,7 +3,6 @@ import ReactLoading from "react-loading";
 import { connect } from 'react-redux';
 import { loadUser, login } from '../../redux/auth/auth.actions';
 import store from '../../redux/store'
-import { clearErrors } from '../../redux/error/error.actions'
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 
@@ -106,7 +105,6 @@ const Login = ({ login, error, auth }) => {
 Login.propTypes = {
     error: PropTypes.object,
     login: PropTypes.func.isRequired,
-    clearErrors: PropTypes.func.isRequired,
     auth: PropTypes.object
 }
 
@@ -116,4 +114,4 @@ const mapStateToProps = state => ({
     error: state.errorReducer
 });
 
-export default connect(mapStateToProps, { login, clearErrors })(Login);
+export default connect(mapStateToProps, { login })(Login);
