@@ -168,8 +168,7 @@ export const sendResetLink = fEmail => async (dispatch) => {
   }
 }
 
-
-// Forgot password
+// Reset password
 export const sendNewPassword = updatePsw => async (dispatch) => {
 
   try {
@@ -187,7 +186,6 @@ export const sendNewPassword = updatePsw => async (dispatch) => {
     dispatch({ type: RESET_FAIL })
   }
 }
-
 
 // Delete a USER
 export const deleteUser = id => async (dispatch, getState) => {

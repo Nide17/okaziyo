@@ -3,29 +3,34 @@ import { connect } from 'react-redux';
 import { sendNewPassword } from '../../redux/auth/auth.actions';
 import PropTypes from 'prop-types';
 
-const ResetPassword = ({ sendNewPassword, error }) => {
+const ResetPassword = ({ error, sendNewPassword }) => {
 
     const [newPasswords, setNewPasswords] = useState({
         password: '',
         password1: ''
     });
     const [showResetSuccess, setShowResetSuccess] = useState(false);
-    const [errorsState, setErrorsState] = useState([])
+    const [errorsState, setErrorsState] = useState({ msg: null })
 
+    useEffect(() => {
+        if (error.id !== null) {
+
+            // Check for register error
+            if (error.id === 'RESET_FAIL') {
+                setErrorsState({ msg: error.msg.msg });
+            } else {
+                setErrorsState({ msg: null });
+            }
+        }
+    }, [error])
+
+    console.log(errorsState)
     const onChangeHandler = e => {
         setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value });
     };
 
-    useEffect(() => {
-
-        setErrorsState({ msg: error });
-    }, [error])
-
     const onSubmitHandler = e => {
         e.preventDefault();
-
-        console.log(errorsState)
-        console.log(errorsState)
 
         const { password, password1 } = newPasswords;
 
@@ -33,22 +38,22 @@ const ResetPassword = ({ sendNewPassword, error }) => {
         const pswdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
         if (!password || !password1) {
-            setErrorsState(['Fill empty fields!']);
+            setErrorsState({ msg: 'Fill empty fields!' });
             return
         }
 
         else if (!pswdRegex.test(password)) {
-            setErrorsState(['Password should be greater than 7 and having special characters, number, and uppercase and lowercase letters']);
+            setErrorsState({ msg: 'Password should be greater than 7 and having special characters, number, and uppercase and lowercase letters' });
             return
         }
 
         else if (password !== password1) {
-            setErrorsState(['Passwords must match!']);
+            setErrorsState({ msg: 'Passwords must match!' });
             return
         }
 
         else if (error.id === 'RESET_FAIL') {
-            setErrorsState([error.msg.msg]);
+            setErrorsState({ msg: error.msg.msg });
             return
         }
 
@@ -76,7 +81,7 @@ const ResetPassword = ({ sendNewPassword, error }) => {
             {console.log(errorsState)}
             <div className="row mt-5 mx-1 d-block text-center">
 
-                {showResetSuccess ?
+                {!errorsState.msg && showResetSuccess ?
                     <h6 className="font-weight-bold my-5 py-5 text-success">
                         Account reset successful, Please Login!
                     </h6> :
@@ -88,13 +93,10 @@ const ResetPassword = ({ sendNewPassword, error }) => {
 
                         <form className="my-4" onSubmit={onSubmitHandler}>
 
-                            {errorsState.length > 0 ?
-                                errorsState.map(err =>
-                                    <div className="alert alert-danger mx-auto p-1 w-50" key={Math.floor(Math.random() * 1000)}>
-                                        {err}
-                                    </div>) :
-                                null
-                            }
+                            {errorsState.msg ?
+                                <div className="alert alert-danger mx-auto p-1 w-50">
+                                    {errorsState.msg}
+                                </div> : null}
 
                             <div className="input-group mx-auto my-5 search w-50">
                                 <input type="password"

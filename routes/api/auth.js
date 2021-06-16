@@ -197,6 +197,8 @@ router.post('/reset-password', async (req, res) => {
 
   const { userId, token, password } = req.body;
 
+  try {
+
   let passwordResetToken = await PswdResetToken.findOne({ userId });
   if (!passwordResetToken) throw Error('Invalid or expired password reset token');
 
@@ -229,6 +231,10 @@ router.post('/reset-password', async (req, res) => {
   await passwordResetToken.deleteOne();
 
   return true;
+  
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
 })
 
 // @route   GET api/auth/user

@@ -28,9 +28,6 @@ const ForgotPassword = ({ error, sendResetLink }) => {
     const onSubmitHandler = e => {
         e.preventDefault();
 
-        // console.log(error)
-        // console.log(errorsState)
-
         // VALIDATE
         const emailTest = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
@@ -44,23 +41,18 @@ const ForgotPassword = ({ error, sendResetLink }) => {
         }
         else if (error.id === 'UNEXISTING_EMAIL') {
             setErrorsState({ msg: error.msg.msg });
-            setShowSent(false)
             return
         }
 
-        // console.log(error)
-        // console.log(errorsState)
-
-        // Attempt to send link
-        sendResetLink(fEmail);
         setShowSent(true)
+        sendResetLink(fEmail);
     }
 
     return (
         <div className="container forgot-password mt-4">
             <div className="row mt-5 mx-1 d-block text-center">
 
-                {showSent ?
+                {!errorsState.msg && showSent ?
                     <h6 className="font-weight-bold my-5 py-5 text-success">
                         Reset link sent to {fEmail.email} succesfully!
                     </h6> :
@@ -71,7 +63,6 @@ const ForgotPassword = ({ error, sendResetLink }) => {
                         <small>Provide your email to find your account</small>
 
                         <form className="my-4" onSubmit={onSubmitHandler}>
-                            {console.log(errorsState)}
                             {errorsState.msg ?
                                 <div className="alert alert-danger mx-auto p-1 w-50">
                                     {errorsState.msg}
