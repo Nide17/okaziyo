@@ -11,7 +11,7 @@ import { Redirect } from "react-router-dom";
 import ReactLoading from "react-loading";
 import CategoriesSummary from './CategoriesSummary'
 import ItemsSummary from './ItemsSummary'
-import YearlySales from './YearlySales'
+import JobsSummary from './JobsSummary'
 import ContactsMessages from './ContactsMessages'
 import SubscribersSummary from './SubscribersSummary'
 // import Facebook from './Facebook'
@@ -60,7 +60,7 @@ const Homepage = ({ auth }) => {
                                             <div className="row">
                                                 <CategoriesSummary />
                                                 <ItemsSummary />
-                                                <YearlySales />
+                                                <JobsSummary />
                                                 <ContactsMessages />
                                                 <SubscribersSummary />
                                                 {/* <Facebook />

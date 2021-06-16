@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import powerOff from '../../images/power-off.svg'
 
 import { connect } from 'react-redux'
 import { logout } from '../../redux/auth/auth.actions'
@@ -18,11 +17,10 @@ const Logout = ({ logout }) => {
   }
 
   return (
-    <>
-      <button className="btn btn-sm btn-warning py-0 px-1" onClick={logingout}>
-        <img src={powerOff} alt="logout" width="16" height="16" />
-      </button>
-    </>
+    <a href="#/" onClick={logingout}>
+      <i className="feather icon-power text-c-red f-16 m-r-10"></i>
+    </a>
+
   )
 }
 

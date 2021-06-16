@@ -10,12 +10,16 @@ const DHeader = () => {
         <header className="navbar pcoded-header navbar-expand-lg navbar-light">
 
             <div className="m-header">
-                <a className="mobile-menu" id="mobile-collapse1" href="#/"><span></span></a>
+
+                <a className="mobile-menu" id="mobile-collapse1" href="#/">
+                    <span></span>
+                </a>
+
                 <a href="#/" className="b-brand">
                     <div className="b-bg">
                         <i className="feather icon-trending-up"></i>
                     </div>
-                    <span className="b-title">Datta Able</span>
+                    <span className="b-title">Okaziyo</span>
                 </a>
             </div>
 
@@ -23,7 +27,6 @@ const DHeader = () => {
                 <i className="feather icon-more-horizontal"></i>
             </a>
 
-            {/*  */}
             <div className="collapse navbar-collapse">
 
                 <ul className="navbar-nav mr-auto">
@@ -32,7 +35,7 @@ const DHeader = () => {
                         <a href="#/" className="full-screen" onClick={() => null}>
                             <i className="feather icon-maximize"></i></a></li>
                     <li className="nav-item dropdown">
-                        <a className="dropdown-toggle" href="#/" data-toggle="dropdown">Dropdown</a>
+                        <a className="dropdown-toggle" href="#/" data-toggle="dropdown">Menu</a>
                         <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="#/">Action</a></li>
                             <li><a className="dropdown-item" href="#/">Another action</a></li>
@@ -117,12 +120,14 @@ const DHeader = () => {
                             </div>
                         </div>
                     </li>
+
                     <li>
                         <div className="dropdown drp-user">
                             <a href="#/" className="dropdown-toggle" data-toggle="dropdown">
                                 <i className="icon feather icon-settings"></i>
                             </a>
                             <div className="dropdown-menu dropdown-menu-right profile-notification">
+
                                 <div className="pro-head">
                                     <img src={avatar1} className="img-radius" alt="User-Profile" />
                                     <span>John Doe</span>
@@ -130,16 +135,26 @@ const DHeader = () => {
                                         <i className="feather icon-log-out"></i>
                                     </a>
                                 </div>
+
                                 <ul className="pro-body">
                                     <li><a href="#/" className="dropdown-item"><i className="feather icon-settings"></i> Settings</a></li>
+
                                     <li><a href="#/" className="dropdown-item"><i className="feather icon-user"></i> Profile</a></li>
+
                                     <li><a href="message.html" className="dropdown-item"><i className="feather icon-mail"></i> My Messages</a></li>
+
                                     <li><a href="auth-signin.html" className="dropdown-item"><i className="feather icon-lock"></i> Lock Screen</a></li>
                                 </ul>
+
                             </div>
-                            <Logout />
                         </div>
                     </li>
+
+                    <li>
+                        <Logout />
+                    </li>
+
+
                 </ul>
             </div>
         </header>
