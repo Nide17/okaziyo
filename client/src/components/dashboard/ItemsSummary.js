@@ -1,11 +1,11 @@
 import React from 'react'
 
-const MonthlySales = () => {
+const ItemsSummary = () => {
     return (
         <div className="col-md-6 col-xl-4">
             <div className="card Monthly-sales">
                 <div className="card-block">
-                    <h6 className="mb-4">Monthly Sales</h6>
+                    <h6 className="mb-4">Items</h6>
                     <div className="row d-flex align-items-center">
                         <div className="col-9">
                             <h3 className="f-w-300 d-flex align-items-center  m-b-0"><i className="feather icon-arrow-down text-c-red f-30 m-r-10"></i>$ 2.942.32</h3>
@@ -23,4 +23,4 @@ const MonthlySales = () => {
     )
 }
 
-export default MonthlySales
+export default ItemsSummary

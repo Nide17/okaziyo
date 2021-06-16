@@ -7,7 +7,7 @@ const Events = () => {
                 <div className="card-block">
                     <div className="row align-items-center justify-content-center">
                         <div className="col">
-                            <h5 className="m-0">Upcoming Event</h5>
+                            <h5 className="m-0">Subscribers</h5>
                         </div>
                         <div className="col-auto">
                             <label className="label theme-bg2 text-white f-14 f-w-400 float-right">34%</label>

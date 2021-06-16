@@ -9,15 +9,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 import ReactLoading from "react-loading";
-import DailySales from './DailySales'
-import MonthlySales from './MonthlySales'
+import CategoriesSummary from './CategoriesSummary'
+import ItemsSummary from './ItemsSummary'
 import YearlySales from './YearlySales'
-import RecentUsers from './RecentUsers'
-import Events from './Events'
-import Facebook from './Facebook'
-import Twitter from './Twitter'
-import GooglePlus from './GooglePlus'
-import Timeline from './Timeline'
+import ContactsMessages from './ContactsMessages'
+import SubscribersSummary from './SubscribersSummary'
+// import Facebook from './Facebook'
+// import Twitter from './Twitter'
+// import GooglePlus from './GooglePlus'
+import AllUsers from './AllUsers'
 import DHeader from './DHeader'
 import Navigation from './Navigation'
 
@@ -58,15 +58,15 @@ const Homepage = ({ auth }) => {
                                         <div className="page-wrapper">
 
                                             <div className="row">
-                                                <DailySales />
-                                                <MonthlySales />
+                                                <CategoriesSummary />
+                                                <ItemsSummary />
                                                 <YearlySales />
-                                                <RecentUsers />
-                                                <Events />
-                                                <Facebook />
+                                                <ContactsMessages />
+                                                <SubscribersSummary />
+                                                {/* <Facebook />
                                                 <Twitter />
-                                                <GooglePlus />
-                                                <Timeline />
+                                                <GooglePlus /> */}
+                                                <AllUsers />
                                             </div>
 
                                         </div>

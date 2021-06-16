@@ -9,7 +9,7 @@ const RecentUsers = () => {
         <div className="col-xl-8 col-md-6">
             <div className="card Recent-Users">
                 <div className="card-header">
-                    <h5>Recent Users</h5>
+                    <h5>Contacts</h5>
                 </div>
                 <div className="card-block px-0 py-3">
                     <div className="table-responsive">
