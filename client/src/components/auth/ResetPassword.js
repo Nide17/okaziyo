@@ -24,7 +24,6 @@ const ResetPassword = ({ error, sendNewPassword }) => {
         }
     }, [error])
 
-    console.log(errorsState)
     const onChangeHandler = e => {
         setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value });
     };
@@ -78,7 +77,6 @@ const ResetPassword = ({ error, sendNewPassword }) => {
     return (
 
         <div className="container forgot-password mt-4">
-            {console.log(errorsState)}
             <div className="row mt-5 mx-1 d-block text-center">
 
                 {!errorsState.msg && showResetSuccess ?
