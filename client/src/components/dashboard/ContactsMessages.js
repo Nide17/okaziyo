@@ -28,7 +28,7 @@ const ContactsMessages = ({ contacts, getContacts }) => {
                                 <tbody>
 
                                     {contacts && contacts.allContacts.map(category => (
-                                        <tr className="unread">
+                                        <tr className="unread" key={category._id}>
 
                                             <td><img className="rounded-circle" style={{ width: "40px" }} src={avatar2} alt="activity-user" /></td>
 

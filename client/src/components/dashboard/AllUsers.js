@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import avatar1 from "./assets/images/user/avatar-1.jpg"
 import avatar3 from "./assets/images/user/avatar-3.jpg"
 import { connect } from 'react-redux'
@@ -8,9 +8,9 @@ import ReactLoading from "react-loading";
 const AllUsers = ({ users, getUsers }) => {
 
     // Lifecycle methods
-    // useEffect(() => {
-    //     getUsers();
-    // }, [getUsers]);
+    useEffect(() => {
+        getUsers();
+    }, [getUsers]);
 
     return (
 
@@ -41,7 +41,7 @@ const AllUsers = ({ users, getUsers }) => {
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Time</th>
+                                <th>Date</th>
                                 <th>Status</th>
                                 <th className="text-right"></th>
                             </tr>
@@ -73,7 +73,7 @@ const AllUsers = ({ users, getUsers }) => {
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Time</th>
+                                <th>Date</th>
                                 <th>Status</th>
                                 <th className="text-right"></th>
                             </tr>
@@ -107,38 +107,38 @@ const AllUsers = ({ users, getUsers }) => {
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Time</th>
+                                <th>Date</th>
                                 <th>Status</th>
                                 <th className="text-right"></th>
                             </tr>
                         </thead>
 
                         <tbody>
-                        
+
                             {users.isLoading ?
-                                    <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
-                                    
-<>
-                                    { users && users.users.map(user => (
-                            <tr>
-                                <td>
-                                    <h6 className="m-0"><img className="rounded-circle  m-r-10" style={{ width: "40px" }} src={avatar3} alt="activity-user" />Silje Larsen</h6>
-                                </td>
-                                <td>
-                                    <h6 className="m-0">Dog the quick brown</h6>
-                                </td>
-                                <td>
-                                    <h6 className="m-0">10:23 AM</h6>
-                                </td>
-                                <td>
-                                    <h6 className="m-0 text-c-purple">Offline</h6>
-                                </td>
-                                <td className="text-right"><i className="fas fa-circle text-c-purple f-10"></i></td>
-                            </tr>
+                                <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
+
+                                <>
+                                    {users && users.users.map(user => (
+                                        <tr key={user._id}>
+                                            <td>
+                                                <h6 className="m-0"><img className="rounded-circle  m-r-10" style={{ width: "40px" }} src={avatar3} alt="activity-user" />{user.name}</h6>
+                                            </td>
+                                            <td>
+                                                <h6 className="m-0">{user.email}</h6>
+                                            </td>
+                                            <td>
+                                                <h6 className="m-0">{new Date(user.date_registered).toLocaleDateString()}</h6>
+                                            </td>
+                                            <td>
+                                                <h6 className="m-0 text-c-green">Online</h6>
+                                            </td>
+                                            <td className="text-right"><i className="fas fa-circle text-c-green f-10"></i></td>
+                                        </tr>
                                     ))}
-                                    </>
+                                </>
                             }
-                                   
+
                         </tbody>
                     </table>
                 </div>

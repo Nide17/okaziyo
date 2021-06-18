@@ -24,29 +24,32 @@ export const tokenConfig = getState => {
 }
 
 // Check token & load user
-export const loadUser = () => (dispatch, getState) => {
+export const loadUser = () => async (dispatch, getState) => {
 
   // User loading
-  dispatch({ type: USER_LOADING });
+  await dispatch({ type: USER_LOADING });
 
-  axios
-    .get('/api/auth/user', tokenConfig(getState))
-    .then(res => dispatch({
-      type: USER_LOADED,
-      payload: res.data
-    }))
+  try {
 
-    .catch(err => {
-      dispatch(returnErrors(err.response.data, err.response.status));
-      dispatch({
-        type: AUTH_ERROR
-      })
-    });
+    await axios
+      .get('/api/auth/user', tokenConfig(getState))
+      .then(res => dispatch({
+        type: USER_LOADED,
+        payload: res.data
+      }))
+  }
+
+  catch (err) {
+    dispatch(returnErrors(err.response.data, err.response.status));
+    dispatch({
+      type: AUTH_ERROR
+    })
+  }
 }
 
 // View all users
 export const getUsers = () => async (dispatch, getState) => {
-  await dispatch(setUsersLoading());
+  // await dispatch(getUsersLoading());
 
   try {
     await axios
@@ -55,8 +58,8 @@ export const getUsers = () => async (dispatch, getState) => {
         dispatch({
           type: GET_USERS,
           payload: res.data,
-        }),
-      )
+        }))
+        
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status))
   }
@@ -113,8 +116,7 @@ export const login = ({ email, password }) =>
         }))
       .catch(err => {
         dispatch(
-          returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL')
-        );
+          returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'));
         dispatch({
           type: LOGIN_FAIL
         });
@@ -199,7 +201,7 @@ export const deleteUser = id => async (dispatch, getState) => {
             type: DELETE_USER,
             payload: id
           }),
-          alert('Deleted Successfully!'))
+          alert('Deleted successfully!'))
     }
 
   } catch (err) {
@@ -208,7 +210,7 @@ export const deleteUser = id => async (dispatch, getState) => {
   }
 }
 
-export const setUsersLoading = () => {
+export const getUsersLoading = () => {
   //Return an action to the reducer
   return {
     //action 
