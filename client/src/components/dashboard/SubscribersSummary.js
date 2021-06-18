@@ -1,62 +1,90 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { getSubscribers } from '../../redux/subscribers/subscribers.actions'
+import ReactLoading from "react-loading";
 
-const Events = () => {
+const SubscribersSummary = ({ subscribers, getSubscribers }) => {
+
+    // Lifecycle methods
+    useEffect(() => {
+        getSubscribers();
+    }, [getSubscribers]);
+
     return (
-        <div className="col-xl-4 col-md-6">
-            <div className="card card-event">
-                <div className="card-block">
+        <>
+            {subscribers.isLoading ?
+                <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
 
-                    <div className="row align-items-center justify-content-center">
-                        <div className="col">
-                            <h5 className="m-0">Subscribers</h5>
+                <div className="col-xl-4 col-md-6">
+                    <div className="card card-event">
+                        <div className="card-block">
+
+                            <div className="row align-items-center justify-content-center">
+                                <div className="col">
+                                    <h5 className="m-0">Subscribers</h5>
+                                </div>
+                            </div>
+
+                            <h2 className="mt-3 f-w-300">
+                                {subscribers.subscribedUsers.length}
+                                <sub className="text-muted f-14"> Clients</sub></h2>
+                            <i className="fab fa-angellist text-c-purple f-50"></i>
                         </div>
                     </div>
 
-                    <h2 className="mt-3 f-w-300">45<sub className="text-muted f-14"> Clients</sub></h2>
-                    <i className="fab fa-angellist text-c-purple f-50"></i>
-                </div>
-            </div>
+                    <div className="card">
+                        <div className="card-block border-bottom">
 
-            <div className="card">
-                <div className="card-block border-bottom">
-
-                    <div className="row d-flex align-items-center">
-                        <div className="col-auto">
-                            <i className="feather icon-zap f-30 text-c-green"></i>
+                            <div className="row d-flex align-items-center">
+                                <div className="col-auto">
+                                    <i className="feather icon-zap f-30 text-c-green"></i>
+                                </div>
+                                <div className="col">
+                                    <h3 className="f-w-300">
+                                        {subscribers.subscribedUsers.length}
+                                    </h3>
+                                    <span className="d-block text-uppercase">TODAY</span>
+                                </div>
+                            </div>
                         </div>
-                        <div className="col">
-                            <h3 className="f-w-300">2</h3>
-                            <span className="d-block text-uppercase">TODAY</span>
+
+                        <div className="card-block border-bottom">
+                            <div className="row d-flex align-items-center">
+                                <div className="col-auto">
+                                    <i className="feather icon-map-pin f-30 text-c-blue"></i>
+                                </div>
+                                <div className="col">
+                                    <h3 className="f-w-300">
+                                        {subscribers.subscribedUsers.length}
+                                    </h3>
+                                    <span className="d-block text-uppercase">THIS WEEK</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="card-block">
+                            <div className="row d-flex align-items-center">
+                                <div className="col-auto">
+                                    <i className="feather icon-map-pin f-30 text-c-blue"></i>
+                                </div>
+                                <div className="col">
+                                    <h3 className="f-w-300">
+                                        {subscribers.subscribedUsers.length}
+                                    </h3>
+                                    <span className="d-block text-uppercase">THIS MONTH</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div className="card-block border-bottom">
-                    <div className="row d-flex align-items-center">
-                        <div className="col-auto">
-                            <i className="feather icon-map-pin f-30 text-c-blue"></i>
-                        </div>
-                        <div className="col">
-                            <h3 className="f-w-300">6</h3>
-                            <span className="d-block text-uppercase">THIS WEEK</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card-block">
-                    <div className="row d-flex align-items-center">
-                        <div className="col-auto">
-                            <i className="feather icon-map-pin f-30 text-c-blue"></i>
-                        </div>
-                        <div className="col">
-                            <h3 className="f-w-300">12</h3>
-                            <span className="d-block text-uppercase">THIS MONTH</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            }
+        </>
     )
 }
 
-export default Events
+
+const mapStateToProps = state => ({
+    subscribers: state.subscribersReducer
+})
+
+export default connect(mapStateToProps, { getSubscribers })(SubscribersSummary)

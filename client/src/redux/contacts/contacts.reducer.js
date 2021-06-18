@@ -1,7 +1,7 @@
 import { GET_CONTACTS, GET_CONTACT, ADD_CONTACT, DELETE_CONTACT, ADD_CONTACT_FAIL, DELETE_CONTACT_FAIL, CONTACTS_LOADING, REPLY_CONTACT, REPLY_CONTACT_FAIL } from "./contacts.types";
 
 const INITIAL_STATE = {
-  contacts: [],
+  allContacts: [],
   isLoading: true
 };
 
@@ -13,19 +13,19 @@ const contactsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false,
-        contacts: action.payload
+        allContacts: action.payload
       };
 
     case GET_CONTACT:
       return {
         ...state,
-        contacts: action.payload
+        Onecontact: action.payload
       };
 
     case ADD_CONTACT:
       return {
         ...state,
-        contacts: [...state.contacts, action.payload]
+        allContacts: [...state.allContacts, action.payload]
       };
 
     case ADD_CONTACT_FAIL:
@@ -33,19 +33,19 @@ const contactsReducer = (state = INITIAL_STATE, action) => {
     case REPLY_CONTACT_FAIL:
       return {
         ...state,
-        contacts: null
+        allContacts: null
       };
 
     case DELETE_CONTACT:
       return {
         ...state,
-        contacts: state.contacts.filter(contact => contact._id !== action.payload)
+        allContacts: state.allContacts.filter(contact => contact._id !== action.payload)
       }
 
     case REPLY_CONTACT:
       return {
         ...state,
-        contacts: state.contacts.map((cont) => {
+        allContacts: state.allContacts.map((cont) => {
 
           if (cont._id === action.payload.idToUpdate) {
 

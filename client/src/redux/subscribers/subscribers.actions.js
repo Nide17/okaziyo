@@ -7,8 +7,8 @@ import { returnErrors } from "../error/error.actions";
 // dispatch(action)
 // Dispatches an action. This is the only way to trigger a state change.
 
-export const setSubscribers = () => async (dispatch, getState) => {
-  await dispatch(setSubscribersLoading());
+export const getSubscribers = () => async (dispatch, getState) => {
+  await dispatch(getSubscribersLoading());
 
   try {
     await axios
@@ -61,7 +61,7 @@ export const deleteSubscriber = uemail => async (dispatch, getState) => {
   }
 }
 
-export const setSubscribersLoading = () => {
+export const getSubscribersLoading = () => {
   //Return an action to the reducer
   return {
     //action 

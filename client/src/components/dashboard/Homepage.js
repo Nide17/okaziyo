@@ -5,6 +5,7 @@ import store from '../../redux/store'
 import "./assets/fonts/fontawesome/css/fontawesome-all.min.css"
 import "./assets/plugins/animation/css/animate.min.css"
 import "./assets/css/dashboard.css"
+
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";

@@ -1,7 +1,7 @@
 import { GET_CATEGORIES, CREATE_CATEGORY, CREATE_CATEGORY_FAIL, DELETE_CATEGORY, DELETE_CATEGORY_FAIL, UPDATE_CATEGORY, UPDATE_CATEGORY_FAIL, CATEGORIES_LOADING } from "./categories.types";
 
 const INITIAL_STATE = {
-  allcategories: [],
+  allCategories: [],
   isLoading: true
 };
 
@@ -13,13 +13,13 @@ const categoriesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false,
-        allcategories: action.payload
+        allCategories: action.payload
       };
 
     case CREATE_CATEGORY:
       return {
         ...state,
-        allcategories: [...state.allcategories, action.payload]
+        allCategories: [...state.allCategories, action.payload]
       };
 
     case CREATE_CATEGORY_FAIL:
@@ -33,7 +33,7 @@ const categoriesReducer = (state = INITIAL_STATE, action) => {
     case UPDATE_CATEGORY:
       return {
         ...state,
-        allcategories: state.allcategories.map((catg) => {
+        allCategories: state.allCategories.map((catg) => {
 
           if (catg._id === action.payload.idToUpdate) {
 
@@ -50,7 +50,7 @@ const categoriesReducer = (state = INITIAL_STATE, action) => {
     case DELETE_CATEGORY:
       return {
         ...state,
-        allcategories: state.allcategories.filter(catg => catg._id !== action.payload)
+        allCategories: state.allCategories.filter(catg => catg._id !== action.payload)
       }
 
     case CATEGORIES_LOADING:

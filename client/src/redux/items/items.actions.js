@@ -32,7 +32,7 @@ export const createItem = (newItem) => async (dispatch, getState) => {
           type: CREATE_ITEM,
           payload: res.data
         }),
-        alert('Created Successfully!'))
+        alert('Created successfully!'))
 
       // Reload the page after category addition
       .then(window.location.reload())

@@ -7,7 +7,7 @@ import { returnErrors } from "../error/error.actions";
 // dispatch(action)
 // Dispatches an action. This is the only way to trigger a state change.
 export const getContacts = () => async (dispatch, getState) => {
-  await dispatch(setContactsLoading());
+  await dispatch(getContactsLoading());
 
   try {
     await axios
@@ -80,7 +80,7 @@ export const deleteContact = id => async (dispatch, getState) => {
   }
 }
 
-export const setContactsLoading = () => {
+export const getContactsLoading = () => {
   //Return an action to the reducer
   return {
     //action 
