@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         const categories = await Category.find()
             //sort categories by date_created
             .sort({ date_created: -1 })
-            // .populate('items')
+        // .populate('items')
 
         if (!categories) throw Error('No categories found');
 
@@ -39,8 +39,8 @@ router.get('/:id', async (req, res) => {
         await Category.findById(id, (err, category) => {
             res.status(200).json(category);
         })
-            // Use the name of the schema path instead of the collection name
-            // .populate('items')
+        // Use the name of the schema path instead of the collection name
+        // .populate('items')
 
     } catch (err) {
         res.status(400).json({
@@ -54,9 +54,9 @@ router.get('/:id', async (req, res) => {
 // @desc    Create a category
 // @access Private: Accessed by admin only
 
-// router.post('/', auth, authRole(['Admin']), async (req, res) => {
-router.post('/', async (req, res) => {
-    const { title, description, date_created, items, creator } = req.body;
+router.post('/', auth, authRole(['Admin']), async (req, res) => {
+    // router.post('/', async (req, res) => {
+    const { title, description, date_created, creator } = req.body;
 
     // Simple validation
     if (!title || !description) {
@@ -71,7 +71,6 @@ router.post('/', async (req, res) => {
             title,
             description,
             date_created,
-            items,
             creator
         });
 

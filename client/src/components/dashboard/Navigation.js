@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Navigation = () => {
+const Navigation = ({ setShowMob, showMob }) => {
+
+    const [show, setShow] = useState(false)
+    const [navBarCollapsed, setNavBarCollapsed] = useState(false)
 
     return (
 
-        <nav className="pcoded-navbar">
+        <nav className={`pcoded-navbar ${showMob ? 'mob-open' : navBarCollapsed ? 'navbar-collapsed' : ''}`}>
 
             <div className="navbar-wrapper">
 
                 <div className="navbar-brand header-logo">
-                    <a href="#/" className="b-brand">
+                    <a href="/" className="b-brand">
                         <div className="b-bg">
                             <i className="feather icon-trending-up"></i>
                         </div>
                         <span className="b-title">Okaziyo</span>
                     </a>
-                    <a className="mobile-menu" id="mobile-collapse" href="#/"><span></span></a>
+                    <a className={`mobile-menu ${navBarCollapsed ? 'on' : ''}`} id="mobile-collapse" href="#/" onClick={() => setNavBarCollapsed(!navBarCollapsed)}>
+                        <span></span>
+                    </a>
                 </div>
 
                 <div className="navbar-content scroll-div">
@@ -26,21 +31,25 @@ const Navigation = () => {
                             <label>Navigation</label>
                         </li>
 
-                        <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" className="nav-item active">
-                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-home"></i></span><span className="pcoded-mtext">Dashboard</span></a>
+                        <li className="nav-item active">
+                            <a href="#/" className="nav-link ">
+                            <span className="pcoded-micon">
+                            <i className="feather icon-home"></i>
+                            </span>
+                            <span className="pcoded-mtext">Dashboard</span></a>
                         </li>
 
                         <li className="nav-item pcoded-menu-caption">
                             <label>Categories</label>
                         </li>
 
-                        <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" className="nav-item pcoded-hasmenu">
+                        <li className={`nav-item pcoded-hasmenu ${show ? 'pcoded-trigger' : null}`} onClick={() => setShow(!show)}>
 
-                            {/* <a href="javascript:" className="nav-link "> */}
                             <a href="#/" className="nav-link ">
 
                                 <span className="pcoded-micon"><i className="feather icon-box"></i></span><span className="pcoded-mtext">Details</span></a>
-                            <ul className="pcoded-submenu">
+
+                            <ul className={`pcoded-submenu ${show ? 'd-block' : 'd-none'}`}>
                                 <li className=""><a href="bc_button.html" className="">Electronics</a></li>
                                 <li className=""><a href="bc_badges.html" className="">Fashion</a></li>
                                 <li className=""><a href="bc_breadcrumb-pagination.html" className="">Furniture</a></li>
@@ -56,23 +65,23 @@ const Navigation = () => {
                             <label>Items</label>
                         </li>
 
-                        <li data-username="form elements advance componant validation masking wizard picker select" className="nav-item">
+                        <li className="nav-item">
                             <a href="form_elements.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-file-text"></i></span><span className="pcoded-mtext">For sale</span></a>
                         </li>
 
-                        <li data-username="Table bootstrap datatable footable" className="nav-item">
+                        <li className="nav-item">
                             <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">For rent</span></a>
                         </li>
 
-                        <li data-username="Table bootstrap datatable footable" className="nav-item">
+                        <li className="nav-item">
                             <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Jobs</span></a>
                         </li>
 
-                        <li data-username="Table bootstrap datatable footable" className="nav-item">
+                        <li className="nav-item">
                             <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Scholarships</span></a>
                         </li>
 
-                        <li data-username="Table bootstrap datatable footable" className="nav-item">
+                        <li className="nav-item">
                             <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Tenders</span></a>
                         </li>
 
@@ -80,13 +89,13 @@ const Navigation = () => {
                             <label>Miscellaneous</label>
                         </li>
 
-                        <li data-username="Charts Morris" className="nav-item">
+                        <li className="nav-item">
                             <a href="chart-morris.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-pie-chart"></i></span><span className="pcoded-mtext">Users</span></a></li>
 
-                        <li data-username="Maps Google" className="nav-item">
+                        <li className="nav-item">
                             <a href="map-google.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-map"></i></span><span className="pcoded-mtext">Contacts</span></a></li>
 
-                        <li data-username="Maps Google" className="nav-item">
+                        <li className="nav-item">
                             <a href="map-google.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-map"></i></span><span className="pcoded-mtext">Subscribers</span></a></li>
 
                     </ul>

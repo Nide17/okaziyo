@@ -19,16 +19,31 @@ const CategorySchema = new Schema({
     type: Date,
     default: Date.now
   },
-  // items: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'item'
-  //   }
-  // ],
+  sub_category: {
+    type: [
+      {
+        name: {
+          type: String,
+          required: true
+        },
+        description: {
+          type: String,
+          required: true
+        },
+        date_created: {
+          type: Date,
+          default: Date.now
+        },
+        creator: {
+          type: Schema.Types.ObjectId,
+          ref: 'user'
+        }
+      }
+    ]
+  },
   creator: {
     type: Schema.Types.ObjectId,
-    ref: 'user',
-    unique: true
+    ref: 'user'
   }
 });
 

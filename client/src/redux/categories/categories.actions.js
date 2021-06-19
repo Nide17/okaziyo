@@ -32,11 +32,10 @@ export const createCategory = (newCategory) => async (dispatch, getState) => {
         dispatch({
           type: CREATE_CATEGORY,
           payload: res.data
-        }),
-        alert('Created Successfully!'))
+        }))
 
-      // Reload the page after category addition
-      .then(window.location.reload())
+    // Reload the page after category addition
+    // .then(window.location.reload())
 
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'CREATE_CATEGORY_FAIL'));

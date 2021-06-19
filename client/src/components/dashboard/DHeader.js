@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import avatar1 from "./assets/images/user/avatar-1.jpg"
 import avatar2 from "./assets/images/user/avatar-2.jpg"
 import avatar3 from "./assets/images/user/avatar-3.jpg"
 import Logout from './../auth/Logout'
 
-const DHeader = () => {
+const DHeader = ({ showMob, setShowMob }) => {
+
+    const [searchOpen, setSearchOpen] = useState(false)
+
     return (
 
         <header className="navbar pcoded-header navbar-expand-lg navbar-light">
 
             <div className="m-header">
 
-                <a className="mobile-menu" id="mobile-collapse1" href="#/">
+                <a className={`mobile-menu ${showMob ? 'on' : ''}`} id="mobile-collapse1" href="#/" onClick={() => setShowMob(!showMob)}>
                     <span></span>
                 </a>
 
@@ -30,31 +33,28 @@ const DHeader = () => {
             <div className="collapse navbar-collapse">
 
                 <ul className="navbar-nav mr-auto">
-                    <li>
-                        {/* <a href="#/" className="full-screen" onClick="#/toggleFullScreen()"> */}
-                        <a href="#/" className="full-screen" onClick={() => null}>
-                            <i className="feather icon-maximize"></i></a></li>
-                    <li className="nav-item dropdown">
-                        <a className="dropdown-toggle" href="#/" data-toggle="dropdown">Menu</a>
-                        <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="#/">Action</a></li>
-                            <li><a className="dropdown-item" href="#/">Another action</a></li>
-                            <li><a className="dropdown-item" href="#/">Something else here</a></li>
-                        </ul>
-                    </li>
+
                     <li className="nav-item">
-                        <div className="main-search">
-                            <div className="input-group">
-                                <input type="text" id="m-search" className="form-control" placeholder="Search . . ." />
+
+                        <div className={`main-search ${searchOpen ? 'open' : ''}`}>
+
+                            <div className="input-group pl-2 ml-1">
+                            
+                                <input type="text" style={{ width: `${searchOpen ? '120px' : '0px'}`}} id="m-search" className="form-control" placeholder="Search . . ." />
+                                
                                 <a href="#/" className="input-group-append search-close">
-                                    <i className="feather icon-x input-group-text"></i>
+                                    <i className="feather icon-x input-group-text" onClick={() => setSearchOpen(false)}></i>
                                 </a>
-                                <span className="input-group-append search-btn btn btn-primary">
+
+                                <span className="input-group-append search-btn btn btn-primary" onClick={() => setSearchOpen(true)}>
+
                                     <i className="feather icon-search input-group-text"></i>
                                 </span>
                             </div>
                         </div>
+
                     </li>
+
                 </ul>
 
 

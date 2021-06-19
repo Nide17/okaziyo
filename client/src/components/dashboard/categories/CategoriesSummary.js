@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getCategories } from '../../redux/categories/categories.actions'
+import { getCategories } from '../../../redux/categories/categories.actions'
 import ReactLoading from "react-loading";
+import CreateCategory from './CreateCategory';
 
 const CategoriesSummary = ({ categories, getCategories }) => {
 
@@ -30,7 +31,7 @@ const CategoriesSummary = ({ categories, getCategories }) => {
 
                             <div className="col-2 text-right">
                                 <p className="m-b-0">
-                                    <i className="feather icon-plus-circle text-c-green f-30 m-r-10"></i>
+                                    <CreateCategory />
                                 </p>
                             </div>
 

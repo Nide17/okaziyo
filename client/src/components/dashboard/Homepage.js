@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { loadUser } from '../../redux/auth/auth.actions'
 import store from '../../redux/store'
 
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 import ReactLoading from "react-loading";
-import CategoriesSummary from './CategoriesSummary'
+import CategoriesSummary from './categories/CategoriesSummary'
 import ItemsSummary from './ItemsSummary'
 import JobsSummary from './JobsSummary'
 import ContactsMessages from './ContactsMessages'
@@ -24,9 +24,8 @@ import Navigation from './Navigation'
 
 const Homepage = ({ auth }) => {
 
-    useEffect(() => {
-        store.dispatch(loadUser())
-    }, []);
+    useEffect(() => { store.dispatch(loadUser())}, []);
+    const [showMob, setShowMob] = useState(false)
 
     return (
 
@@ -39,16 +38,15 @@ const Homepage = ({ auth }) => {
             auth.isAuthenticated ?
 
                 <div className="dashboard">
-                    {/*         
+                            
             <div className="loader-bg">
                 <div className="loader-track">
                     <div className="loader-fill"></div>
                 </div>
-            </div> */}
+            </div>
 
-
-                    <Navigation />
-                    <DHeader />
+                    <Navigation showMob={showMob} setShowMob={setShowMob} />
+                    <DHeader showMob={showMob} setShowMob={setShowMob} />
 
                     <div className="pcoded-main-container">
                         <div className="pcoded-wrapper">
