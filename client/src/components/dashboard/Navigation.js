@@ -1,6 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import { getCategories } from '../../redux/categories/categories.actions'
 
-const Navigation = ({ setShowMob, showMob }) => {
+const Navigation = ({ categories, getCategories, showMob }) => {
+
+    // Lifecycle methods
+    useEffect(() => {
+        getCategories();
+    }, [getCategories]);
 
     const [show, setShow] = useState(false)
     const [navBarCollapsed, setNavBarCollapsed] = useState(false)
@@ -33,10 +40,10 @@ const Navigation = ({ setShowMob, showMob }) => {
 
                         <li className="nav-item active">
                             <a href="#/" className="nav-link ">
-                            <span className="pcoded-micon">
-                            <i className="feather icon-home"></i>
-                            </span>
-                            <span className="pcoded-mtext">Dashboard</span></a>
+                                <span className="pcoded-micon">
+                                    <i className="feather icon-home"></i>
+                                </span>
+                                <span className="pcoded-mtext">Dashboard</span></a>
                         </li>
 
                         <li className="nav-item pcoded-menu-caption">
@@ -50,14 +57,12 @@ const Navigation = ({ setShowMob, showMob }) => {
                                 <span className="pcoded-micon"><i className="feather icon-box"></i></span><span className="pcoded-mtext">Details</span></a>
 
                             <ul className={`pcoded-submenu ${show ? 'd-block' : 'd-none'}`}>
-                                <li className=""><a href="bc_button.html" className="">Electronics</a></li>
-                                <li className=""><a href="bc_badges.html" className="">Fashion</a></li>
-                                <li className=""><a href="bc_breadcrumb-pagination.html" className="">Furniture</a></li>
-                                <li className=""><a href="bc_collapse.html" className="">Transport</a></li>
-                                <li className=""><a href="bc_tabs.html" className="">Real Estate</a></li>
-                                <li className=""><a href="bc_typography.html" className="">Scholarships</a></li>
-                                <li className=""><a href="icon-feather.html" className="">Jobs</a></li>
-                                <li className=""><a href="icon-feather.html" className="">Others</a></li>
+
+                                {categories && categories.allCategories.map(category => (
+                                    <li key={category._id}>
+                                        <a href="#/">{category.title}</a>
+                                    </li>
+                                ))}
                             </ul>
                         </li>
 
@@ -106,4 +111,8 @@ const Navigation = ({ setShowMob, showMob }) => {
     )
 }
 
-export default Navigation
+const mapStateToProps = state => ({
+    categories: state.categoriesReducer
+})
+
+export default connect(mapStateToProps, { getCategories })(Navigation)
