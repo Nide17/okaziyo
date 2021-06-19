@@ -3,7 +3,7 @@ import logo from '../logo/Logo.svg'
 
 const Footer = () => {
 
-    if (window.location.pathname === '/register' || window.location.pathname === '/login' || window.location.pathname === '/dashboard') return null;
+    if (window.location.pathname === '/register' || window.location.pathname === '/login' || window.location.pathname === '/dashboard' || window.location.pathname === '/dashboard/view-category/60cdd948181fa53764a17290' || window.location.pathname === '/dashboard/view-category/60cdd957181fa53764a17291' || window.location.pathname === '/dashboard/view-category/60cddb7b181fa53764a17292' || window.location.pathname === '/dashboard/view-category/60cddbc1181fa53764a17293' || window.location.pathname === '/dashboard/view-category/60cddbe8181fa53764a17294' || window.location.pathname === '/dashboard/view-category/60cddc0f181fa53764a17295' || window.location.pathname === '/dashboard/view-category/60cddc21181fa53764a17296' || window.location.pathname === '/dashboard/view-category/60cddc4c181fa53764a17297') return null;
 
     return (
         <section className="container footer px-2">

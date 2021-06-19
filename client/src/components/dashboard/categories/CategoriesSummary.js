@@ -30,9 +30,9 @@ const CategoriesSummary = ({ categories, getCategories }) => {
                             </div>
 
                             <div className="col-2 text-right">
-                                <p className="m-b-0">
+                                <div className="m-b-0">
                                     <CreateCategory />
-                                </p>
+                                </div>
                             </div>
 
                             <div className="col-2 text-right">

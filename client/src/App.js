@@ -22,7 +22,7 @@ import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
 import Subscribe from './components/auth/Subscribe';
-import Homepage from './components/dashboard/Homepage';
+import DashboardRoutes from './components/dashboard/DashboardRoutes';
 import Logout from './components/auth/Logout'
 
 // REDUX
@@ -60,7 +60,7 @@ const App = () => {
             <Route exact path="/hot-deals" component={Placeholder} />
 
             {/* Dashboard */}
-            <Route exact path="/dashboard" component={Homepage} />
+            <DashboardRoutes />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/all-products" component={Placeholder} />
             <Route path="/slickItem" component={Placeholder} />
@@ -68,6 +68,7 @@ const App = () => {
 
             {/* Categories */}
             <CategoriesRoutes />
+
           </Switch>
         </Router>
         <Footer />

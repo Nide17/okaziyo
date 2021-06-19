@@ -23,6 +23,15 @@ const ItemSchema = new Schema({
     required: true,
     default: 0
   },
+  pictures: {
+    type: [
+      {
+        photo: {
+          type: String
+        }
+      }
+    ]
+  },
   date_created: {
     type: Date,
     required: true,

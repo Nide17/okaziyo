@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { loadUser } from '../../redux/auth/auth.actions'
 import store from '../../redux/store'
-
 import "./assets/fonts/fontawesome/css/fontawesome-all.min.css"
 import "./assets/plugins/animation/css/animate.min.css"
 import "./assets/css/dashboard.css"
@@ -10,6 +9,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 import ReactLoading from "react-loading";
+import DHeader from './DHeader'
+import Navigation from './Navigation'
 import CategoriesSummary from './categories/CategoriesSummary'
 import ItemsSummary from './ItemsSummary'
 import JobsSummary from './JobsSummary'
@@ -19,31 +20,30 @@ import SubscribersSummary from './SubscribersSummary'
 // import Twitter from './Twitter'
 // import GooglePlus from './GooglePlus'
 import AllUsers from './AllUsers'
-import DHeader from './DHeader'
-import Navigation from './Navigation'
 
 const Homepage = ({ auth }) => {
 
-    useEffect(() => { store.dispatch(loadUser())}, []);
+    useEffect(() => { store.dispatch(loadUser()) }, []);
+
     const [showMob, setShowMob] = useState(false)
 
     return (
 
         auth.isLoading ?
-            <>
+            <div className="d-flex justify-content-center align-items-center m-5 p-5">
                 <ReactLoading type="spinningBubbles" color="#33FFFC" />&nbsp;&nbsp;&nbsp;&nbsp; <br />
                 <p className="d-block">Loading user ...</p>
-            </> :
+            </div> :
 
             auth.isAuthenticated ?
 
                 <div className="dashboard">
-                            
-            <div className="loader-bg">
-                <div className="loader-track">
-                    <div className="loader-fill"></div>
-                </div>
-            </div>
+
+                    <div className="loader-bg">
+                        <div className="loader-track">
+                            <div className="loader-fill"></div>
+                        </div>
+                    </div>
 
                     <Navigation showMob={showMob} setShowMob={setShowMob} />
                     <DHeader showMob={showMob} setShowMob={setShowMob} />
@@ -63,8 +63,8 @@ const Homepage = ({ auth }) => {
                                                 <ContactsMessages />
                                                 <SubscribersSummary />
                                                 {/* <Facebook />
-                                                <Twitter />
-                                                <GooglePlus /> */}
+                                                    <Twitter />
+                                                    <GooglePlus /> */}
                                                 <AllUsers />
                                             </div>
 
@@ -74,6 +74,8 @@ const Homepage = ({ auth }) => {
                             </div>
                         </div>
                     </div>
+
+
 
                     <script src="assets/js/vendor-all.min.js"></script>
                     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>

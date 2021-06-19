@@ -60,7 +60,7 @@ const Navigation = ({ categories, getCategories, showMob }) => {
 
                                 {categories && categories.allCategories.map(category => (
                                     <li key={category._id}>
-                                        <a href={`/${category.title.toLowerCase()}`}>{category.title}</a>
+                                        <a href={`/dashboard/view-category/${category._id}`}>{category.title}</a>
                                     </li>
                                 ))}
                             </ul>

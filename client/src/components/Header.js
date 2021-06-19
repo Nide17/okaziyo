@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import logo from '../logo/Logo.svg'
 import Logosm from '../logo/Logosm.svg'
-import { useLocation } from "react-router-dom";
 
 const Header = () => {
-
-    let location = useLocation();
 
     const [state, setState] = useState({
         menu: false,
@@ -107,7 +104,7 @@ const Header = () => {
     const jobsBuyClass = state.showJobsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
     const othBuyClass = state.showOthersItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
 
-    if (location.pathname === '/register' || location.pathname === '/login' || location.pathname === '/dashboard') return null;
+    if (window.location.pathname === '/register' || window.location.pathname === '/login' || window.location.pathname === '/dashboard' || window.location.pathname === '/dashboard/view-category/60cdd948181fa53764a17290' || window.location.pathname === '/dashboard/view-category/60cdd957181fa53764a17291' || window.location.pathname === '/dashboard/view-category/60cddb7b181fa53764a17292' || window.location.pathname === '/dashboard/view-category/60cddbc1181fa53764a17293' || window.location.pathname === '/dashboard/view-category/60cddbe8181fa53764a17294' || window.location.pathname === '/dashboard/view-category/60cddc0f181fa53764a17295' || window.location.pathname === '/dashboard/view-category/60cddc21181fa53764a17296' || window.location.pathname === '/dashboard/view-category/60cddc4c181fa53764a17297') return null;
 
         return (
 
