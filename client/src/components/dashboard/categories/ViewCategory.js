@@ -3,15 +3,15 @@ import "../assets/fonts/fontawesome/css/fontawesome-all.min.css"
 import "../assets/plugins/animation/css/animate.min.css"
 import "../assets/css/dashboard.css"
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import DHeader from '../DHeader'
+import AddItem from './AddItem'
 import Navigation from '../Navigation'
 import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link, useParams } from 'react-router-dom'
 import { getCategories } from '../../../redux/categories/categories.actions'
 import ReactLoading from "react-loading";
 
-const ViewCategory = ({ auth, getCategories, categories }) => {
+const ViewCategory = ({ getCategories, categories }) => {
 
     const [showMob, setShowMob] = useState(false)
 
@@ -70,10 +70,11 @@ const ViewCategory = ({ auth, getCategories, categories }) => {
 
                                                         {categories.isLoading ?
                                                             <ReactLoading type="bars" color="#33FFFC" /> :
-<>
+
+                                                            <>
                                                             {category.sub_category.map(subc => (
 
-                                                            <Col sm="4" className="card-block">
+                                                                <Col sm="4" className="card-block" key={subc._id}>
                                                                         <h6 className="mb-4">{subc.name}</h6>
 
                                                                 <div className="row d-flex align-items-center">
@@ -85,9 +86,9 @@ const ViewCategory = ({ auth, getCategories, categories }) => {
                                                                     </div>
 
                                                                     <div className="col-2 text-right">
-                                                                        <p className="m-b-0">
-                                                                            <i className="feather icon-plus-circle text-c-green f-30 m-r-10"></i>
-                                                                        </p>
+                                                                        <div className="m-b-0">
+                                                                                <AddItem categoryId={category._id} sub_categoryName={subc.name}/>
+                                                                        </div>
                                                                     </div>
 
                                                                     <div className="col-2 text-right">
@@ -105,7 +106,6 @@ const ViewCategory = ({ auth, getCategories, categories }) => {
 
                                                     </Row>
                                                 </div>
-
                                                 
                                             </div> :
                                             null
@@ -125,13 +125,8 @@ const ViewCategory = ({ auth, getCategories, categories }) => {
     )
 }
 
-ViewCategory.propTypes = {
-    auth: PropTypes.object
-}
-
 // Map  state props
 const mapStateToProps = state => ({
-    auth: state.authReducer,
     categories: state.categoriesReducer
 });
 

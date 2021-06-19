@@ -58,10 +58,10 @@ router.get('/:id', async (req, res) => {
 // router.post('/', auth, authRole(['Creator', 'Admin']), async (req, res) => {
 router.post('/', async (req, res) => {
 
-    const { title, description, brand, price, category, creator } = req.body;
+    const { title, description, brand, price, pictures, category, sub_category, contactNumber, creator } = req.body;
 
     // Simple validation
-    if (!title || !description || !category) {
+    if (!title || !description || !brand || !price || !category || !sub_category || !contactNumber) {
         return res.status(400).json({ msg: 'There are missing info!' });
     }
 
@@ -71,7 +71,10 @@ router.post('/', async (req, res) => {
             description,
             brand,
             price,
+            pictures,
             category,
+            sub_category,
+            contactNumber,
             creator
         });
 
@@ -85,6 +88,9 @@ router.post('/', async (req, res) => {
             description: savedItem.description,
             brand: savedItem.brand,
             price: savedItem.price,
+            pictures: savedItem.pictures,
+            sub_category: savedItem.sub_category,
+            contactNumber: savedItem.contactNumber,
             category: savedItem.category,
             creator: savedItem.creator
         });

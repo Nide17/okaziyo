@@ -31,11 +31,10 @@ export const createItem = (newItem) => async (dispatch, getState) => {
         dispatch({
           type: CREATE_ITEM,
           payload: res.data
-        }),
-        alert('Created successfully!'))
+        }))
 
       // Reload the page after category addition
-      .then(window.location.reload())
+      // .then(window.location.reload())
 
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'CREATE_ITEM_FAIL'));
