@@ -11,10 +11,11 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         description: '',
         brand: '',
         price: 0,
-        pictures: [],
+        pictures: '',
         contactNumber: ''
     })
 
+    console.log(auth)
     // Errors state on form
     const [errorsState, setErrorsState] = useState([])
 
@@ -31,8 +32,14 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         setItemState({ ...itemState, [e.target.name]: e.target.value });
     };
 
+    const onPictureHandler = (e) => {
+        setItemState({ ...itemState, pictures: e.target.files[0] });
+    }
+
     const onSubmitHandler = e => {
         e.preventDefault();
+
+        const formData = new FormData();
 
         const { name, description, brand, price, contactNumber, pictures } = itemState;
 
@@ -63,21 +70,19 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         }
 
         // Create new item object
-        const newItem = {
-            title: name,
-            description,
-            brand,
-            price,
-            pictures,
-            contactNumber,
-            date_created: Date.now,
-            category: categoryId,
-            sub_category: sub_categoryName,
-            creator: auth.user ? auth.user._id : null
-        };
+        formData.append('title', name);
+        formData.append('description', description);
+        formData.append('brand', brand);
+        formData.append('price', price);
+        formData.append('contactNumber', contactNumber);
+        formData.append('date_created', Date.now);
+        formData.append('category', categoryId);
+        formData.append('sub_category', sub_categoryName);
+        formData.append('creator', auth.user ? auth.user._id : '60c5d2a3f7b3082d8c4dadd6');
+        formData.append('pictures', pictures);
 
         // Attempt to create
-        createItem(newItem);
+        createItem(formData);
 
         // Reset the form
         setItemState({
@@ -114,7 +119,7 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
                         null
                     }
 
-                    <Form onSubmit={onSubmitHandler}>
+                    <Form onSubmit={onSubmitHandler} encType='multipart/form-data'>
 
                         <FormGroup>
 
@@ -146,7 +151,8 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
                                 <strong>Picture</strong>
                             </Label>
 
-                            <Input type="text" name="pictures" id="pictures" placeholder="Item pictures ..." className="mb-2" onChange={onChangeHandler} />
+                            <Input type="file" accept=".png, .jpg, .jpeg" name="pictures" placeholder="Item pictures ..." onChange={onPictureHandler}
+                            />
 
                             <Label for="contactNumber">
                                 <strong>Phone</strong>

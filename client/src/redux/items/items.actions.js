@@ -22,11 +22,11 @@ export const getItems = () => async (dispatch, getState) => {
 };
 
 // Create Item
-export const createItem = (newItem) => async (dispatch, getState) => {
+export const createItem = (newItem) => async (dispatch) => {
 
   try {
     await axios
-      .post('/api/items', newItem, tokenConfig(getState))
+      .post('/api/items', newItem)
       .then(res =>
         dispatch({
           type: CREATE_ITEM,

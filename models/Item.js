@@ -23,15 +23,7 @@ const ItemSchema = new Schema({
     required: true,
     default: 0
   },
-  pictures: {
-    type: [
-      {
-        photo: {
-          type: String
-        }
-      }
-    ]
-  },
+  pictures: [String],
   date_created: {
     type: Date,
     required: true,
@@ -57,8 +49,7 @@ const ItemSchema = new Schema({
   },
   creator: {
     type: Schema.Types.ObjectId,
-    ref: 'user',
-    unique: true
+    ref: 'user'
   }
 });
 

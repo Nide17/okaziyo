@@ -1,5 +1,37 @@
 const express = require("express");
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
+
+// Uploading
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, './uploads');
+    },
+    filename: (req, file, callback) => {
+        callback(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const fileFilter = (req, file, callback) => {
+
+    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+
+    if (allowedFileTypes.includes(file.mimetype)) {
+        callback(null, true);
+    } else {
+        callback(null, false);
+    }
+}
+
+var upload = multer({
+    storage, 
+    limits: {
+        fileSize: 1000000 // 1000000 Bytes = 1 MB
+    },
+    fileFilter });
+
 
 // Item Model
 const Item = require('../../models/Item');
@@ -56,9 +88,10 @@ router.get('/:id', async (req, res) => {
 // @access  Have to be private
 
 // router.post('/', auth, authRole(['Creator', 'Admin']), async (req, res) => {
-router.post('/', async (req, res) => {
+router.post('/', upload.single('pictures'), async (req, res) => {
 
-    const { title, description, brand, price, pictures, category, sub_category, contactNumber, creator } = req.body;
+    const { title, description, brand, price, category, sub_category, contactNumber, creator } = req.body;
+    const pictures = req.file.filename;
 
     // Simple validation
     if (!title || !description || !brand || !price || !category || !sub_category || !contactNumber) {
