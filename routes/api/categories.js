@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     try {
         const categories = await Category.find()
             //sort categories by date_created
-            .sort({ date_created: -1 })
+            .sort({ date_created: 1 })
         // .populate('items')
 
         if (!categories) throw Error('No categories found');
