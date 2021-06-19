@@ -28,7 +28,7 @@ const Categories = ({ categories, getCategories }) => {
                                 {/* dropdown */}
                                 <ul className="dropdown-menu">
                                     {category && category.sub_category.map(subc => (
-                                        <li>
+                                        <li key={subc._id}>
                                             <a className="dropdown-item px-1" href={`/${subc.name.toLowerCase().split(" ")[0]}`}>
                                                 {subc.name}
                                             </a>

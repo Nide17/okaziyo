@@ -60,7 +60,7 @@ const Navigation = ({ categories, getCategories, showMob }) => {
 
                                 {categories && categories.allCategories.map(category => (
                                     <li key={category._id}>
-                                        <a href="#/">{category.title}</a>
+                                        <a href={`/${category.title.toLowerCase()}`}>{category.title}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -71,23 +71,23 @@ const Navigation = ({ categories, getCategories, showMob }) => {
                         </li>
 
                         <li className="nav-item">
-                            <a href="form_elements.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-file-text"></i></span><span className="pcoded-mtext">For sale</span></a>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-file-text"></i></span><span className="pcoded-mtext">For sale</span></a>
                         </li>
 
                         <li className="nav-item">
-                            <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">For rent</span></a>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">For rent</span></a>
                         </li>
 
                         <li className="nav-item">
-                            <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Jobs</span></a>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Jobs</span></a>
                         </li>
 
                         <li className="nav-item">
-                            <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Scholarships</span></a>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Scholarships</span></a>
                         </li>
 
                         <li className="nav-item">
-                            <a href="tbl_bootstrap.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Tenders</span></a>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-server"></i></span><span className="pcoded-mtext">Tenders</span></a>
                         </li>
 
                         <li className="nav-item pcoded-menu-caption">
@@ -95,13 +95,13 @@ const Navigation = ({ categories, getCategories, showMob }) => {
                         </li>
 
                         <li className="nav-item">
-                            <a href="chart-morris.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-pie-chart"></i></span><span className="pcoded-mtext">Users</span></a></li>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-pie-chart"></i></span><span className="pcoded-mtext">Users</span></a></li>
 
                         <li className="nav-item">
-                            <a href="map-google.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-map"></i></span><span className="pcoded-mtext">Contacts</span></a></li>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-map"></i></span><span className="pcoded-mtext">Contacts</span></a></li>
 
                         <li className="nav-item">
-                            <a href="map-google.html" className="nav-link "><span className="pcoded-micon"><i className="feather icon-map"></i></span><span className="pcoded-mtext">Subscribers</span></a></li>
+                            <a href="#/" className="nav-link "><span className="pcoded-micon"><i className="feather icon-map"></i></span><span className="pcoded-mtext">Subscribers</span></a></li>
 
                     </ul>
                 </div>
