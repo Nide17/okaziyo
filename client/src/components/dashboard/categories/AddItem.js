@@ -11,11 +11,10 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         description: '',
         brand: '',
         price: 0,
-        pictures: '',
+        pictures: [],
         contactNumber: ''
     })
 
-    console.log(auth)
     // Errors state on form
     const [errorsState, setErrorsState] = useState([])
 
@@ -33,7 +32,10 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
     };
 
     const onPictureHandler = (e) => {
-        setItemState({ ...itemState, pictures: e.target.files[0] });
+
+        const pictures = [...itemState.pictures]; // Spread syntax creates a shallow copy
+        pictures.push(...e.target.files); // Spread again to push each selected file individually
+        setItemState({ ...itemState, pictures });
     }
 
     const onSubmitHandler = e => {
@@ -41,7 +43,7 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
 
         const formData = new FormData();
 
-        const { name, description, brand, price, contactNumber, pictures } = itemState;
+        const { name, description, brand, price, contactNumber } = itemState;
 
         // VALIDATE
         if (name.length < 4 || description.length < 4 || brand.length < 4) {
@@ -79,9 +81,10 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         formData.append('category', categoryId);
         formData.append('sub_category', sub_categoryName);
         formData.append('creator', auth.user ? auth.user._id : '60c5d2a3f7b3082d8c4dadd6');
-        formData.append('pictures', pictures);
+        itemState.pictures.forEach((pic) => formData.append('pictures', pic));
 
         // Attempt to create
+        console.log(itemState);
         createItem(formData);
 
         // Reset the form
@@ -90,7 +93,7 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
             description: '',
             brand: '',
             price: 0,
-            pictures: '',
+            pictures: [],
             contactNumber: ''
         })
 
@@ -151,8 +154,7 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
                                 <strong>Picture</strong>
                             </Label>
 
-                            <Input type="file" accept=".png, .jpg, .jpeg" name="pictures" placeholder="Item pictures ..." onChange={onPictureHandler}
-                            />
+                            <Input type="file" accept=".png, .jpg, .jpeg" name="pictures" placeholder="Item pictures ..." onChange={onPictureHandler} multiple />
 
                             <Label for="contactNumber">
                                 <strong>Phone</strong>

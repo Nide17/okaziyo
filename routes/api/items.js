@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const multer = require('multer');
-const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-// Uploading
+// Uploading images
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, './uploads');
     },
     filename: (req, file, callback) => {
-        callback(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
+        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+        callback(null, uuidv4() + '-' + fileName)
     }
 });
 
@@ -26,11 +26,12 @@ const fileFilter = (req, file, callback) => {
 }
 
 var upload = multer({
-    storage, 
+    storage,
     limits: {
         fileSize: 1000000 // 1000000 Bytes = 1 MB
     },
-    fileFilter });
+    fileFilter
+});
 
 
 // Item Model
@@ -88,10 +89,16 @@ router.get('/:id', async (req, res) => {
 // @access  Have to be private
 
 // router.post('/', auth, authRole(['Creator', 'Admin']), async (req, res) => {
-router.post('/', upload.single('pictures'), async (req, res) => {
+router.post('/', upload.array('pictures', 10), async (req, res) => {
+
+    const pictures = [];
+    const url = req.protocol + '://' + req.get('host')
+
+    for (var i = 0; i < req.files.length; i++) {
+        pictures.push(url + '/uploads/' + req.files[i].filename)
+    }
 
     const { title, description, brand, price, category, sub_category, contactNumber, creator } = req.body;
-    const pictures = req.file.filename;
 
     // Simple validation
     if (!title || !description || !brand || !price || !category || !sub_category || !contactNumber) {
@@ -113,7 +120,7 @@ router.post('/', upload.single('pictures'), async (req, res) => {
 
         const savedItem = await newItem.save();
 
-        if (!savedItem) throw Error('Something went wrong during creation!');
+        if (!savedItem) throw Error('Something went wrong during creation! file size should not exceed 1MB');
 
         res.status(200).json({
             _id: savedItem._id,
