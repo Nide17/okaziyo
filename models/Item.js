@@ -35,19 +35,17 @@ const ItemSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'category',
     unique: true,
-    default: 'Others'
+    default: '60cddc4c181fa53764a17297'
   },
   sub_category: {
     type: String,
-    required: true,
-    default: 'Others'
+    required: true
   },
   contactNumber: {
     type: String,
     minlength: 10,
     maxlength: 10,
-    required: true,
-    default: 'Others'
+    required: true
   },
   creator: {
     type: Schema.Types.ObjectId,

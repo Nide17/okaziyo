@@ -34,6 +34,8 @@
     "nodemailer": "^6.6.1",
     "react-loading": "^2.0.3",
     "reactstrap": "^8.9.0",
-    "uuid": "^8.3.2"
+    "slugify": "^1.5.3",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0"
   }
 }

@@ -36,6 +36,7 @@ connectDB().catch(err => console.error(err))
 //Use routes / All requests going to the api/categories goes the categories variable at the top categories.js file
 app.use('/api/categories', require('./routes/api/categories'));
 app.use('/api/items', require('./routes/api/items'));
+app.use('/api/jobs', require('./routes/api/jobs'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/subscribers', require('./routes/api/subscribers'));
