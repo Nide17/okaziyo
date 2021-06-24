@@ -1,14 +1,7 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { getSubscribers } from '../../redux/subscribers/subscribers.actions'
+import React from 'react'
 import ReactLoading from "react-loading";
 
-const SubscribersSummary = ({ subscribers, getSubscribers }) => {
-
-    // Lifecycle methods
-    useEffect(() => {
-        getSubscribers();
-    }, [getSubscribers]);
+const SubscribersSummary = ({ subscribers }) => {
 
     return (
         <>
@@ -82,9 +75,4 @@ const SubscribersSummary = ({ subscribers, getSubscribers }) => {
     )
 }
 
-
-const mapStateToProps = state => ({
-    subscribers: state.subscribersReducer
-})
-
-export default connect(mapStateToProps, { getSubscribers })(SubscribersSummary)
+export default SubscribersSummary

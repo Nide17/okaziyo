@@ -89,7 +89,7 @@ router.get('/:id', async (req, res) => {
 // @access  Have to be private
 
 // router.post('/', auth, authRole(['Creator', 'Admin']), async (req, res) => {
-router.post('/', upload.array('pictures', 10), async (req, res) => {
+router.post('/', upload.array('pictures', 12), async (req, res) => {
 
     const pictures = [];
     const url = req.protocol + '://' + req.get('host')

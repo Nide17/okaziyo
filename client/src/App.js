@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,21 +15,27 @@ import Privacy from './components/others/Privacy';
 import Terms from './components/others/Terms';
 import Contact from './components/others/Contact';
 import About from './components/others/About';
-import CategoriesRoutes from './CategoriesRoutes';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
 import Subscribe from './components/auth/Subscribe';
-import DashboardRoutes from './components/dashboard/DashboardRoutes';
 import Logout from './components/auth/Logout'
 
+import CategoriesRoutes from './CategoriesRoutes';
+import DashboardRoutes from './components/dashboard/DashboardRoutes';
+
 // REDUX
-import { Provider } from 'react-redux'
 import store from './redux/store'
+import { loadUser } from './redux/auth/auth.actions'
+import { Provider } from 'react-redux'
 
 const App = () => {
+
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, []);
 
   return (
     <div className="App">

@@ -1,16 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import avatar1 from "./assets/images/user/avatar-1.jpg"
 import avatar3 from "./assets/images/user/avatar-3.jpg"
-import { connect } from 'react-redux'
-import { getUsers } from '../../redux/auth/auth.actions'
 import ReactLoading from "react-loading";
 
-const AllUsers = ({ users, getUsers }) => {
-
-    // Lifecycle methods
-    useEffect(() => {
-        getUsers();
-    }, [getUsers]);
+const AllUsers = ({ auth }) => {
 
     return (
 
@@ -115,11 +108,11 @@ const AllUsers = ({ users, getUsers }) => {
 
                         <tbody>
 
-                            {users.isLoading ?
+                            {auth.isLoading ?
                                 <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
 
                                 <>
-                                    {users && users.users.map(user => (
+                                    {auth && auth.users.map(user => (
                                         <tr key={user._id}>
                                             <td>
                                                 <h6 className="m-0"><img className="rounded-circle  m-r-10" style={{ width: "40px" }} src={avatar3} alt="activity-user" />{user.name}</h6>
@@ -147,8 +140,4 @@ const AllUsers = ({ users, getUsers }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    users: state.authReducer
-})
-
-export default connect(mapStateToProps, { getUsers })(AllUsers)
+export default AllUsers

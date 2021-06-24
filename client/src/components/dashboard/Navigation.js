@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
-import { getCategories } from '../../redux/categories/categories.actions'
+import React, { useState } from 'react'
 
-const Navigation = ({ categories, getCategories, showMob }) => {
-
-    // Lifecycle methods
-    useEffect(() => {
-        getCategories();
-    }, [getCategories]);
+const Navigation = ({ categories, showMob }) => {
 
     const [show, setShow] = useState(false)
     const [navBarCollapsed, setNavBarCollapsed] = useState(false)
@@ -39,7 +32,7 @@ const Navigation = ({ categories, getCategories, showMob }) => {
                         </li>
 
                         <li className="nav-item active">
-                            <a href="#/" className="nav-link ">
+                            <a href="/dashboard" className="nav-link ">
                                 <span className="pcoded-micon">
                                     <i className="feather icon-home"></i>
                                 </span>
@@ -111,8 +104,4 @@ const Navigation = ({ categories, getCategories, showMob }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    categories: state.categoriesReducer
-})
-
-export default connect(mapStateToProps, { getCategories })(Navigation)
+export default Navigation

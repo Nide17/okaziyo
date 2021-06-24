@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { loadUser } from '../../redux/auth/auth.actions'
-import store from '../../redux/store'
+import React, { useState } from 'react'
+// import { loadUser } from '../../redux/auth/auth.actions'
+
+// import store from '../../redux/store'
 import "./assets/fonts/fontawesome/css/fontawesome-all.min.css"
 import "./assets/plugins/animation/css/animate.min.css"
 import "./assets/css/dashboard.css"
 
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect } from "react-router-dom";
-import ReactLoading from "react-loading";
 import DHeader from './DHeader'
 import Navigation from './Navigation'
 import CategoriesSummary from './categories/CategoriesSummary'
@@ -21,22 +19,11 @@ import SubscribersSummary from './SubscribersSummary'
 // import GooglePlus from './GooglePlus'
 import AllUsers from './AllUsers'
 
-const Homepage = ({ auth }) => {
-
-    useEffect(() => { store.dispatch(loadUser()) }, []);
+const Homepage = ({ auth, items, categories, contacts, subscribers }) => {
 
     const [showMob, setShowMob] = useState(false)
 
     return (
-
-        auth.isLoading ?
-            <div className="d-flex justify-content-center align-items-center m-5 p-5">
-                <ReactLoading type="spinningBubbles" color="#33FFFC" />&nbsp;&nbsp;&nbsp;&nbsp; <br />
-                <p className="d-block">Loading user ...</p>
-            </div> :
-
-            auth.isAuthenticated ?
-
                 <div className="dashboard">
 
                     <div className="loader-bg">
@@ -45,7 +32,7 @@ const Homepage = ({ auth }) => {
                         </div>
                     </div>
 
-                    <Navigation showMob={showMob} setShowMob={setShowMob} />
+                    <Navigation showMob={showMob} setShowMob={setShowMob} categories={categories}/>
                     <DHeader showMob={showMob} setShowMob={setShowMob} />
 
                     <div className="pcoded-main-container">
@@ -57,15 +44,15 @@ const Homepage = ({ auth }) => {
                                         <div className="page-wrapper">
 
                                             <div className="row">
-                                                <CategoriesSummary />
-                                                <ItemsSummary />
+                                                <CategoriesSummary auth={auth} categories={categories} />
+                                                <ItemsSummary items={items} />
                                                 <JobsSummary />
-                                                <ContactsMessages />
-                                                <SubscribersSummary />
+                                                <ContactsMessages contacts={contacts}/>
+                                                <SubscribersSummary subscribers={subscribers} />
                                                 {/* <Facebook />
                                                     <Twitter />
                                                     <GooglePlus /> */}
-                                                <AllUsers />
+                                                <AllUsers auth={auth}/>
                                             </div>
 
                                         </div>
@@ -75,14 +62,10 @@ const Homepage = ({ auth }) => {
                         </div>
                     </div>
 
-
-
                     <script src="assets/js/vendor-all.min.js"></script>
                     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
                     <script src="assets/js/pcoded.min.js"></script>
-                </div> :
-
-                <Redirect to="/login" />
+                </div>
     )
 }
 
@@ -90,9 +73,4 @@ Homepage.propTypes = {
     auth: PropTypes.object
 }
 
-// Map  state props
-const mapStateToProps = state => ({
-    auth: state.authReducer
-});
-
-export default connect(mapStateToProps, null)(Homepage);
+export default Homepage;

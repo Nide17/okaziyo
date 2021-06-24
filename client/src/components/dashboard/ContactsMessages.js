@@ -1,15 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import avatar2 from "./assets/images/user/avatar-2.jpg"
-import { connect } from 'react-redux'
-import { getContacts } from '../../redux/contacts/contacts.actions'
 import ReactLoading from "react-loading";
 
-const ContactsMessages = ({ contacts, getContacts }) => {
-
-    // Lifecycle methods
-    useEffect(() => {
-        getContacts();
-    }, [getContacts]);
+const ContactsMessages = ({ contacts }) => {
 
     return (
 
@@ -57,8 +50,4 @@ const ContactsMessages = ({ contacts, getContacts }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    contacts: state.contactsReducer
-})
-
-export default connect(mapStateToProps, { getContacts })(ContactsMessages)
+export default ContactsMessages

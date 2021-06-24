@@ -1,14 +1,7 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { getItems } from '../../redux/items/items.actions'
+import React from 'react'
 import ReactLoading from "react-loading";
 
-const ItemsSummary = ({ items, getItems }) => {
-
-    // Lifecycle methods
-    useEffect(() => {
-        getItems();
-    }, [getItems]);
+const ItemsSummary = ({ items }) => {
 
     return (
         <div className="col-md-6 col-xl-4">
@@ -51,8 +44,4 @@ const ItemsSummary = ({ items, getItems }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    items: state.itemsReducer
-})
-
-export default connect(mapStateToProps, { getItems })(ItemsSummary)
+export default ItemsSummary

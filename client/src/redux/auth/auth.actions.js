@@ -30,7 +30,6 @@ export const loadUser = () => async (dispatch, getState) => {
   await dispatch({ type: USER_LOADING });
 
   try {
-
     await axios
       .get('/api/auth/user', tokenConfig(getState))
       .then(res => dispatch({

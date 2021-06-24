@@ -1,16 +1,8 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { getCategories } from '../../../redux/categories/categories.actions'
+import React from 'react'
 import ReactLoading from "react-loading";
 import CreateCategory from './CreateCategory';
 
-const CategoriesSummary = ({ categories, getCategories }) => {
-
-    // Lifecycle methods
-    useEffect(() => {
-        getCategories();
-    }, [getCategories]);
-
+const CategoriesSummary = ({ auth, categories }) => {
 
     return (
         <div className="col-md-6 col-xl-4">
@@ -31,7 +23,7 @@ const CategoriesSummary = ({ categories, getCategories }) => {
 
                             <div className="col-2 text-right">
                                 <div className="m-b-0">
-                                    <CreateCategory />
+                                    <CreateCategory auth={auth} />
                                 </div>
                             </div>
 
@@ -52,8 +44,4 @@ const CategoriesSummary = ({ categories, getCategories }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    categories: state.categoriesReducer
-})
-
-export default connect(mapStateToProps, { getCategories })(CategoriesSummary)
+export default CategoriesSummary

@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link, useParams } from 'react-router-dom'
+import ReactLoading from "react-loading";
 import "../assets/fonts/fontawesome/css/fontawesome-all.min.css"
 import "../assets/plugins/animation/css/animate.min.css"
 import "../assets/css/dashboard.css"
-import { connect } from 'react-redux';
+
 import DHeader from '../DHeader'
 import AddItem from './AddItem'
 import Navigation from '../Navigation'
-import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Link, useParams } from 'react-router-dom'
-import { getCategories } from '../../../redux/categories/categories.actions'
-import ReactLoading from "react-loading";
 
-const ViewCategory = ({ getCategories, categories }) => {
+const ViewCategory = ({ categories }) => {
 
     const [showMob, setShowMob] = useState(false)
-
-    // Lifecycle methods
-    useEffect(() => {
-        getCategories();
-    }, [getCategories]);
 
     // Access route parameters
     const { categoryId } = useParams()
@@ -33,7 +27,7 @@ const ViewCategory = ({ getCategories, categories }) => {
                 </div>
             </div>
 
-            <Navigation showMob={showMob} setShowMob={setShowMob} />
+            <Navigation showMob={showMob} setShowMob={setShowMob} categories={categories} />
             <DHeader showMob={showMob} setShowMob={setShowMob} />
 
             <div className="pcoded-main-container">
@@ -124,10 +118,4 @@ const ViewCategory = ({ getCategories, categories }) => {
         </div>
     )
 }
-
-// Map  state props
-const mapStateToProps = state => ({
-    categories: state.categoriesReducer
-});
-
-export default connect(mapStateToProps, { getCategories })(ViewCategory);
+export default ViewCategory;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
-import PropTypes from 'prop-types';
-import { Redirect } from "react-router-dom";
 import ReactLoading from "react-loading";
+import { Redirect } from "react-router-dom";
+
 import { connect } from 'react-redux';
 import { createCategory } from '../../../redux/categories/categories.actions';
 
@@ -136,11 +136,4 @@ const CreateCategory = ({ auth, createCategory }) => {
     );
 }
 
-CreateCategory.propTypes = {
-    auth: PropTypes.object,
-}
-
-// Map  state props
-const mapStateToProps = state => ({ auth: state.authReducer });
-
-export default connect(mapStateToProps, { createCategory })(CreateCategory);
+export default connect(null, { createCategory })(CreateCategory);
