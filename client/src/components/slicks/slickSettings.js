@@ -3,14 +3,14 @@ const settings = {
     infinite: false,
     lazyLoad: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
         {
             breakpoint: 1025,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 2,
               slidesToScroll: 1,
               infinite: false,
               dots: false
@@ -19,7 +19,7 @@ const settings = {
           {
             breakpoint: 768,
             settings: {
-              slidesToShow: 2.6,
+              slidesToShow: 1.8,
               slidesToScroll: 1,
               initialSlide: 0
             }
@@ -27,7 +27,7 @@ const settings = {
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 1.2,
                 slidesToScroll: 1,
                 initialSlide: 0
             }
@@ -35,14 +35,14 @@ const settings = {
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1.25,
+                slidesToShow: 1.1,
                 slidesToScroll: 1,
             }
         },
         {
           breakpoint: 410,
           settings: {
-              slidesToShow: 1.1,
+              slidesToShow: 1,
               slidesToScroll: 1,
           }
       }

@@ -10,9 +10,9 @@ const Main = () => {
         <>
             <Categories />
             <Process />
+            <JobSlick />
             <Browse />
             <Money />
-            <JobSlick />
             <ScholarshipSlick />
         </>
     );

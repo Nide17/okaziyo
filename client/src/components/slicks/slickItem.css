@@ -6,14 +6,12 @@
 section.container.featured {
     max-width: 100%;
     padding: 1.5625rem 50px;
-    /* height: 23.75rem; */
 }
 
 section.container.featured .container {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    /* height: 20.625rem; */
 }
 
 .slick-slider {
@@ -22,11 +20,15 @@ section.container.featured .container {
 }
 
 div.slickItem-card {
-    max-width: 17rem;
+    max-width: 94%;
     height: 17rem;
     background-color: #f5f5f5;
     border-radius: 3px;
     border: none;
+}
+
+.slickItem-card .deadline {
+    color: #1d5aa0;
 }
 
 div.slickItem-card:hover {
@@ -36,9 +38,9 @@ div.slickItem-card:hover {
 }
 
 .slick-slider .slickItem-card.card .img-holder {
-    max-width: 100%;
+    max-width: 80%;
     height: 8.5rem;
-    margin: 0.15rem;
+    margin: 0.15rem auto;
 }
 
 .slick-slider .slickItem-card.card .card-body {
@@ -50,7 +52,7 @@ div.slickItem-card:hover {
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder {
-    width: 17rem;
+    width: 100%;
     height: 7.5rem;
     padding: 0;
     background-color: #f8fafc;
@@ -80,8 +82,8 @@ div.slickItem-card:hover {
     border-radius: 1.5625rem;
     border: 1.8px solid #ffffff !important;
     font-size: 0.8rem;
-    line-height: 1.2rem;
-    padding: .27rem .56rem;
+    line-height: .8rem;
+    padding: .38rem .6rem;
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder a.slickItem-button,

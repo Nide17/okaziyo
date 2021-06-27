@@ -4,7 +4,7 @@ import '../../../node_modules/slick-carousel/slick/slick.css'
 import '../../../node_modules/slick-carousel/slick/slick-theme.css'
 import './slickItem.css'
 import settings from './slickSettings'
-const NewSlickItem = lazy(() => import('./NewSlickItem'));
+const NewSlickScholarships = lazy(() => import('./NewSlickScholarships'));
 
 const ScholarshipSlick = () => {
     const scholarships = [
@@ -55,7 +55,7 @@ const ScholarshipSlick = () => {
                                     <span className="sr-only">Loading...</span>
                                 </div>
                             </div>}>
-                                <NewSlickItem key={id} slickItem={scholarship} />
+                                <NewSlickScholarships key={id} slickItem={scholarship} />
                             </Suspense>
                         ))
                     }
