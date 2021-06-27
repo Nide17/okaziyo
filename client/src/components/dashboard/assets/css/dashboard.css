@@ -2245,6 +2245,7 @@ p.text-muted {
 .mobile-menu.on span:before {
   height: 2px;
   width: 100%;
+  z-index: 1030!important;
 }
 
 .mobile-menu.on span:before {

@@ -10,11 +10,11 @@ const DHeader = ({ showMob, setShowMob }) => {
 
     return (
 
-        <header className="navbar pcoded-header navbar-expand-lg navbar-light" onClick={() => setShowMob(!showMob)}>
+        <header className="navbar pcoded-header navbar-expand-lg navbar-light">
 
             <div className="m-header">
 
-                <a className={`mobile-menu ${showMob ? 'on' : ''}`} id="mobile-collapse1" href="#/">
+                <a className={`mobile-menu ${showMob ? 'on' : ''}`} id="mobile-collapse1" href="#/" onClick={() => setShowMob(!showMob)}>
                     <span></span>
                 </a>
 
@@ -40,7 +40,7 @@ const DHeader = ({ showMob, setShowMob }) => {
 
                             <div className="input-group pl-2 ml-1">
                             
-                                <input type="text" style={{ width: `${searchOpen ? '120px' : '0px'}`}} id="m-search" className="form-control" placeholder="Search . . ." />
+                                <input type="text" style={{ width: `${searchOpen ? '120px' : '0px'}`}} id="m-search" className="form-control" placeholder=" Search . . ." />
                                 
                                 <a href="#/" className="input-group-append search-close">
                                     <i className="feather icon-x input-group-text" onClick={() => setSearchOpen(false)}></i>
