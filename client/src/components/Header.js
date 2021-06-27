@@ -104,13 +104,11 @@ const Header = () => {
     const jobsBuyClass = state.showJobsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
     const othBuyClass = state.showOthersItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
 
-    let loc = window.location
+    if (window.location.toString().includes("dashboard") || window.location.pathname === '/login' || window.location.pathname === '/register') return null
 
-    if (loc.pathname === '/' || loc.pathname === '/about' || loc.pathname === '/know-more-process' || loc.pathname === '/privacy' || loc.pathname === '/disclaimer' || loc.pathname === '/terms' || loc.pathname === '/feat-brands' || loc.pathname === '/hot-deals' || loc.pathname === '/all-products' || loc.pathname === '/slickItem' || loc.pathname === '/electronics' || loc.pathname === '/computers' || loc.pathname === '/phones' || loc.pathname === '/printers')
+       else return (
 
-        return (
-
-            <div className="container-fluid">
+            <div className="container-fluid" id="main-header">
 
                 <nav className="row navbar navbar-expand-lg navbar-light mx-0">
 
@@ -180,7 +178,7 @@ const Header = () => {
                                     <li className={elecBuyClass} onClick={onElectronicsItemClick}>
                                         <a href="/electronics">
                                             Electronics</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                                    <i className="fa fa-angle-down"></i>
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item px-1" href="/computers">Computers & Accessories</a></li>
@@ -193,7 +191,7 @@ const Header = () => {
                                     <li className={fashBuyClass} onClick={onFashionItemClick}>
                                         <a href="/fashion">
                                             Fashion</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                                <i className="fa fa-angle-down"></i>
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item px-1" href="/clothes">Clothes</a></li>
@@ -205,7 +203,7 @@ const Header = () => {
                                     <li className={furnBuyClass} onClick={onFurnitureItemClick}>
                                         <a href="/furniture">
                                             Furniture</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                                <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -218,7 +216,7 @@ const Header = () => {
 
                                     <li className={transBuyClass} onClick={onTransportItemClick}><a href="/transport">
                                         Transport</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -231,7 +229,7 @@ const Header = () => {
 
                                     <li className={estBuyClass} onClick={onEstateItemClick}><a href="/real-estate">
                                         Real Estate</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                            <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -243,7 +241,7 @@ const Header = () => {
 
                                     <li className={schBuyClass} onClick={onScholarshipsItemClick}><a href="/scholarships">
                                         Scholarships</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                                <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -254,7 +252,7 @@ const Header = () => {
 
                                     <li className={jobsBuyClass} onClick={onJobsItemClick}><a href="/jobs">
                                         Jobs</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                                <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -266,7 +264,7 @@ const Header = () => {
 
                                     <li className={othBuyClass} onClick={onOthersItemClick}><a href="/others">
                                         Others</a> &nbsp;
-                                        <i className="fa fa-angle-down"></i>
+                                    <i className="fa fa-angle-down"></i>
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item px-1" href="/tenders">Tenders</a></li>
@@ -294,9 +292,6 @@ const Header = () => {
                 </nav>
             </div>
         )
-
-    else return null;
-
 }
 
 export default Header

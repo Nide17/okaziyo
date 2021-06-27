@@ -42,7 +42,7 @@ const NewSlickJob = ({ slickJob, categories, getCategories }) => {
                 </div>
 
                 <div className="card-body text-center pb-1">
-                    <a href={`/slickItem/${slickJob._id}`} className="slickItem-button card-link btn btn-primary">View Job</a>
+                    <a href={`/slickJob/${slickJob._id}`} className="slickItem-button card-link btn btn-primary">View Job</a>
                     <span href="/" className="card-link ml-lg-5">Posted on {new Date(slickJob.updatedAt).toLocaleDateString()}</span>
                 </div>
 

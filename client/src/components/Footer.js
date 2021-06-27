@@ -3,11 +3,9 @@ import logo from '../logo/Logo.svg'
 
 const Footer = () => {
 
-    let loc = window.location
+    if (window.location.toString().includes("dashboard") || window.location.pathname === '/login' || window.location.pathname === '/register') return null
 
-    if (loc.pathname === '/' || loc.pathname === '/about' || loc.pathname === '/know-more-process' || loc.pathname === '/privacy' || loc.pathname === '/disclaimer' || loc.pathname === '/terms' || loc.pathname === '/feat-brands' || loc.pathname === '/hot-deals' || loc.pathname === '/all-products' || loc.pathname === '/slickItem' || loc.pathname === '/electronics' || loc.pathname === '/computers' || loc.pathname === '/phones' || loc.pathname === '/printers')
-
-        return (
+    else return (
             <section className="container footer px-2">
 
                 <div className="row footerLinks">
@@ -66,8 +64,6 @@ const Footer = () => {
                 </div>
             </section>
         )
-
-    else return null;
-}
+    }
 
 export default Footer
