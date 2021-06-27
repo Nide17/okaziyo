@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
+import { Redirect } from "react-router-dom";
 import { register } from '../../redux/auth/auth.actions';
 import PropTypes from 'prop-types';
 
-const Register = ({ register, error }) => {
+const Register = ({ auth, register, error }) => {
 
     const [state, setState] = useState({
         // initialy doesn't show
@@ -53,6 +54,9 @@ const Register = ({ register, error }) => {
     }
 
     return (
+
+        auth.isAuthenticated ? <Redirect to="/dashboard" /> :
+
         <div className="container">
             <div className="mt-5 w-50 mx-auto">
                 <h1 className="text-center">Register</h1>
@@ -94,7 +98,12 @@ Register.propTypes = {
     register: PropTypes.func.isRequired,
 }
 
+
 // Map  state props
-const mapStateToProps = state => ({ error: state.errorReducer });
+const mapStateToProps = state => ({
+    auth: state.authReducer,
+    error: state.errorReducer
+});
+
 
 export default connect(mapStateToProps, { register })(Register);
