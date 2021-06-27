@@ -12,7 +12,7 @@ import "../assets/css/dashboard.css"
 import DHeader from '../DHeader'
 import Navigation from '../Navigation'
 
-const CreateJob = ({ categories, auth, createJob }) => {
+const CreateJob = ({ auth, categories, createJob }) => {
 
     const [itemState, setItemState] = useState({
         title: '',
@@ -76,7 +76,7 @@ const CreateJob = ({ categories, auth, createJob }) => {
         formData.append('markdown', markdown);
         formData.append('category', categoryToUse._id);
         formData.append('sub_category', subCategoryId);
-        formData.append('creator', auth.user ? auth.user._id : '60c5d2a3f7b3082d8c4dadd6');
+        formData.append('creator', auth.user ? auth.user._id : null);
 
         // Attempt to create
         createJob(formData);
@@ -154,13 +154,13 @@ const CreateJob = ({ categories, auth, createJob }) => {
                                                                     <strong>Job Title</strong>
                                                                 </Label>
 
-                                                                <Input type="text" name="title" id="title" placeholder="Job title ..." className="mb-2" onChange={onChangeHandler} />
+                                                                <Input type="text" name="title" id="title" placeholder="Job title ..." className="mb-2" onChange={onChangeHandler} value={itemState.title || ''} />
 
                                                                 <Label for="company">
                                                                     <strong>Company</strong>
                                                                 </Label>
 
-                                                                <Input type="text" name="company" id="company" placeholder="Company name ..." className="mb-2" onChange={onChangeHandler} />
+                                                                <Input type="text" name="company" id="company" placeholder="Company name ..." className="mb-2" onChange={onChangeHandler} value={itemState.company || ''}/>
 
                                                                 <Label for="brand_image">
                                                                     <strong>Company Logo</strong>
@@ -172,13 +172,13 @@ const CreateJob = ({ categories, auth, createJob }) => {
                                                                     <strong>Deadline</strong>
                                                                 </Label>
 
-                                                                <Input type="date" name="deadline" id="deadline" placeholder="Job deadline ..." className="mb-2" onChange={onChangeHandler} />
+                                                                <Input type="date" name="deadline" id="deadline" placeholder="Job deadline ..." className="mb-2" onChange={onChangeHandler} value={itemState.deadline || ''}/>
 
                                                                 <Label for="markdown">
                                                                     <strong>Markdown</strong>
                                                                 </Label>
 
-                                                                <Input type="text" name="markdown" id="markdown" placeholder="Job markdown ..." className="mb-2" onChange={onChangeHandler} />
+                                                                <Input type="textarea" name="markdown" id="markdown" placeholder="Job details ..." minLength="80" rows="30" className="mb-2" onChange={onChangeHandler} value={itemState.markdown || ''}/>
 
                                                                 <Button color="success" style={{ marginTop: '2rem' }} block >Create</Button>
 
