@@ -22,6 +22,7 @@ import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
 import Subscribe from './components/auth/Subscribe';
 import Logout from './components/auth/Logout'
+import SlickJob from './components/slicks/SlickJob'
 
 import CategoriesRoutes from './CategoriesRoutes';
 import DashboardRoutes from './components/dashboard/DashboardRoutes';
@@ -49,7 +50,7 @@ const App = () => {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/about" component={About} />
             <Route exact path="/know-more-process" component={Placeholder} />
-            <Route path="/slickJob/:jobId" component={Placeholder} />
+            <Route exact path="/slickJob/:jobId" component={SlickJob} />
 
             {/* auth */}
             <Route exact path="/register" component={Register} />

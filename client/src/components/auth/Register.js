@@ -98,7 +98,6 @@ Register.propTypes = {
     register: PropTypes.func.isRequired,
 }
 
-
 // Map  state props
 const mapStateToProps = state => ({
     auth: state.authReducer,
