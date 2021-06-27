@@ -10,11 +10,11 @@ const DHeader = ({ showMob, setShowMob }) => {
 
     return (
 
-        <header className="navbar pcoded-header navbar-expand-lg navbar-light">
+        <header className="navbar pcoded-header navbar-expand-lg navbar-light" onClick={() => setShowMob(!showMob)}>
 
             <div className="m-header">
 
-                <a className={`mobile-menu ${showMob ? 'on' : ''}`} id="mobile-collapse1" href="#/" onClick={() => setShowMob(!showMob)}>
+                <a className={`mobile-menu ${showMob ? 'on' : ''}`} id="mobile-collapse1" href="#/">
                     <span></span>
                 </a>
 
