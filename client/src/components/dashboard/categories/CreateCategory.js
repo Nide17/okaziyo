@@ -72,8 +72,6 @@ const CreateCategory = ({ auth, createCategory }) => {
     return (
         auth.isAuthenticated ?
 
-            auth.user.role !== 'Visitor' ?
-
                 <div>
                     <i className="feather icon-plus-circle text-c-green f-30 m-r-10" onClick={toggle}></i>
 
@@ -116,10 +114,6 @@ const CreateCategory = ({ auth, createCategory }) => {
                             </Form>
                         </ModalBody>
                     </Modal>
-                </div> :
-
-                <div className="m-5 p-5 d-flex justify-content-center align-items-center text-danger">
-                    <h3>Not Allowed</h3>
                 </div> :
 
             // If not authenticated or loading
