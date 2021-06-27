@@ -104,7 +104,9 @@ const Header = () => {
     const jobsBuyClass = state.showJobsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
     const othBuyClass = state.showOthersItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
 
-    if (window.location.pathname === '/register' || window.location.pathname === '/login' || window.location.pathname === '/dashboard' || window.location.pathname === '/dashboard/view-category/60cdd948181fa53764a17290' || window.location.pathname === '/dashboard/view-category/60cdd957181fa53764a17291' || window.location.pathname === '/dashboard/view-category/60cddb7b181fa53764a17292' || window.location.pathname === '/dashboard/view-category/60cddbc1181fa53764a17293' || window.location.pathname === '/dashboard/view-category/60cddbe8181fa53764a17294' || window.location.pathname === '/dashboard/view-category/60cddc0f181fa53764a17295' || window.location.pathname === '/dashboard/view-category/60cddc21181fa53764a17296' || window.location.pathname === '/dashboard/view-category/60cddc4c181fa53764a17297') return null;
+    let loc = window.location
+
+    if (loc.pathname === '/' || loc.pathname === '/about' || loc.pathname === '/know-more-process' || loc.pathname === '/privacy' || loc.pathname === '/disclaimer' || loc.pathname === '/terms' || loc.pathname === '/feat-brands' || loc.pathname === '/hot-deals' || loc.pathname === '/all-products' || loc.pathname === '/slickItem' || loc.pathname === '/electronics' || loc.pathname === '/computers' || loc.pathname === '/phones' || loc.pathname === '/printers')
 
         return (
 
@@ -178,7 +180,7 @@ const Header = () => {
                                     <li className={elecBuyClass} onClick={onElectronicsItemClick}>
                                         <a href="/electronics">
                                             Electronics</a> &nbsp;
-                                    <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item px-1" href="/computers">Computers & Accessories</a></li>
@@ -191,7 +193,7 @@ const Header = () => {
                                     <li className={fashBuyClass} onClick={onFashionItemClick}>
                                         <a href="/fashion">
                                             Fashion</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item px-1" href="/clothes">Clothes</a></li>
@@ -203,7 +205,7 @@ const Header = () => {
                                     <li className={furnBuyClass} onClick={onFurnitureItemClick}>
                                         <a href="/furniture">
                                             Furniture</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -216,7 +218,7 @@ const Header = () => {
 
                                     <li className={transBuyClass} onClick={onTransportItemClick}><a href="/transport">
                                         Transport</a> &nbsp;
-                            <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -229,7 +231,7 @@ const Header = () => {
 
                                     <li className={estBuyClass} onClick={onEstateItemClick}><a href="/real-estate">
                                         Real Estate</a> &nbsp;
-                            <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -241,7 +243,7 @@ const Header = () => {
 
                                     <li className={schBuyClass} onClick={onScholarshipsItemClick}><a href="/scholarships">
                                         Scholarships</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -252,7 +254,7 @@ const Header = () => {
 
                                     <li className={jobsBuyClass} onClick={onJobsItemClick}><a href="/jobs">
                                         Jobs</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
 
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
@@ -264,7 +266,7 @@ const Header = () => {
 
                                     <li className={othBuyClass} onClick={onOthersItemClick}><a href="/others">
                                         Others</a> &nbsp;
-                                    <i className="fa fa-angle-down"></i>
+                                        <i className="fa fa-angle-down"></i>
                                         {/* dropdown */}
                                         <ul className="dropdown-menu">
                                             <li><a className="dropdown-item px-1" href="/tenders">Tenders</a></li>
@@ -292,6 +294,9 @@ const Header = () => {
                 </nav>
             </div>
         )
+
+    else return null;
+
 }
 
 export default Header

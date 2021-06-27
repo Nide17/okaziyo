@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 // Make sure to place css after bootstrap
 import Homepage from './Homepage';
 import ViewCategory from './categories/ViewCategory';
+import CreateJob from './categories/CreateJob';
 import { connect } from 'react-redux';
 import { getCategories } from '../../redux/categories/categories.actions'
 import { getItems } from '../../redux/items/items.actions'
@@ -50,6 +51,10 @@ const DashboardRoutes = ({
                     <Route
                         exact path="/dashboard/view-category/:categoryId"
                         render={() => <ViewCategory categories={categories} auth={auth} />} />
+
+                    <Route
+                        exact path="/dashboard/create-job/:subCategoryId"
+                        render={() => <CreateJob categories={categories} auth={auth} />} />
                 </> :
                 <LoginModal />
     );

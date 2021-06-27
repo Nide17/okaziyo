@@ -5,6 +5,7 @@ import ReactLoading from "react-loading";
 import "../assets/fonts/fontawesome/css/fontawesome-all.min.css"
 import "../assets/plugins/animation/css/animate.min.css"
 import "../assets/css/dashboard.css"
+import plusItem from '../../../images/plus.svg';
 
 import DHeader from '../DHeader'
 import AddItem from './AddItem'
@@ -66,41 +67,56 @@ const ViewCategory = ({ categories }) => {
                                                             <ReactLoading type="bars" color="#33FFFC" /> :
 
                                                             <>
-                                                            {category.sub_category.map(subc => (
+                                                                {category.sub_category.map(subc => (
 
-                                                                <Col sm="4" className="card-block" key={subc._id}>
+                                                                    <Col sm="4" className="card-block" key={subc._id}>
                                                                         <h6 className="mb-4">{subc.name}</h6>
 
-                                                                <div className="row d-flex align-items-center">
-                                                                    <div className="col-8">
-                                                                        <h3 className="f-w-300 d-flex align-items-center m-b-0">
-                                                                            <i className="feather icon-folder text-c-green f-30 m-r-10"></i>
-                                                                            0
-                                                                        </h3>
-                                                                    </div>
+                                                                        <div className="row d-flex align-items-center">
+                                                                            <div className="col-8">
+                                                                                <h3 className="f-w-300 d-flex align-items-center m-b-0">
+                                                                                    <i className="feather icon-folder text-c-green f-30 m-r-10"></i>
+                                                                                    0
+                                                                                </h3>
+                                                                            </div>
 
-                                                                    <div className="col-2 text-right">
-                                                                        <div className="m-b-0">
-                                                                                <AddItem categoryId={category._id} sub_categoryName={subc.name}/>
+                                                                            <div className="col-2 text-right">
+
+                                                                                {category._id === '60cddc21181fa53764a17296' ?
+
+                                                                                    <Link to={`/dashboard/create-job/${subc._id}`} className="text-secondary">
+                                                                                        <img src={plusItem} alt="" width="16" height="16" />
+                                                                                    </Link> :
+                                                                                    
+                                                                                    category._id === '60cddc0f181fa53764a17295' ?
+
+                                                                                        <Link to={`/dashboard/create-scholarship/${subc._id}`} className="text-secondary">
+                                                                                            <img src={plusItem} alt="" width="16" height="16" />
+                                                                                        </Link> :
+
+                                                                                    <div className="m-b-0">
+                                                                                        <AddItem categoryId={category._id} sub_categoryName={subc.name} />
+                                                                                    </div>
+                                                                                }
+
+                                                                            </div>
+
+                                                                            <div className="col-2 text-right">
+                                                                                <p className="m-b-0">
+                                                                                    <i className="feather icon-eye text-c-green f-30 m-r-10"></i>
+                                                                                </p>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <div className="col-2 text-right">
-                                                                        <p className="m-b-0">
-                                                                            <i className="feather icon-eye text-c-green f-30 m-r-10"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="progress m-t-30" style={{ height: "7px" }}>
-                                                                    <div className="progress-bar progress-c-theme2" role="progressbar" style={{ width: "100%" }} aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                </div>
-                                                            </Col>))}
+                                                                        <div className="progress m-t-30" style={{ height: "7px" }}>
+                                                                            <div className="progress-bar progress-c-theme2" role="progressbar" style={{ width: "100%" }} aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                        </div>
+                                                                    </Col>))}
                                                             </>}
 
                                                     </Row>
                                                 </div>
-                                                
+
                                             </div> :
                                             null
                                     ))}

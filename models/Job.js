@@ -51,7 +51,7 @@ const jobSchema = new Schema({
     sub_category: {
         type: String,
         required: true,
-        default: 'Others'
+        default: '60cde50716f3e4305c6e8984'
     }
 },
     {

@@ -64,10 +64,10 @@ router.post('/', upload.single('brand_image'), async (req, res) => {
     const url = req.protocol + '://' + req.get('host')
     const brand_image = req.file ? url + '/uploads/' + req.file.filename : null
 
-    const { title, markdown, brand, deadline, category, sub_category, creator } = req.body;
+    const { title, brand, deadline, markdown, category, sub_category, creator } = req.body;
 
     // Simple validation
-    if (!title || !brand || !brand || !markdown || !deadline) {
+    if (!title || !brand || !deadline || !markdown || !category) {
         return res.status(400).json({ msg: 'There are missing info!' });
     }
 
@@ -76,11 +76,11 @@ router.post('/', upload.single('brand_image'), async (req, res) => {
             title,
             brand,
             brand_image,
-            markdown,
             deadline,
-            creator,
+            markdown,
             category,
-            sub_category
+            sub_category,
+            creator
         });
 
         const savedJob = await newJob.save();
@@ -90,14 +90,14 @@ router.post('/', upload.single('brand_image'), async (req, res) => {
         res.status(200).json({
             _id: savedJob._id,
             title: savedJob.title,
-            markdown: savedJob.markdown,
-            slug: savedJob.slug,
-            creator: savedJob.creator,
+            brand: savedJob.brand,
             brand_image: savedJob.brand_image,
             deadline: savedJob.deadline,
-            brand: savedJob.brand,
+            markdown: savedJob.markdown,
             category: savedJob.category,
             sub_category: savedJob.sub_category,
+            creator: savedJob.creator,
+            slug: savedJob.slug,
         });
 
     } catch (err) {

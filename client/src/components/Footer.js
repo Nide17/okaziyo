@@ -3,67 +3,71 @@ import logo from '../logo/Logo.svg'
 
 const Footer = () => {
 
-    if (window.location.pathname === '/register' || window.location.pathname === '/login' || window.location.pathname === '/dashboard' || window.location.pathname === '/dashboard/view-category/60cdd948181fa53764a17290' || window.location.pathname === '/dashboard/view-category/60cdd957181fa53764a17291' || window.location.pathname === '/dashboard/view-category/60cddb7b181fa53764a17292' || window.location.pathname === '/dashboard/view-category/60cddbc1181fa53764a17293' || window.location.pathname === '/dashboard/view-category/60cddbe8181fa53764a17294' || window.location.pathname === '/dashboard/view-category/60cddc0f181fa53764a17295' || window.location.pathname === '/dashboard/view-category/60cddc21181fa53764a17296' || window.location.pathname === '/dashboard/view-category/60cddc4c181fa53764a17297') return null;
+    let loc = window.location
 
-    return (
-        <section className="container footer px-2">
+    if (loc.pathname === '/' || loc.pathname === '/about' || loc.pathname === '/know-more-process' || loc.pathname === '/privacy' || loc.pathname === '/disclaimer' || loc.pathname === '/terms' || loc.pathname === '/feat-brands' || loc.pathname === '/hot-deals' || loc.pathname === '/all-products' || loc.pathname === '/slickItem' || loc.pathname === '/electronics' || loc.pathname === '/computers' || loc.pathname === '/phones' || loc.pathname === '/printers')
 
-            <div className="row footerLinks">
+        return (
+            <section className="container footer px-2">
 
-                <div className="col-12 col-md-3 mb-3 logo">
-                    <a className="footer-logo" href="/">
-                        <img src={logo} alt="logo" />
-                    </a>
-                </div>
+                <div className="row footerLinks">
 
-                <div className="col-6 col-md-3 shops">
-                    <h6 className="shops">Shops</h6>
-                    <ul className="shops">
-                        <li><a href="/feat-brands">Featured Brands</a></li>
-                        <li><a href="/hot-deals">Hot Deals</a></li>
-                    </ul>
-                </div>
+                    <div className="col-12 col-md-3 mb-3 logo">
+                        <a className="footer-logo" href="/">
+                            <img src={logo} alt="logo" />
+                        </a>
+                    </div>
 
-                <div className="col-6 col-md-3 community">
-                    <h6 className="community">Community</h6>
-                    <ul className="community">
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/privacy">Privacy policy</a></li>
-                        <li><a href="/terms">Terms of use</a></li>
-                    </ul>
-                </div>
+                    <div className="col-6 col-md-3 shops">
+                        <h6 className="shops">Shops</h6>
+                        <ul className="shops">
+                            <li><a href="/feat-brands">Featured Brands</a></li>
+                            <li><a href="/hot-deals">Hot Deals</a></li>
+                        </ul>
+                    </div>
 
-                <div className="col-6 col-md-3 company">
-                    <h6 className="company">Company</h6>
-                    <ul className="company">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/subscribe">Subscribe</a></li>
-                    </ul>
-                </div>
-            </div>
+                    <div className="col-6 col-md-3 community">
+                        <h6 className="community">Community</h6>
+                        <ul className="community">
+                            <li><a href="/disclaimer">Disclaimer</a></li>
+                            <li><a href="/privacy">Privacy policy</a></li>
+                            <li><a href="/terms">Terms of use</a></li>
+                        </ul>
+                    </div>
 
-            <hr />
-
-            <div className="row footerSocial">
-
-                <div className="col-12 col-xl-6 copyright">
-                    <p>&copy; Okaziyo, Ltd. 2021. Browse, Buy & Sell comfortably!</p>
-                </div>
-                <div className="col-12 col-xl-6 icons px-0">
-                    <h6 className="text-center">Follow us</h6>
-                    <div className="selfIcons">
-                        <a href="twitter.com"><i className="fa fa-twitter"></i></a>
-                        <a href="facebook.com"><i className="fa fa-facebook"></i></a>
-                        <a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
-                        <a href="instagram.com"><i className="fa fa-instagram"></i></a>
-                        <a href="youtube.com"><i className="fa fa-youtube"></i></a>
+                    <div className="col-6 col-md-3 company">
+                        <h6 className="company">Company</h6>
+                        <ul className="company">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/subscribe">Subscribe</a></li>
+                        </ul>
                     </div>
                 </div>
 
-            </div>
-        </section>
-    )
+                <hr />
+
+                <div className="row footerSocial">
+
+                    <div className="col-12 col-xl-6 copyright">
+                        <p>&copy; Okaziyo, Ltd. 2021. Browse, Buy & Sell comfortably!</p>
+                    </div>
+                    <div className="col-12 col-xl-6 icons px-0">
+                        <h6 className="text-center">Follow us</h6>
+                        <div className="selfIcons">
+                            <a href="twitter.com"><i className="fa fa-twitter"></i></a>
+                            <a href="facebook.com"><i className="fa fa-facebook"></i></a>
+                            <a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
+                            <a href="instagram.com"><i className="fa fa-instagram"></i></a>
+                            <a href="youtube.com"><i className="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        )
+
+    else return null;
 }
 
 export default Footer
