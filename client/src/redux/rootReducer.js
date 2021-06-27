@@ -6,7 +6,8 @@ import authReducer from './auth/auth.reducer';
 import categoriesReducer from './categories/categories.reducer';
 import itemsReducer from './items/items.reducer';
 import contactsReducer from './contacts/contacts.reducer';
+import jobsReducer from './items/jobs/jobs.reducer';
 
-const rootReducer = combineReducers({ subscribersReducer, errorReducer, authReducer, categoriesReducer, itemsReducer, contactsReducer });
+const rootReducer = combineReducers({ subscribersReducer, errorReducer, authReducer, categoriesReducer, itemsReducer, contactsReducer, jobsReducer });
 
 export default rootReducer;
