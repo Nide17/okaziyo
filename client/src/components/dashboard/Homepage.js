@@ -19,7 +19,7 @@ import SubscribersSummary from './SubscribersSummary'
 // import GooglePlus from './GooglePlus'
 import AllUsers from './AllUsers'
 
-const Homepage = ({ auth, items, categories, contacts, subscribers }) => {
+const Homepage = ({ auth, jobs, items, categories, contacts, subscribers }) => {
 
     const [showMob, setShowMob] = useState(false)
 
@@ -46,7 +46,7 @@ const Homepage = ({ auth, items, categories, contacts, subscribers }) => {
                                             <div className="row">
                                                 <CategoriesSummary auth={auth} categories={categories} />
                                                 <ItemsSummary items={items} />
-                                                <JobsSummary />
+                                                <JobsSummary jobs={jobs}/>
                                                 <ContactsMessages contacts={contacts}/>
                                                 <SubscribersSummary subscribers={subscribers} />
                                                 {/* <Facebook />

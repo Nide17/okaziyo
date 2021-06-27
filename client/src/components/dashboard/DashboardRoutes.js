@@ -6,6 +6,7 @@ import ViewCategory from './categories/ViewCategory';
 import { connect } from 'react-redux';
 import { getCategories } from '../../redux/categories/categories.actions'
 import { getItems } from '../../redux/items/items.actions'
+import { getJobs } from '../../redux/items/jobs/jobs.actions'
 import { getContacts } from '../../redux/contacts/contacts.actions'
 import { getSubscribers } from '../../redux/subscribers/subscribers.actions'
 import { getUsers } from '../../redux/auth/auth.actions'
@@ -13,16 +14,17 @@ import LoginModal from '../../components/auth/LoginModal'
 import ReactLoading from "react-loading";
 
 const DashboardRoutes = ({
-    auth, items, getItems, categories, getCategories, contacts, getContacts, subscribers, getSubscribers, getUsers }) => {
+    auth, jobs, getJobs, items, getItems, categories, getCategories, contacts, getContacts, subscribers, getSubscribers, getUsers }) => {
 
     // Lifecycle methods to load items
     useEffect(() => {
         getItems();
+        getJobs();
         getCategories();
         getContacts();
         getSubscribers();
         getUsers();
-    }, [getItems, getCategories, getContacts, getSubscribers, getUsers]);
+    }, [getJobs, getItems, getCategories, getContacts, getSubscribers, getUsers]);
 
     return (
         
@@ -41,6 +43,7 @@ const DashboardRoutes = ({
                             auth={auth}
                             categories={categories}
                             items={items}
+                            jobs={jobs}
                             contacts={contacts}
                             subscribers={subscribers} />} />
 
@@ -59,6 +62,7 @@ const mapStateToProps = state => ({
     categories: state.categoriesReducer,
     contacts: state.contactsReducer,
     subscribers: state.subscribersReducer,
+    jobs: state.jobsReducer,
 });
 
-export default connect(mapStateToProps, { getItems, getCategories, getContacts, getSubscribers, getUsers })(DashboardRoutes);
+export default connect(mapStateToProps, { getJobs, getItems, getCategories, getContacts, getSubscribers, getUsers })(DashboardRoutes);

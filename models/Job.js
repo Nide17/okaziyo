@@ -46,7 +46,6 @@ const jobSchema = new Schema({
     category: {
         type: Schema.Types.ObjectId,
         ref: 'category',
-        unique: true,
         default: '60cddc4c181fa53764a17297'
     },
     sub_category: {

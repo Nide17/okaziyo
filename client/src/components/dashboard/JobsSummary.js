@@ -1,9 +1,14 @@
 import React from 'react'
+import ReactLoading from "react-loading";
 
-const JobsSummary = () => {
+const JobsSummary = ({ jobs }) => {
     return (
         <div className="col-md-12 col-xl-4">
             <div className="card yearly-sales">
+
+                {jobs.isLoading ?
+                    <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
+
                 <div className="card-block">
                     <h6 className="mb-4">Jobs</h6>
                     
@@ -11,7 +16,7 @@ const JobsSummary = () => {
                         <div className="col-8">
                             <h3 className="f-w-300 d-flex align-items-center m-b-0">
                                 <i className="feather icon-folder text-c-green f-30 m-r-10"></i>
-                            1
+                                    {jobs.allJobs.length}
                             </h3>
                         </div>
 
@@ -32,6 +37,7 @@ const JobsSummary = () => {
                         <div className="progress-bar progress-c-theme" role="progressbar" style={{ width: "100%" }} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
+                }
             </div>
         </div>
     )
