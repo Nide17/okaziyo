@@ -55,11 +55,11 @@ const CreateJob = ({ auth, categories, createJob }) => {
             setErrorsState(['Insufficient info!']);
             return
         }
-        else if (title.length > 45) {
+        else if (title.length > 80) {
             setErrorsState(['Job title is too long!']);
             return
         }
-        else if (company.length > 15) {
+        else if (company.length > 50) {
             setErrorsState(['company name is too long!']);
             return
         }

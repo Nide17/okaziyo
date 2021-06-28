@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import Markdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
 import { connect } from 'react-redux';
 import { getCategories } from '../../redux/categories/categories.actions'
 import { getJobs } from '../../redux/items/jobs/jobs.actions'
@@ -25,16 +27,16 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
         category.sub_category.find(subcat => subcat._id === jobToUse.sub_category))
 
     return (
-        <Container className="slick-job">
+        <Container className="slick-job my-4">
 
             <Row>
 
-                <Col sm="8">
+                <Col sm="9" className="mx-0 px-lg-5">
 
                     {!jobs.isLoading ?
 
                         <>
-                            <Media className="mt-lg-5">
+                            <Media className="mt-lg-2 p-lg-3 border-bottom job-title">
 
                                 <Media left href="#" className="my-auto d-flex justify-content-center align-items-center">
                                     <img src={log} data-src={log} alt="Generic placeholder" />
@@ -42,15 +44,15 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
 
                                 <Media body>
                                     <Media heading className="px-lg-4">
-                                        <h4 className="font-weight-bolder">{jobToUse && jobToUse.title}</h4>
+                                        <h4 className="text-info">{jobToUse && jobToUse.title}</h4>
 
-                                        <div className="d-flex justify-content-between">
+                                        <div className="d-flex justify-content-between font-weight-bolder  text-secondary">
                                             <h6>{jobToUse && jobToUse.brand}</h6>
 
                                             <p>{categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === jobToUse.sub_category).name}</p>
                                         </div>
 
-                                        <div className="d-flex justify-content-between">
+                                        <div className="d-flex justify-content-between text-muted">
                                             <p>Posted on {new Date(jobToUse && jobToUse.createdAt).toLocaleDateString()}</p>
                                             <h6>Deadline: {new Date(jobToUse && jobToUse.deadline).toLocaleDateString()}</h6>
                                         </div>
@@ -60,17 +62,17 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
 
                             </Media>
 
-                            <div className="job-description px-lg-4 mt-3">
-                                <h4>Job Description</h4>
-                                <p>
-                                    {jobToUse && jobToUse.markdown}
-                                </p>
+                            <div className="job-description px-lg-4 py-lg-4">
+                                <h4 className="font-weight-bolder mb-lg-3">Job Description</h4>
+
+                                <Markdown rehypePlugins={[rehypeHighlight]}>{jobToUse && jobToUse.markdown}</Markdown>
+
                             </div>
                         </> :
                         <ReactLoading type="bars" color="#33FFFC" />}
                 </Col>
 
-                <Col sm="4">
+                <Col sm="3">
                     <div className="sidebar mt-lg-5">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam debitis assumenda labore, id delectus sed repudiandae eius culpa exercitationem cupiditate.</p>
                     </div>

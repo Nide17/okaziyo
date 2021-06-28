@@ -35,6 +35,7 @@
     "react-loading": "^2.0.3",
     "react-markdown": "^6.0.2",
     "reactstrap": "^8.9.0",
+    "rehype-highlight": "^4.1.0",
     "slugify": "^1.5.3",
     "uuid": "^8.3.2",
     "validator": "^13.6.0"

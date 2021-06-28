@@ -53,11 +53,11 @@ const Footer = () => {
                     <div className="col-12 col-xl-6 icons px-0">
                         <h6 className="text-center">Follow us</h6>
                         <div className="selfIcons">
-                            <a href="twitter.com"><i className="fa fa-twitter"></i></a>
-                            <a href="facebook.com"><i className="fa fa-facebook"></i></a>
-                            <a href="linkedin.com"><i className="fa fa-linkedin"></i></a>
-                            <a href="instagram.com"><i className="fa fa-instagram"></i></a>
-                            <a href="youtube.com"><i className="fa fa-youtube"></i></a>
+                            <a href="https://twitter.com"><i className="fa fa-twitter"></i></a>
+                            <a href="https://facebook.com"><i className="fa fa-facebook"></i></a>
+                            <a href="https://linkedin.com"><i className="fa fa-linkedin"></i></a>
+                            <a href="https://instagram.com"><i className="fa fa-instagram"></i></a>
+                            <a href="https://youtube.com"><i className="fa fa-youtube"></i></a>
                         </div>
                     </div>
 

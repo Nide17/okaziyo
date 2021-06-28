@@ -84,9 +84,9 @@ a {
 }
 
 .fa-unlock {
-  font-size: 36px!important;
+  font-size: 36px !important;
   color: #499167;
-  text-shadow:3px 2px rgba(255, 165, 0, .75)
+  text-shadow: 3px 2px rgba(255, 165, 0, .75)
 }
 
 
@@ -129,7 +129,20 @@ a {
 }
 
 .slick-job .media-left {
-width: 20%;
+  width: 20%;
+}
+
+.container.slick-job .job-title,
+.container.slick-job .job-description {
+  background-color: rgb(247, 243, 243);
+}
+
+.container.slick-job .job-description ul {
+  margin-left: 1.2rem;
+}
+
+.container.slick-job .job-description a {
+  color: rgb(24, 105, 228);
 }
 
 @media all and (min-width: 992px) {
@@ -807,15 +820,16 @@ a.forgot-password {
     font-size: 1.5rem !important;
     font-weight: 900;
   }
-h2 {
-  font-size: 1.2rem !important;
-  font-weight: 900;
-}
 
-h3 {
-  font-size: 1.1rem !important;
-  font-weight: 900;
-}
+  h2 {
+    font-size: 1.2rem !important;
+    font-weight: 900;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+    font-weight: 900;
+  }
 
   p,
   li {
@@ -973,7 +987,7 @@ h3 {
   }
 
   .row.footerSocial .copyright p {
-    font-size: 0.6rem!important;
+    font-size: 0.6rem !important;
     margin-top: 1rem;
     text-align: center;
   }
