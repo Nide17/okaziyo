@@ -137,44 +137,46 @@ a {
   margin-left: 1.2rem;
 }
 
-.container.slick-job h4 {
-  font-size: 1rem;
-  font-weight: 900 !important;
+.container.slick-job .job-description a {
+  color: rgb(24, 105, 228);
 }
 
-.container.slick-job h6 {
+.container.slick-job .choosen-job img {
+  max-height: 104px;
+}
+
+.container.slick-job .sidebar-content img {
+  max-height: 56px;
+}
+
+.container.slick-job .job-title .media-body {
+  height: 104px;
+}
+
+.container.slick-job .sidebar-content .job-title .media-body {
+  height: 72px;
+}
+
+.container.slick-job .sidebar-content h5 {
   font-size: .8rem;
-  font-weight: 900 !important;
 }
 
-.container.slick-job h5 {
-  font-size: .9rem;
-  font-weight: 900!important;
+.container.slick-job .sidebar-content h5 a {
+  color: #178ab8 !important;
+  font-weight: 900;
+}
+
+.container.slick-job .sidebar-content small {
+  font-size: 55%;
+  font-weight: 900;
 }
 
 .container.slick-job .job-description strong {
   font-weight: 900 !important;
 }
 
-.container.slick-job .job-description h4,
-.container.slick-job .job-description h5 {
-  margin-bottom: .8rem;
-}
-
 .container.slick-job .job-description code {
-  font-size: 94%;
-}
-
-.container.slick-job .job-description a {
-  color: rgb(24, 105, 228);
-}
-
-.container.slick-job .job-title img {
-  max-height: 104px;
-}
-
-.container.slick-job .job-title .media-body {
-  height: 104px;
+  font-size: 1rem;
 }
 
 @media all and (min-width: 992px) {
@@ -518,13 +520,14 @@ a.forgot-password {
 }
 
 @media (min-width: 1200px) {
-.container,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl {
-  max-width: 100%;
-}
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -838,6 +841,40 @@ a.forgot-password {
   .container.money {
     padding: 1.5rem;
   }
+
+  .container.slick-job h4 {
+    font-size: 1rem;
+    font-weight: 900 !important;
+  }
+
+  .container.slick-job h6 {
+    font-size: .8rem;
+    font-weight: 900 !important;
+  }
+
+  .container.slick-job h5 {
+    font-size: .9rem !important;
+    font-weight: 900 !important;
+  }
+
+  .container.slick-job .job-description strong {
+    font-weight: 900 !important;
+  }
+
+  .container.slick-job .job-description h4,
+  .container.slick-job .job-description h5 {
+    margin-bottom: .8rem;
+  }
+
+  .container.slick-job .job-description code {
+    font-size: 94%;
+  }
+
+    .container.slick-job .job-description .alert-info {
+      font-size: .7rem;
+      padding: .4rem;
+    }
+
 }
 
 /***********/

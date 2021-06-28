@@ -135,7 +135,9 @@ const CreateJob = ({ auth, categories, createJob }) => {
                                             <Row className="mb-0 mt-lg-4 mx-0 card Monthly-sales d-flex flex-row">
 
                                                 {categories.isLoading ?
-                                                    <ReactLoading type="bars" color="#33FFFC" /> :
+                                                    <div className="d-flex justify-content-center align-items-center">
+                                                        <ReactLoading type="bars" color="#33FFFC" />
+                                                    </div>:
 
                                                     <Col>
                                                         {errorsState.length > 0 ?
@@ -189,7 +191,9 @@ const CreateJob = ({ auth, categories, createJob }) => {
 
                                             </Row>
                                         </div> :
-                                        <ReactLoading type="bars" color="#33FFFC" />}
+                                        <div className="d-flex justify-content-center align-items-center">
+                            <ReactLoading type="bars" color="#33FFFC" />
+                        </div>}
                                 </div>
                             </div>
                         </div>

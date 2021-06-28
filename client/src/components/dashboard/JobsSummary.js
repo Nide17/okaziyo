@@ -7,7 +7,9 @@ const JobsSummary = ({ jobs }) => {
             <div className="card yearly-sales">
 
                 {jobs.isLoading ?
-                    <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
+                    <div className="d-flex justify-content-center align-items-center">
+                        <ReactLoading type="spinningBubbles" color="#33FFFC" />
+                    </div> :
 
                 <div className="card-block">
                     <h6 className="mb-4">Jobs</h6>

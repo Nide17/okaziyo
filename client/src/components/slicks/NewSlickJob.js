@@ -28,13 +28,15 @@ const NewSlickJob = ({ slickJob, categories, getCategories }) => {
                 <div className="card-body text-center pb-1">
                     <p className="card-text instructor">
                         <span>at </span>
-                        <a href="/">{slickJob.brand}</a>
+                        <a href="#/">{slickJob.brand}</a>
                     </p>
                 </div>
 
                 <div className="card-body text-center py-0 px-lg-4 d-flex justify-content-between">
                     <span className="card-link">
-                        <small>{categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === slickJob.sub_category).name}</small>
+                        <small>
+                        {categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === slickJob.sub_category).name}
+                        </small>
                     </span>
                     <span className="card-link deadline">
                         <small>Deadline: {new Date(slickJob.deadline).toLocaleDateString()}</small>

@@ -16,7 +16,9 @@ const Categories = ({ categories, getCategories }) => {
             <ul className="categories-list">
 
                 {categories.isLoading ?
-                    <ReactLoading type="bars" color="#33FFFC" /> :
+                    <div className="d-flex justify-content-center align-items-center">
+                        <ReactLoading type="bars" color="#33FFFC" />
+                    </div> :
 
                     <>
                         {categories && categories.allCategories.map(category => (

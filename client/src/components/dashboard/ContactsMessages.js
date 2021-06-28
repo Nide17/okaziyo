@@ -15,7 +15,9 @@ const ContactsMessages = ({ contacts }) => {
                     <div className="table-responsive">
 
                         {contacts.isLoading ?
-                            <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
+                            <div className="d-flex justify-content-center align-items-center">
+                                <ReactLoading type="spinningBubbles" color="#33FFFC" />
+                            </div> :
 
                             <table className="table table-hover">
                                 <tbody>

@@ -6,7 +6,9 @@ const SubscribersSummary = ({ subscribers }) => {
     return (
         <>
             {subscribers.isLoading ?
-                <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
+            <div className="d-flex justify-content-center align-items-center">
+                            <ReactLoading type="spinningBubbles" color="#33FFFC" />
+                        </div>:
 
                 <div className="col-xl-4 col-md-6">
                     <div className="card card-event">

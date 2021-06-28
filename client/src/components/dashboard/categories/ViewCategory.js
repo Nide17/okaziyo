@@ -64,7 +64,9 @@ const ViewCategory = ({ categories }) => {
                                                     <Row className="mb-0 mb-lg-3 mx-0 card Monthly-sales d-flex flex-row">
 
                                                         {categories.isLoading ?
-                                                            <ReactLoading type="bars" color="#33FFFC" /> :
+                                                        <div className="d-flex justify-content-center align-items-center">
+                            <ReactLoading type="bars" color="#33FFFC" />
+                        </div> :
 
                                                             <>
                                                                 {category.sub_category.map(subc => (

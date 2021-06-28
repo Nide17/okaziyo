@@ -109,7 +109,11 @@ const AllUsers = ({ auth }) => {
                         <tbody>
 
                             {auth.isLoading ?
-                                <ReactLoading type="spinningBubbles" color="#33FFFC" /> :
+                            <div className="d-flex justify-content-center align-items-center">
+                                    <div className="d-flex justify-content-center align-items-center">
+                                        <ReactLoading type="spinningBubbles" color="#33FFFC" />
+                                    </div>
+                        </div> :
 
                                 <>
                                     {auth && auth.users.map(user => (
