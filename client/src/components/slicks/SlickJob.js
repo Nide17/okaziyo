@@ -6,7 +6,7 @@ import { getCategories } from '../../redux/categories/categories.actions'
 import { getJobs } from '../../redux/items/jobs/jobs.actions'
 import ReactLoading from "react-loading";
 import { useParams } from 'react-router-dom'
-import { Container, Row, Col, Media } from 'reactstrap';
+import { Container, Row, Col, Media, Alert } from 'reactstrap';
 import log from '../../images/logoDashb.jpg'
 
 const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
@@ -27,34 +27,34 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
         category.sub_category.find(subcat => subcat._id === jobToUse.sub_category))
 
     return (
-        <Container className="slick-job my-4">
+        <Container className="slick-job my-lg-3 px-0 px-lg-3">
 
             <Row>
 
-                <Col sm="9" className="mx-0 px-lg-5">
+                <Col sm="8" className="mx-0 px-0 px-lg-5">
 
                     {!jobs.isLoading ?
 
                         <>
-                            <Media className="mt-lg-2 p-lg-3 border-bottom job-title">
+                            <Media className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
-                                <Media left href="#" className="my-auto d-flex justify-content-center align-items-center">
-                                    <img src={log} data-src={log} alt="Generic placeholder" />
+                                <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
+                                    <img src={jobToUse && jobToUse.brand_image} data-src={log} alt="" />
                                 </Media>
 
                                 <Media body>
-                                    <Media heading className="px-lg-4">
+                                    <Media heading className="px-3 py-3 py-lg-0 mb-0 h-100 d-flex flex-column justify-content-between">
                                         <h4 className="text-info">{jobToUse && jobToUse.title}</h4>
 
-                                        <div className="d-flex justify-content-between font-weight-bolder  text-secondary">
+                                        <div className="d-flex flex-column flex-lg-row justify-content-between font-weight-bolder text-secondary">
                                             <h6>{jobToUse && jobToUse.brand}</h6>
 
                                             <p>{categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === jobToUse.sub_category).name}</p>
                                         </div>
 
-                                        <div className="d-flex justify-content-between text-muted">
-                                            <p>Posted on {new Date(jobToUse && jobToUse.createdAt).toLocaleDateString()}</p>
-                                            <h6>Deadline: {new Date(jobToUse && jobToUse.deadline).toLocaleDateString()}</h6>
+                                        <div className="d-flex justify-content-between text-muted align-bottom">
+                                            <p className="mb-0">Posted on {new Date(jobToUse && jobToUse.createdAt).toLocaleDateString()}</p>
+                                            <h6 className="mb-0">Deadline: {new Date(jobToUse && jobToUse.deadline).toLocaleDateString()}</h6>
                                         </div>
                                     </Media>
 
@@ -62,7 +62,7 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
 
                             </Media>
 
-                            <div className="job-description px-lg-4 py-lg-4">
+                            <div className="job-description px-3 py-lg-4">
                                 <h4 className="font-weight-bolder mb-lg-3">Job Description</h4>
 
                                 <Markdown rehypePlugins={[rehypeHighlight]}>{jobToUse && jobToUse.markdown}</Markdown>
@@ -72,8 +72,25 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
                         <ReactLoading type="bars" color="#33FFFC" />}
                 </Col>
 
-                <Col sm="3">
-                    <div className="sidebar mt-lg-5">
+                <Col sm="4">
+                    <div className="similar-jobs mt-4 mt-lg-2">
+                        <Alert color="dark">
+                            Similar jobs
+                        </Alert>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam debitis assumenda labore, id delectus sed repudiandae eius culpa exercitationem cupiditate.</p>
+                    </div>
+
+                    <div className="similar-jobs mt-lg-5">
+                        <Alert color="dark">
+                            Other jobs
+                        </Alert>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam debitis assumenda labore, id delectus sed repudiandae eius culpa exercitationem cupiditate.</p>
+                    </div>
+
+                    <div className="similar-jobs mt-lg-5">
+                        <Alert color="dark">
+                            New scholarships
+                        </Alert>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam debitis assumenda labore, id delectus sed repudiandae eius culpa exercitationem cupiditate.</p>
                     </div>
                 </Col>

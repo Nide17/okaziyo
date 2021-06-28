@@ -128,10 +128,6 @@ a {
   color: #499167;
 }
 
-.slick-job .media-left {
-  width: 20%;
-}
-
 .container.slick-job .job-title,
 .container.slick-job .job-description {
   background-color: rgb(247, 243, 243);
@@ -141,8 +137,44 @@ a {
   margin-left: 1.2rem;
 }
 
+.container.slick-job h4 {
+  font-size: 1rem;
+  font-weight: 900 !important;
+}
+
+.container.slick-job h6 {
+  font-size: .8rem;
+  font-weight: 900 !important;
+}
+
+.container.slick-job h5 {
+  font-size: .9rem;
+  font-weight: 900!important;
+}
+
+.container.slick-job .job-description strong {
+  font-weight: 900 !important;
+}
+
+.container.slick-job .job-description h4,
+.container.slick-job .job-description h5 {
+  margin-bottom: .8rem;
+}
+
+.container.slick-job .job-description code {
+  font-size: 94%;
+}
+
 .container.slick-job .job-description a {
   color: rgb(24, 105, 228);
+}
+
+.container.slick-job .job-title img {
+  max-height: 104px;
+}
+
+.container.slick-job .job-title .media-body {
+  height: 104px;
 }
 
 @media all and (min-width: 992px) {
@@ -483,6 +515,16 @@ input[type=number]:focus,
 
 a.forgot-password {
   text-decoration: underline !important;
+}
+
+@media (min-width: 1200px) {
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  max-width: 100%;
+}
 }
 
 @media screen and (max-width: 1023px) {
