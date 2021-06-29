@@ -69,15 +69,16 @@ const App = () => {
             <Route exact path="/feat-brands" component={Placeholder} />
             <Route exact path="/hot-deals" component={Placeholder} />
 
+
             {/* Dashboard */}
             <DashboardRoutes />
+
+            {/* Categories */}
+            <CategoriesRoutes />            
+            
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/all-products" component={Placeholder} />
             <Route path="/slickItem" component={Placeholder} />
-            {/* <ProtectedRoute exact path="/dashboard" component={Homepage} /> */}
-
-            {/* Categories */}
-            <CategoriesRoutes />
 
           </Switch>
         </Router>
