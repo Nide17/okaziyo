@@ -7,9 +7,9 @@ import '../../../../node_modules/slick-carousel/slick/slick.css'
 import '../../../../node_modules/slick-carousel/slick/slick-theme.css'
 import '../slickItem.css'
 import settings from '../slickSettings'
-const OneSlickJob = lazy(() => import('./OneSlickJob'));
+const SlickJobPlaceholder = lazy(() => import('./SlickJobPlaceholder'));
 
-const JobSlick = ({ jobs, getJobs }) => {
+const JobsSlick = ({ jobs, getJobs }) => {
 
   // Lifecycle methods to load items
   useEffect(() => {
@@ -39,7 +39,7 @@ const JobSlick = ({ jobs, getJobs }) => {
 
                 }>
 
-                <OneSlickJob slickJob={job} />
+                <SlickJobPlaceholder slickJob={job} />
               </Suspense>
             ))
           }
@@ -55,4 +55,4 @@ const mapStateToProps = state => ({
   jobs: state.jobsReducer
 });
 
-export default connect(mapStateToProps, { getJobs })(JobSlick);
+export default connect(mapStateToProps, { getJobs })(JobsSlick);

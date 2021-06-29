@@ -22,9 +22,9 @@ section.container.featured .container {
 div.slickItem-card {
     max-width: 94%;
     height: 17rem;
-    background-color: #f5f5f5;
+    background-color: transparent;
     border-radius: 3px;
-    border: none;
+    border: 2px solid #edeef0;
 }
 
 .slickItem-card .deadline {
@@ -65,16 +65,22 @@ div.slickItem-card:hover {
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder p.slickItem-description {
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 900;
     line-height: 1.2rem;
     max-height: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder p.instructor {
     font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder p.instructor a,

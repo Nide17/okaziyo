@@ -146,6 +146,7 @@ a {
 
 .container.slick-job .sidebar-content img {
   max-height: 56px;
+  width: 100px;
 }
 
 .container.slick-job .job-title .media-body {

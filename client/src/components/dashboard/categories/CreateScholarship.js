@@ -60,7 +60,7 @@ const CreateScholarship = ({ auth, categories, createScholarship }) => {
             return
         }
         else if (company.length > 50) {
-            setErrorsState(['company name is too long!']);
+            setErrorsState(['Institution name is too long!']);
             return
         }
         else if (markdown.length < 80) {
@@ -158,17 +158,17 @@ const CreateScholarship = ({ auth, categories, createScholarship }) => {
 
                                                                 <Input type="text" name="title" id="title" placeholder="Scholarship title ..." className="mb-2" onChange={onChangeHandler} value={itemState.title || ''} />
 
-                                                                <Label for="company">
-                                                                    <strong>Company</strong>
+                                                                <Label for="institution">
+                                                                    <strong>Institution</strong>
                                                                 </Label>
 
-                                                                <Input type="text" name="company" id="company" placeholder="Company name ..." className="mb-2" onChange={onChangeHandler} value={itemState.company || ''}/>
+                                                                <Input type="text" name="company" id="Institution" placeholder="Institution name ..." className="mb-2" onChange={onChangeHandler} value={itemState.company || ''}/>
 
                                                                 <Label for="brand_image">
-                                                                    <strong>Company Logo</strong>
+                                                                    <strong>Institution Logo</strong>
                                                                 </Label>
 
-                                                                <Input type="file" accept=".png, .jpg, .jpeg" name="brand_image" placeholder="Company logo ..." onChange={onPictureHandler} />
+                                                                <Input type="file" accept=".png, .jpg, .jpeg" name="brand_image" placeholder="Institution logo ..." onChange={onPictureHandler} />
 
                                                                 <Label for="deadline">
                                                                     <strong>Deadline</strong>

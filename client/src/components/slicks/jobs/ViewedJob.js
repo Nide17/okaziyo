@@ -3,20 +3,22 @@ import Markdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import { connect } from 'react-redux';
 import { getCategories } from '../../../redux/categories/categories.actions'
+import { getScholarships } from '../../../redux/items/scholarships/scholarships.actions'
 import { getJobs } from '../../../redux/items/jobs/jobs.actions'
 import ReactLoading from "react-loading";
 import { useParams } from 'react-router-dom'
 import { Container, Row, Col, Media, Alert } from 'reactstrap';
 import SimilarJobs from './SimilarJobs';
-// import NewestSchJobs from './NewestSchJobs';
+import LatestScholarships from './LatestScholarships';
 
-const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
+const ViewedJob = ({ jobs, scholarships, categories, getJobs, getCategories, getScholarships }) => {
 
     // Lifecycle methods to load items
     useEffect(() => {
         getCategories();
+        getScholarships();
         getJobs();
-    }, [getCategories, getJobs]);
+    }, [getCategories, getJobs, getScholarships]);
 
     // Access route parameters
     const { jobId } = useParams()
@@ -90,10 +92,8 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
                 </Col>
 
                 <Col sm="4" className="sidebar-content">
-
                     <SimilarJobs jobs={jobs} jobToUse={jobToUse} categoryToUse={categoryToUse} />
-
-                    {/* <NewestSchJobs jobToUse={jobToUse} categoryToUse={categoryToUse} /> */}
+                    <LatestScholarships scholarships={scholarships && scholarships} categories={categories} />
                 </Col>
             </Row>
 
@@ -103,7 +103,8 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
 // Map  state props
 const mapStateToProps = state => ({
     jobs: state.jobsReducer,
+    scholarships: state.scholarshipsReducer,
     categories: state.categoriesReducer
 });
 
-export default connect(mapStateToProps, { getJobs, getCategories })(SlickJob);
+export default connect(mapStateToProps, { getJobs, getScholarships, getCategories })(ViewedJob);
