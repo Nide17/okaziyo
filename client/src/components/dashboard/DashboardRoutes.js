@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Homepage from './Homepage';
 import ViewCategory from './categories/ViewCategory';
 import CreateJob from './categories/CreateJob';
+import CreateScholarship from './categories/CreateScholarship';
 import { connect } from 'react-redux';
 import { getCategories } from '../../redux/categories/categories.actions'
 import { getItems } from '../../redux/items/items.actions'
@@ -55,6 +56,10 @@ const DashboardRoutes = ({
                     <Route
                         exact path="/dashboard/create-job/:subCategoryId"
                         render={() => <CreateJob categories={categories} auth={auth} />} />
+
+                    <Route
+                        exact path="/dashboard/create-scholarship/:subCategoryId"
+                        render={() => <CreateScholarship categories={categories} auth={auth} />} />
                 </> :
                 <LoginModal />
     );
