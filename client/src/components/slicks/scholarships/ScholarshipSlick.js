@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react'
 import Slider from 'react-slick'
-import '../../../node_modules/slick-carousel/slick/slick.css'
-import '../../../node_modules/slick-carousel/slick/slick-theme.css'
-import './slickItem.css'
-import settings from './slickSettings'
-const NewSlickScholarships = lazy(() => import('./NewSlickScholarships'));
+import '../../../../node_modules/slick-carousel/slick/slick.css'
+import '../../../../node_modules/slick-carousel/slick/slick-theme.css'
+import '../slickItem.css'
+import settings from '../slickSettings'
+const NewSlickScholarships = lazy(() => import('./OneSlickScholarships'));
 
 const ScholarshipSlick = () => {
     const scholarships = [

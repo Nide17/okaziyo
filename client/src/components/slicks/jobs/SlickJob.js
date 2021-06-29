@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import Markdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import { connect } from 'react-redux';
-import { getCategories } from '../../redux/categories/categories.actions'
-import { getJobs } from '../../redux/items/jobs/jobs.actions'
+import { getCategories } from '../../../redux/categories/categories.actions'
+import { getJobs } from '../../../redux/items/jobs/jobs.actions'
 import ReactLoading from "react-loading";
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Container, Row, Col, Media, Alert } from 'reactstrap';
 import SimilarJobs from './SimilarJobs';
 // import NewestSchJobs from './NewestSchJobs';
@@ -72,26 +72,26 @@ const SlickJob = ({ jobs, categories, getJobs, getCategories }) => {
                             <div className="job-description px-3 py-4">
                                 <h3 className="font-weight-bolder mb-lg-3">Job Description</h3>
 
-                                <Markdown rehypePlugins={[rehypeHighlight]}>{jobToUse && jobToUse.markdown}</Markdown>
+                                <Markdown rehypePlugins={[rehypeHighlight]}>{jobToUse && jobToUse.markdown}
+                                </Markdown>
 
-                                <Link to="#/">
+                                <a href="https://chat.whatsapp.com/Db3xfvRz9JB527FpPLzWl2">
                                     <Alert color="info" className="text-center">
                                         Click here to join okaziyo.com's WhatsApp group to receive updates
                                     </Alert>
-                                </Link>
+                                </a>
 
                             </div>
                         </> :
 
                         <div className="d-flex justify-content-center align-items-center">
                             <ReactLoading type="bars" color="#33FFFC" />
-                        </div>
-                    }
+                        </div>}
                 </Col>
 
                 <Col sm="4" className="sidebar-content">
 
-                    <SimilarJobs jobToUse={jobToUse} categoryToUse={categoryToUse} />
+                    <SimilarJobs jobs={jobs} jobToUse={jobToUse} categoryToUse={categoryToUse} />
 
                     {/* <NewestSchJobs jobToUse={jobToUse} categoryToUse={categoryToUse} /> */}
                 </Col>

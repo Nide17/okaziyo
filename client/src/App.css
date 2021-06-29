@@ -89,7 +89,6 @@ a {
   text-shadow: 3px 2px rgba(255, 165, 0, .75)
 }
 
-
 .nav-buttons {
   display: flex;
   justify-content: space-between;
@@ -804,7 +803,6 @@ a.forgot-password {
   .icons h6 {
     margin-bottom: 1.8rem;
   }
-
 }
 
 @media screen and (min-width: 768px)and (max-width: 1024px) {

@@ -1,13 +1,13 @@
 import React, { lazy, Suspense, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { getJobs } from '../../redux/items/jobs/jobs.actions'
+import { getJobs } from '../../../redux/items/jobs/jobs.actions'
 
 import Slider from 'react-slick'
-import '../../../node_modules/slick-carousel/slick/slick.css'
-import '../../../node_modules/slick-carousel/slick/slick-theme.css'
-import './slickItem.css'
-import settings from './slickSettings'
-const NewSlickJob = lazy(() => import('./NewSlickJob'));
+import '../../../../node_modules/slick-carousel/slick/slick.css'
+import '../../../../node_modules/slick-carousel/slick/slick-theme.css'
+import '../slickItem.css'
+import settings from '../slickSettings'
+const NewSlickJob = lazy(() => import('./OneSlickJob'));
 
 const JobSlick = ({ jobs, getJobs }) => {
 

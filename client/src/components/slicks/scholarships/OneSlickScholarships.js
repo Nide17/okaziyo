@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import icon from "./undraw_developer_activity_bv83 1.svg"
+import icon from "../undraw_developer_activity_bv83 1.svg"
 
 const NewSlickScholarships = ({ slickItem }) => {
 

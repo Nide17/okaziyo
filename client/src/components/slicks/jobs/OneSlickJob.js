@@ -1,8 +1,8 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { getCategories } from '../../redux/categories/categories.actions'
+import { getCategories } from '../../../redux/categories/categories.actions'
 import { connect } from 'react-redux';
-import icon from "./undraw_developer_activity_bv83 1.svg"
+import icon from "../undraw_developer_activity_bv83 1.svg"
 
 const NewSlickJob = ({ slickJob, categories, getCategories }) => {
 
@@ -35,7 +35,7 @@ const NewSlickJob = ({ slickJob, categories, getCategories }) => {
                 <div className="card-body text-center py-0 px-lg-4 d-flex justify-content-between">
                     <span className="card-link">
                         <small>
-                        {categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === slickJob.sub_category).name}
+                            {categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === slickJob.sub_category).name}
                         </small>
                     </span>
                     <span className="card-link deadline">

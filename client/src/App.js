@@ -22,7 +22,7 @@ import ResetPassword from './components/auth/ResetPassword';
 import Unsubscribe from './components/auth/Unsubscribe';
 import Subscribe from './components/auth/Subscribe';
 import Logout from './components/auth/Logout'
-import SlickJob from './components/slicks/SlickJob'
+import SlickJob from './components/slicks/jobs/SlickJob'
 
 import CategoriesRoutes from './CategoriesRoutes';
 import DashboardRoutes from './components/dashboard/DashboardRoutes';
