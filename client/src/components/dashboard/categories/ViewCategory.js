@@ -48,7 +48,7 @@ const ViewCategory = ({ categories }) => {
                                                 <Row className="mb-0 mb-lg-3 mx-0">
                                                     <Breadcrumb>
                                                         <BreadcrumbItem>
-                                                            <Link to="/webmaster">{category.title}</Link>
+                                                            <Link to="/dashboard">{category.title}</Link>
                                                         </BreadcrumbItem>
                                                         <BreadcrumbItem active>Sub-categories</BreadcrumbItem>
                                                     </Breadcrumb>

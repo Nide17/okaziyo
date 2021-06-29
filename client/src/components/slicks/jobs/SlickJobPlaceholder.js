@@ -20,9 +20,9 @@ const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
             </div>
 
             <div className="card-body body-holder">
-                <p className="card-text slickItem-description text-center mb-0 mt-2 mx-1">
+                <strong className="card-text slickItem-description text-center mb-0 mt-2 mx-1">
                     {slickJob.title}
-                </p>
+                </strong>
 
                 <div className="card-body text-center pb-1">
                     <p className="card-text instructor">

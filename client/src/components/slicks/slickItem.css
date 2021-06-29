@@ -62,6 +62,9 @@ div.slickItem-card:hover {
     height: 7.5rem;
     padding: 0;
     background-color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder p.slickItem-description {

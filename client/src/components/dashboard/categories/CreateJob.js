@@ -118,7 +118,7 @@ const CreateJob = ({ auth, categories, createJob }) => {
                                             <Row className="mb-0 mx-0">
                                                 <Breadcrumb>
                                                     <BreadcrumbItem>
-                                                        <Link to="/webmaster">{categoryToUse.title}</Link>
+                                                        <Link to="/dashboard">{categoryToUse.title}</Link>
                                                     </BreadcrumbItem>
                                                     <BreadcrumbItem active>
                                                         {categoryToUse.sub_category.find(subcat => subcat._id === subCategoryId).name}

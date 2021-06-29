@@ -46,9 +46,9 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
 
                                 <Media body>
                                     <Media heading className="p-3 py-lg-0 mb-0 h-100 d-flex flex-column justify-content-between">
-                                        <p className="text-info">
+                                        <strong className="text-info">
                                             {scholarshipToUse && scholarshipToUse.title}
-                                        </p>
+                                        </strong>
 
                                         <div className="d-flex flex-column flex-lg-row justify-content-between font-weight-bolder text-secondary">
                                             <h6>{scholarshipToUse && scholarshipToUse.brand}</h6>
