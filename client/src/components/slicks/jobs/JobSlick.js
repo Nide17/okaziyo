@@ -7,7 +7,7 @@ import '../../../../node_modules/slick-carousel/slick/slick.css'
 import '../../../../node_modules/slick-carousel/slick/slick-theme.css'
 import '../slickItem.css'
 import settings from '../slickSettings'
-const NewSlickJob = lazy(() => import('./OneSlickJob'));
+const OneSlickJob = lazy(() => import('./OneSlickJob'));
 
 const JobSlick = ({ jobs, getJobs }) => {
 
@@ -39,7 +39,7 @@ const JobSlick = ({ jobs, getJobs }) => {
 
                 }>
 
-                <NewSlickJob slickJob={job} />
+                <OneSlickJob slickJob={job} />
               </Suspense>
             ))
           }

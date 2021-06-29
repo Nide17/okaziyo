@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { getCategories } from '../../../redux/categories/categories.actions'
 import { connect } from 'react-redux';
-import icon from "../undraw_developer_activity_bv83 1.svg"
 
 const NewSlickJob = ({ slickJob, categories, getCategories }) => {
 
@@ -17,7 +16,7 @@ const NewSlickJob = ({ slickJob, categories, getCategories }) => {
     return (
         <div className="slickItem-card card mx-auto my-0">
             <div className="img-holder">
-                <img src={icon} className="card-img-top img-fluid" alt="..." />
+                <img src={slickJob.brand_image} alt={slickJob.brand}  className="card-img-top img-fluid" />
             </div>
 
             <div className="card-body body-holder">

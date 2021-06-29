@@ -40,7 +40,13 @@ div.slickItem-card:hover {
 .slick-slider .slickItem-card.card .img-holder {
     max-width: 80%;
     height: 8.5rem;
-    margin: 0.15rem auto;
+    margin: 0.25rem auto;
+}
+
+.slick-slider .slickItem-card.card .img-holder .card-img,
+.slick-slider .slickItem-card.card .img-holder .card-img-bottom,
+.slick-slider .slickItem-card.card .img-holder .card-img-top {
+    width: auto;
 }
 
 .slick-slider .slickItem-card.card .card-body {
