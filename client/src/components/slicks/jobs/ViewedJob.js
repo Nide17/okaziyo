@@ -46,9 +46,9 @@ const ViewedJob = ({ jobs, scholarships, categories, getJobs, getCategories, get
 
                                 <Media body>
                                     <Media heading className="p-3 py-lg-0 mb-0 h-100 d-flex flex-column justify-content-between">
-                                        <h4 className="text-info">
+                                        <p className="text-info">
                                             {jobToUse && jobToUse.title}
-                                        </h4>
+                                        </p>
 
                                         <div className="d-flex flex-column flex-lg-row justify-content-between font-weight-bolder text-secondary">
                                             <h6>{jobToUse && jobToUse.brand}</h6>

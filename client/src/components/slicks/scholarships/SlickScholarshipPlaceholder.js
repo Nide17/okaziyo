@@ -20,7 +20,7 @@ const SlickScholarshipPlaceholder = ({ slickScholarship, categories, getCategori
             </div>
 
             <div className="card-body body-holder">
-                <p className="card-text slickItem-description text-center mb-0 mt-2">
+                <p className="card-text slickItem-description text-center mb-0 mt-2 mx-1">
                     {slickScholarship.title}
                 </p>
 

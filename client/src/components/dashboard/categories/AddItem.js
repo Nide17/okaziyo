@@ -84,7 +84,6 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         itemState.pictures.forEach((pic) => formData.append('pictures', pic));
 
         // Attempt to create
-        console.log(itemState);
         createItem(formData);
 
         // Reset the form

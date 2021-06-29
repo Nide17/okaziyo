@@ -46,9 +46,9 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
 
                                 <Media body>
                                     <Media heading className="p-3 py-lg-0 mb-0 h-100 d-flex flex-column justify-content-between">
-                                        <h4 className="text-info">
+                                        <p className="text-info">
                                             {scholarshipToUse && scholarshipToUse.title}
-                                        </h4>
+                                        </p>
 
                                         <div className="d-flex flex-column flex-lg-row justify-content-between font-weight-bolder text-secondary">
                                             <h6>{scholarshipToUse && scholarshipToUse.brand}</h6>
@@ -61,9 +61,9 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
                                                 Posted on {new Date(scholarshipToUse && scholarshipToUse.createdAt).toLocaleDateString()}
                                             </p>
 
-                                            <h6 className="mb-0">
+                                            <p className="mb-0">
                                                 Deadline: {new Date(scholarshipToUse && scholarshipToUse.deadline).toLocaleDateString()}
-                                            </h6>
+                                            </p>
                                         </div>
                                     </Media>
 

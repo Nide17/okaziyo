@@ -20,9 +20,9 @@ const LatestJobs = ({ jobs }) => {
 
                     <Media body>
                         <Media heading className="p-2 py-lg-0 mb-0 h-100 d-flex flex-column justify-content-between">
-                            <h5 className="text-info my-0">
+                            <p className="text-info mt-0 mb-2">
                                 <a href={`/slickJob/${job._id}`}>{job.title}</a>
-                            </h5>
+                            </p>
 
                             <div className="d-flex flex-column flex-lg-row justify-content-between text-secondary m-0">
                                 <p className="mb-1">{job.brand}</p>

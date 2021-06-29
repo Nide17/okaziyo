@@ -146,7 +146,7 @@ a {
 
 .container.slick-job .sidebar-content img {
   max-height: 56px;
-  width: 100px;
+  width: 90px;
 }
 
 .container.slick-job .job-title .media-body {
@@ -842,17 +842,17 @@ a.forgot-password {
   }
 
   .container.slick-job h4 {
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 900 !important;
   }
 
   .container.slick-job h6 {
-    font-size: .8rem;
+    font-size: .7rem;
     font-weight: 900 !important;
   }
 
   .container.slick-job h5 {
-    font-size: .9rem !important;
+    font-size: .8rem !important;
     font-weight: 900 !important;
   }
 
@@ -862,7 +862,7 @@ a.forgot-password {
 
   .container.slick-job .job-description h4,
   .container.slick-job .job-description h5 {
-    margin-bottom: .8rem;
+    margin-bottom: .7rem;
   }
 
   .container.slick-job .job-description code {
@@ -900,13 +900,14 @@ a.forgot-password {
   }
 
   h2 {
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
     font-weight: 900;
   }
 
   h3 {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
     font-weight: 900;
+        text-align: center;
   }
 
   p,
