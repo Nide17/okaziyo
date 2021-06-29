@@ -38,12 +38,12 @@ app.use('/uploads', express.static('uploads'));
 //Use routes / All requests going to the api/categories goes the categories variable at the top categories.js file
 app.use('/api/categories', require('./routes/api/categories'));
 app.use('/api/items', require('./routes/api/items'));
-app.use('/api/jobs', require('./routes/api/jobs'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/subscribers', require('./routes/api/subscribers'));
 app.use('/api/contacts', require('./routes/api/contacts'));
-
+app.use('/api/jobs', require('./routes/api/jobs'));
+app.use('/api/scholarships', require('./routes/api/scholarships'));
 
 //Edit for deployment || serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
