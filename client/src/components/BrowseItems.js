@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import sell from '../logo/sell.svg'
 import ReactLoading from "react-loading";
 import { connect } from 'react-redux';
 import { getItems } from '../redux/items/items.actions'
@@ -36,7 +35,7 @@ const BrowseItems = ({ items, getItems }) => {
                                 <div className="col-6 col-md-3 col-xl-2 oneCard">
                                     <div className="item-holder">
                                         <div className="item">
-                                            <img src={sell} alt="sell" />
+                                            <img src={item.pictures[0]} alt="sell" />
                                             <h6>{item.title}</h6>
                                             <p className="price">{item.price}</p>
                                             <p className="desc">{item.description}</p>
