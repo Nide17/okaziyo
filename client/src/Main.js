@@ -1,6 +1,6 @@
 import Categories from './components/Categories';
 import Process from './components/Process';
-import Browse from './components/Browse';
+import BrowseItems from './components/BrowseItems';
 import Money from './components/Money';
 import JobsSlick from './components/slicks/jobs/JobsSlick';
 import ScholarshipsSlick from './components/slicks/scholarships/ScholarshipsSlick';
@@ -11,7 +11,7 @@ const Main = () => {
             <Categories />
             <Process />
             <JobsSlick />
-            <Browse />
+            <BrowseItems />
             <Money />
             <ScholarshipsSlick />
         </>

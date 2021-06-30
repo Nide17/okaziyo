@@ -19,8 +19,8 @@ const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
                 <img src={slickJob.brand_image} alt={slickJob.brand}  className="card-img-top img-fluid" />
             </div>
 
-            <div className="card-body body-holder">
-                <strong className="card-text slickItem-description text-center mb-0 mt-2 mx-1">
+            <div className="card-body body-holder d-flex flex-column align-items-center">
+                <strong className="card-text slickItem-description mb-0 mt-2 mx-1">
                     {slickJob.title}
                 </strong>
 
