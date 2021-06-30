@@ -11,7 +11,7 @@ import DHeader from '../DHeader'
 import AddItem from './AddItem'
 import Navigation from '../Navigation'
 
-const ViewCategory = ({ categories }) => {
+const ViewCategory = ({ categories, jobs, scholarships, items }) => {
 
     const [showMob, setShowMob] = useState(false)
 
@@ -48,7 +48,9 @@ const ViewCategory = ({ categories }) => {
                                                 <Row className="mb-0 mb-lg-3 mx-0">
                                                     <Breadcrumb>
                                                         <BreadcrumbItem>
-                                                            <Link to="/dashboard">{category.title}</Link>
+                                                            <Link to="/dashboard">
+                                                                {category.title}
+                                                            </Link>
                                                         </BreadcrumbItem>
                                                         <BreadcrumbItem active>Sub-categories</BreadcrumbItem>
                                                     </Breadcrumb>
@@ -60,64 +62,78 @@ const ViewCategory = ({ categories }) => {
                                                     </i>
                                                 </small>
 
-                                                <div className="col-md-6 col-xl-10">
-                                                    <Row className="mb-0 mb-lg-3 mx-0 card Monthly-sales d-flex flex-row">
+                    <div className="col-md-6 col-xl-10">
+                        <Row className="mb-0 mb-lg-3 mx-0 card Monthly-sales d-flex flex-row">
 
-                                                        {categories.isLoading ?
-                                                        <div className="d-flex justify-content-center align-items-center">
-                            <ReactLoading type="bars" color="#33FFFC" />
-                        </div> :
+                            {categories.isLoading ?
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <ReactLoading type="bars" color="#33FFFC" />
+                                </div> :
 
-                                                            <>
-                                                                {category.sub_category.map(subc => (
+                                <>
+                                    {category.sub_category.map(subc => (
 
-                                                                    <Col sm="4" className="card-block" key={subc._id}>
-                                                                        <h6 className="mb-4">{subc.name}</h6>
+                                        <Col sm="4" className="card-block" key={subc._id}>
+                                            <h6 className="mb-4">{subc.name}</h6>
 
-                                                                        <div className="row d-flex align-items-center">
-                                                                            <div className="col-8">
-                                                                                <h3 className="f-w-300 d-flex align-items-center m-b-0">
-                                                                                    <i className="feather icon-folder text-c-green f-30 m-r-10"></i>
-                                                                                    0
-                                                                                </h3>
-                                                                            </div>
+                                            <div className="row d-flex align-items-center">
+                                                <div className="col-8">
+                                                    <h3 className="f-w-300 d-flex align-items-center m-b-0">
+                                                        <i className="feather icon-folder text-c-green f-30 m-r-10"></i>
 
-                                                                            <div className="col-2 text-right">
+                                                        {/* Count the number of items in sub category */}
+                                                        {category._id === '60cddc21181fa53764a17296' ?
+                                                        
+                                                        jobs.allJobs.filter(job =>
+                                                            job.sub_category === subc._id).length :
+                                                            
+                                                            category._id === '60cddc0f181fa53764a17295' ?
 
-                                                                                {category._id === '60cddc21181fa53764a17296' ?
-
-                                                                                    <Link to={`/dashboard/create-job/${subc._id}`} className="text-secondary">
-                                                                                        <img src={plusItem} alt="" width="16" height="16" />
-                                                                                    </Link> :
-                                                                                    
-                                                                                    category._id === '60cddc0f181fa53764a17295' ?
-
-                                                                                        <Link to={`/dashboard/create-scholarship/${subc._id}`} className="text-secondary">
-                                                                                            <img src={plusItem} alt="" width="16" height="16" />
-                                                                                        </Link> :
-
-                                                                                    <div className="m-b-0">
-                                                                                        <AddItem categoryId={category._id} sub_categoryName={subc.name} />
-                                                                                    </div>
-                                                                                }
-
-                                                                            </div>
-
-                                                                            <div className="col-2 text-right">
-                                                                                <p className="m-b-0">
-                                                                                    <i className="feather icon-eye text-c-green f-30 m-r-10"></i>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div className="progress m-t-30" style={{ height: "7px" }}>
-                                                                            <div className="progress-bar progress-c-theme2" role="progressbar" style={{ width: "100%" }} aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                        </div>
-                                                                    </Col>))}
-                                                            </>}
-
-                                                    </Row>
+                                                                scholarships.allScholarships.filter(scholarship =>
+                                                                    scholarship.sub_category === subc._id).length :
+                                                                    
+                                                                items.allItems.filter(item =>
+                                                                    item.sub_category === subc._id).length
+                                                        }
+                                                    </h3>
                                                 </div>
+
+                                                <div className="col-2 text-right">
+
+                                                    {category._id === '60cddc21181fa53764a17296' ?
+
+                                                        <Link to={`/dashboard/create-job/${subc._id}`} className="text-secondary">
+                                                            <img src={plusItem} alt="" width="16" height="16" />
+                                                        </Link> :
+
+                                                        category._id === '60cddc0f181fa53764a17295' ?
+
+                                                            <Link to={`/dashboard/create-scholarship/${subc._id}`} className="text-secondary">
+                                                                <img src={plusItem} alt="" width="16" height="16" />
+                                                            </Link> :
+
+                                                            <div className="m-b-0">
+                                                                <AddItem categoryId={category._id} sub_categoryName={subc.name} />
+                                                            </div>
+                                                    }
+
+                                                </div>
+
+                                                <div className="col-2 text-right">
+                                                    <p className="m-b-0">
+                                                        <i className="feather icon-eye text-c-green f-30 m-r-10"></i>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div className="progress m-t-30" style={{ height: "7px" }}>
+                                                <div className="progress-bar progress-c-theme2" role="progressbar" style={{ width: "100%" }} aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </Col>))}
+                                </>}
+
+                        </Row>
+                    </div>
 
                                             </div> :
                                             null
