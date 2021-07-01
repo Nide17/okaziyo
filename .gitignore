@@ -7,12 +7,14 @@
 /.pnp
 *.pnp.js
 .pnp.js
+*/.vscode
 
 # testing
 /coverage
 
 # production
 */build
+*/client/build
 
 # misc
 *.DS_Store
@@ -34,3 +36,4 @@
 /client/src/components/* cop 2.js
 /client/src/components/* copy 3.js
 /client/src/components/* copy 4.js
+/db
