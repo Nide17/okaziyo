@@ -953,10 +953,13 @@ a.forgot-password {
   }
 
   .know-more button {
-    font-size: 0.9rem;
-    width: 15rem;
+    font-size: 0.8rem;
+    width: 14rem;
   }
 
+  .btn {
+    padding: 6px 14px!important;
+  }
 
   /* BROWSE ITEMS */
   .row.contents {
@@ -1016,8 +1019,8 @@ a.forgot-password {
   }
 
   .row.contents .load-more {
-    width: 15rem;
-    font-size: .9rem;
+    width: 10rem;
+    font-size: .8rem;
   }
 
 
@@ -1037,10 +1040,9 @@ a.forgot-password {
 
   .row.moneyRow button {
     height: 3.125rem;
-    width: 15rem;
-    font-size: .9rem;
+    width: 13rem;
+    font-size: .8rem;
   }
-
 
   /* FOOTER */
   .container.footer {

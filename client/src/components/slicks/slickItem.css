@@ -58,6 +58,7 @@ div.slickItem-card:hover {
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder {
+    font-size: .8rem;
     width: 100%;
     height: 7.5rem;
     padding: 0;
@@ -68,7 +69,7 @@ div.slickItem-card:hover {
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder p.slickItem-description {
-    font-size: .9rem;
+    font-size: .7rem;
     font-weight: 900;
     line-height: 1.2rem;
     max-height: 1.2em;

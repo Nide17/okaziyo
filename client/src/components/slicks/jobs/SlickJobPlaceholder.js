@@ -20,7 +20,7 @@ const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
             </div>
 
             <div className="card-body body-holder d-flex flex-column align-items-center">
-                <strong className="card-text slickItem-description mb-0 mt-2 mx-1">
+                <strong className="card-text slickItem-description mb-0 mt-2 mx-2">
                     {slickJob.title}
                 </strong>
 
