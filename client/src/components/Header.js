@@ -1,297 +1,147 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../logo/Logo.svg'
 import Logosm from '../logo/Logosm.svg'
+import { connect } from 'react-redux'
+import { getCategories } from '../redux/categories/categories.actions'
+import ReactLoading from "react-loading";
 
-const Header = () => {
+const Header = ({ categories, getCategories }) => {
 
-    const [state, setState] = useState({
-        menu: false,
-        showElectronicsItems: false,
-        showFashionItems: false,
-        showFurnitureItems: false,
-        showTransportItems: false,
-        showEstateItems: false,
-        showScholarshipsItems: false,
-        showJobsItems: false,
-        showOthersItems: false,
-        isSearchOpen: false,
-        isBuying: false
-    })
+    const [clickedItem, setClickedItem] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [openSearch, setOpenSearch] = useState(false);
+    const [isBuying, setIsBuying] = useState(false);
 
-    const ChangeBuying = () => {
-        setState({
-            isBuying: !state.isBuying
-        })
-    }
-
-    const openSearch = () => {
-        setState({
-            isSearchOpen: !state.isSearchOpen
-        })
-    }
-
-    const toggleMenu = () => {
-        setState({
-            menu: !state.menu,
-
-        })
-    }
-
-    const onElectronicsItemClick = () => {
-        setState({
-            showElectronicsItems: !state.showElectronicsItems,
-            menu: true
-        })
-    }
-
-    const onFashionItemClick = () => {
-        setState({
-            showFashionItems: !state.showFashionItems,
-            menu: true
-        })
-    }
-
-    const onFurnitureItemClick = () => {
-        setState({
-            showFurnitureItems: !state.showFurnitureItems,
-            menu: true
-        })
-    }
-
-    const onTransportItemClick = () => {
-        setState({
-            showTransportItems: !state.showTransportItems,
-            menu: true
-        })
-    }
-
-    const onEstateItemClick = () => {
-        setState({
-            showEstateItems: !state.showEstateItems,
-            menu: true
-        })
-    }
-
-    const onScholarshipsItemClick = () => {
-        setState({
-            showScholarshipsItems: !state.showScholarshipsItems,
-            menu: true
-        })
-    }
-
-    const onJobsItemClick = () => {
-        setState({
-            showJobsItems: !state.showJobsItems,
-            menu: true
-        })
-    }
-
-    const onOthersItemClick = () => {
-        setState({
-            showOthersItems: !state.showOthersItems,
-            menu: true
-        })
-    }
-
-    const classNavSearch = state.menu ? "nav-search col-12 col-lg-6 collapse navbar-collapse show" : "nav-search col-12 col-lg-6 collapse navbar-collapse";
-    const classNavSearchOpen = state.isSearchOpen ? "nav-search w-100 show mt-2 mb-0 py-4" : "nav-search w-100  d-lg-none";
-    const elecBuyClass = state.showElectronicsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const fashBuyClass = state.showFashionItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const furnBuyClass = state.showFurnitureItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const transBuyClass = state.showTransportItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const estBuyClass = state.showEstateItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const schBuyClass = state.showScholarshipsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const jobsBuyClass = state.showJobsItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
-    const othBuyClass = state.showOthersItems ? "category-item show-details dropdown item-buy mt-3" : "category-item dropdown item-buy mt-3"
+    // Lifecycle methods
+    useEffect(() => {
+        getCategories();
+    }, [getCategories]);
 
     if (window.location.toString().includes("dashboard") || window.location.pathname === '/login' || window.location.pathname === '/register') return null
 
-       else return (
+    else return (
 
-            <div className="container-fluid" id="main-header">
+        <div className="container-fluid" id="main-header">
 
-                <nav className="row navbar navbar-expand-lg navbar-light mx-0">
+            <nav className="row navbar navbar-expand-lg navbar-light mx-0">
 
-                    <div className="col-7 col-lg-3 navbar-toggler-holder px-0">
+                <div className="col-7 col-lg-3 navbar-toggler-holder px-0">
 
-                        <button className="navbar-toggler ml-2" type="button" onClick={toggleMenu}>
-                            <span>
-                                <i className="fa fa-bars"></i>
-                            </span>
-                        </button>
+                    <button className="navbar-toggler ml-2" type="button" onClick={() => setMenuOpen(!menuOpen)}>
+                        <span>
+                            <i className="fa fa-bars"></i>
+                        </span>
+                    </button>
 
-                        <a className="navbar-brand d-none d-lg-flex" href="/">
-                            <img src={logo} alt="logo" />
-                        </a>
+                    <a className="navbar-brand d-none d-lg-flex" href="/">
+                        <img src={logo} alt="logo" />
+                    </a>
 
-                        <a className="navbar-brand-small d-block d-lg-none ml-1" href="/">
-                            <img src={Logosm} alt="Logosm" width="73px" height="30px" />
-                        </a>
-                    </div>
+                    <a className="navbar-brand-small d-block d-lg-none ml-1" href="/">
+                        <img src={Logosm} alt="Logosm" width="73px" height="30px" />
+                    </a>
+                </div>
 
-                    <div className="nav-buttons col-5 col-lg-3 d-flex d-lg-none px-0">
-                        <button className="search-sm" onClick={openSearch}>
-                            <i className="fa fa-search"></i>
-                        </button>
+                <div className="nav-buttons col-5 col-lg-3 d-flex d-lg-none px-0">
+                    <button className="search-sm" onClick={() => setOpenSearch(!openSearch)}>
+                        <i className="fa fa-search"></i>
+                    </button>
 
-                        <button className="btn sell mr-2 py-1 px-1" type="button" onClick={ChangeBuying}>
-                            {state.isBuying ? 'Buy now' : 'Sell now'}
-                        </button>
-                    </div>
+                    <button className="btn sell mr-2 py-1 px-1" type="button" onClick={() => setIsBuying(!isBuying)}>
+                        {isBuying ? 'Buy now' : 'Sell now'}
+                    </button>
+                </div>
 
-                    {/* SEARCH FOR LARGE*/}
-                    <div className={classNavSearchOpen}>
-                        <form className="px-1">
-                            <div className="form-group row mx-1">
-                                <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
-                                <button type="submit">
-                                    <i className="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                {/* SEARCH FOR LARGE*/}
+                <div className={`nav-search w-100 ${openSearch ? 'show mt-2 mb-0 py-4' : 'd-lg-none'}`}>
+                    <form className="px-1">
+                        <div className="form-group row mx-1">
+                            <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
+                            <button type="submit">
+                                <i className="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-                    <div className={classNavSearch}>
+                <div className={`nav-search col-12 col-lg-6 collapse navbar-collapse ${menuOpen ? 'show' : null}`}>
 
-                        {/* SEARCH FOR LARGE*/}
-                        <form className="d-none d-sm-block">
-                            <div className="form-group row">
-                                <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
-                                <button type="submit"><i className="fa fa-search"></i></button>
-                            </div>
-                        </form>
+                    {/* SEARCH FOR MOBILE*/}
+                    <form className="d-none d-sm-block">
+                        <div className="form-group row">
+                            <input className="form-control" type="search" placeholder="What do you want to buy?" aria-label="Search" />
+                            <button type="submit"><i className="fa fa-search"></i></button>
+                        </div>
+                    </form>
 
-                        {/* FOR MOBILE */}
+                    {/* FOR MOBILE */}
+
+                    {categories.isLoading ?
+                        <div className="d-flex justify-content-center align-items-center">
+                            <ReactLoading type="bars" color="#33FFFC" />
+                        </div> :
+
                         <div className={"nav-buttons col-lg-3 d-flex d-lg-none justify-content-around mr-4 px-4"}>
 
                             <div className="auth d-flex justify-content-around w-100">
                                 <a href="/register">
                                     <button className="btn my-1" type="button">Register</button>
                                 </a>
-                                <a href="/login"><button className="btn my-1" type="button">Login</button></a>
+                                <a href="/login">
+                                    <button className="btn my-1" type="button">Login</button>
+                                </a>
                             </div>
 
                             <div className="buy mt-3">
 
                                 <ul className="categories-list-mobile">
+                                    {categories && categories.allCategories.map((category, index) => (
 
-                                    <li className={elecBuyClass} onClick={onElectronicsItemClick}>
-                                        <a href="/electronics">
-                                            Electronics</a> &nbsp;
-                                    <i className="fa fa-angle-down"></i>
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/computers">Computers & Accessories</a></li>
-                                            <li><a className="dropdown-item px-1" href="/phones">Phones & Accessories </a></li>
-                                            <li><a className="dropdown-item px-1" href="/printers">Printers</a></li>
-                                            <li><a className="dropdown-item px-1" href="/others-electronics">Others</a></li>
-                                        </ul>
-                                    </li>
+                                        <li
+                                            key={index}
+                                            className={`category-item dropdown item-buy mt-3 ${index === clickedItem ? 'show-details' : null}`}>
 
-                                    <li className={fashBuyClass} onClick={onFashionItemClick}>
-                                        <a href="/fashion">
-                                            Fashion</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/clothes">Clothes</a></li>
-                                            <li><a className="dropdown-item px-1" href="/shoes">Shoes</a></li>
-                                            <li><a className="dropdown-item px-1" href="/others-fashion">Others</a></li>
-                                        </ul>
-                                    </li>
+                                            <a href={`/${category.title.toLowerCase().split(" ")[0]}`}>
+                                                {category.title}</a> &nbsp;
 
-                                    <li className={furnBuyClass} onClick={onFurnitureItemClick}>
-                                        <a href="/furniture">
-                                            Furniture</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
+                                            <i className="fa fa-angle-down" onClick={() => setClickedItem(clickedItem === null ? index : null)}></i>
 
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/beds">Beds</a></li>
-                                            <li><a className="dropdown-item px-1" href="/chairs">Chairs</a></li>
-                                            <li><a className="dropdown-item px-1" href="/tables">Tables</a></li>
-                                            <li><a className="dropdown-item px-1" href="/others-furniture">Others</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li className={transBuyClass} onClick={onTransportItemClick}><a href="/transport">
-                                        Transport</a> &nbsp;
-                            <i className="fa fa-angle-down"></i>
-
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/cars">Cars</a></li>
-                                            <li><a className="dropdown-item px-1" href="/motorcycles">Motorcycles</a></li>
-                                            <li><a className="dropdown-item px-1" href="/bicycles">Bicycles</a></li>
-                                            <li><a className="dropdown-item px-1" href="/others-transport">Others</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li className={estBuyClass} onClick={onEstateItemClick}><a href="/real-estate">
-                                        Real Estate</a> &nbsp;
-                            <i className="fa fa-angle-down"></i>
-
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/plots">Land plots</a></li>
-                                            <li><a className="dropdown-item px-1" href="/houses">Houses</a></li>
-                                            <li><a className="dropdown-item px-1" href="/others-real-estate">Others</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li className={schBuyClass} onClick={onScholarshipsItemClick}><a href="/scholarships">
-                                        Scholarships</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
-
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/fully-funded">Fully funded</a></li>
-                                            <li><a className="dropdown-item px-1" href="/partially-funded">Partialy funded</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li className={jobsBuyClass} onClick={onJobsItemClick}><a href="/jobs">
-                                        Jobs</a> &nbsp;
-                                <i className="fa fa-angle-down"></i>
-
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/full-time">Full-time</a></li>
-                                            <li><a className="dropdown-item px-1" href="/part-time">Part-time</a></li>
-                                            <li><a className="dropdown-item px-1" href="/internships">Internships</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li className={othBuyClass} onClick={onOthersItemClick}><a href="/others">
-                                        Others</a> &nbsp;
-                                    <i className="fa fa-angle-down"></i>
-                                        {/* dropdown */}
-                                        <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item px-1" href="/tenders">Tenders</a></li>
-                                            <li><a className="dropdown-item px-1" href="/rents">Rent</a></li>
-                                        </ul>
-                                    </li>
+                                            {/* dropdown */}
+                                            <ul className="dropdown-menu">
+                                                {category && category.sub_category.map(subc => (
+                                                    <li key={subc._id} className="pt-2">
+                                                        <a className="dropdown-item px-1" href={`/${subc.name.toLowerCase().split(" ")[0]}`}>
+                                                            {subc.name}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </li>
+                                    ))}
 
                                 </ul>
                             </div>
 
-                        </div>
-                    </div>
+                        </div>}
+                </div>
 
-                    {/* FOR LARGE */}
-                    <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex justify-content-around pl-0 mr-4"}>
+                {/* FOR LARGE */}
+                <div className={"nav-buttons col-6 col-lg-3 d-none d-lg-flex justify-content-around pl-0 mr-4"}>
 
-                        <button className="btn sell px-lg-2" type="button" onClick={ChangeBuying}>
-                            {state.isBuying ? 'Buy now!' : 'Sell now!'}
-                        </button>
-                        <a href="/register">
-                            <button className="btn px-lg-2" type="button">Register</button>
-                        </a>
-                        <a href="/login"><button className="btn px-lg-2" type="button">Login</button></a>
-                    </div>
-                </nav>
-            </div>
-        )
+                    <button className="btn sell px-lg-2" type="button" onClick={() => setIsBuying(!isBuying)}>
+                        {isBuying ? 'Buy now!' : 'Sell now!'}
+                    </button>
+                    <a href="/register">
+                        <button className="btn px-lg-2" type="button">Register</button>
+                    </a>
+                    <a href="/login"><button className="btn px-lg-2" type="button">Login</button></a>
+                </div>
+            </nav>
+        </div>
+    )
 }
+const mapStateToProps = state => ({
+    categories: state.categoriesReducer
+})
 
-export default Header
+export default connect(mapStateToProps, { getCategories })(Header)

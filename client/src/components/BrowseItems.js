@@ -32,7 +32,7 @@ const BrowseItems = ({ items, getItems }) => {
 
                         <>
                             {items && items.allItems.map(item => (
-                                <div className="col-6 col-md-3 col-xl-2 oneCard">
+                                <div key={item._id} className="col-6 col-md-3 col-xl-2 oneCard">
                                     <div className="item-holder">
                                         <div className="item">
                                             <img src={item.pictures[0]} alt="sell" />

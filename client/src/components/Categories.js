@@ -23,7 +23,7 @@ const Categories = ({ categories, getCategories }) => {
                     <>
                         {categories && categories.allCategories.map(category => (
                             <li className="category-item dropdown" key={category._id}>
-                                <a href={`/${category.title.toLowerCase()}`}>
+                                <a href={`/${category.title.toLowerCase().split(" ")[0]}`}>
                                     {category.title}</a> &nbsp;
                                 <i className="fa fa-angle-down"></i>
 

@@ -215,6 +215,7 @@ a {
 
   .categories-list-mobile .category-item.show-details .dropdown-menu a.dropdown-item {
     color: #499167 !important;
+    display: inline !important;
   }
 
   .categories-list-mobile .category-item .dropdown-menu {
@@ -238,13 +239,12 @@ a {
 }
 
 .container.processes {
-  height: 437px;
   background-color: #ebf0ed;
+  padding: 86px 0 35px 0;
 }
 
 .row.groups {
   margin: 0 38px;
-  height: 70%;
 }
 
 .row.groups>div {
@@ -285,7 +285,7 @@ a {
 }
 
 .know-more-container {
-  height: 30%;
+  padding-top: 30px;
 }
 
 .know-more {
@@ -299,8 +299,7 @@ a {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bolder;
-  width: 23rem;
-  height: 4rem;
+  margin: 0 !important
 }
 
 /* BROWSE ITEMS */
@@ -424,9 +423,8 @@ a {
 }
 
 .row.moneyRow button {
+  margin: 0 !important;
   margin-top: 20px;
-  height: 67px;
-  width: 364px;
   color: #3f4531;
   background-color: #91f9e5;
   font-weight: 800;
@@ -666,10 +664,6 @@ a.forgot-password {
 /* TABLET */
 /*********/
 @media screen and (max-width: 1024px) {
-  .container.processes {
-    height: 328px;
-  }
-
   .row.groups {
     margin: 0 95px;
   }
@@ -694,8 +688,6 @@ a.forgot-password {
 
   .know-more button {
     font-size: 0.9rem;
-    width: 17rem;
-    height: 3rem;
   }
 
   /* BROWSE ITEMS */
@@ -758,8 +750,6 @@ a.forgot-password {
 
   .row.moneyRow button {
     margin-top: 20px;
-    width: 18.75rem;
-    height: 3.4rem;
     font-size: 1.2rem;
   }
 
@@ -873,10 +863,10 @@ a.forgot-password {
     font-size: 94%;
   }
 
-    .container.slick-job .job-description .alert-info {
-      font-size: .7rem;
-      padding: .4rem;
-    }
+  .container.slick-job .job-description .alert-info {
+    font-size: .7rem;
+    padding: .4rem;
+  }
 
 }
 
@@ -911,7 +901,7 @@ a.forgot-password {
   h3 {
     font-size: 1.2rem !important;
     font-weight: 900;
-        text-align: center;
+    text-align: center;
   }
 
   p,
@@ -920,7 +910,8 @@ a.forgot-password {
   }
 
   .container.processes {
-    height: 640px;
+    background-color: #ebf0ed;
+    padding: 24px 0
   }
 
   .row.groups {
@@ -949,16 +940,15 @@ a.forgot-password {
   }
 
   .know-more-container {
-    height: 45%;
+    padding-top: 20px;
   }
 
   .know-more button {
-    font-size: 0.8rem;
-    width: 14rem;
+    font-size: 0.7rem;
   }
 
   .btn {
-    padding: 6px 14px!important;
+    padding: 7px 14px !important;
   }
 
   /* BROWSE ITEMS */
@@ -1039,9 +1029,7 @@ a.forgot-password {
   }
 
   .row.moneyRow button {
-    height: 3.125rem;
-    width: 13rem;
-    font-size: .8rem;
+    font-size: .7rem;
   }
 
   /* FOOTER */
