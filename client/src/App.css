@@ -127,6 +127,10 @@ a {
   color: #499167;
 }
 
+.container.slick-job .viewed-details {
+  background-color: rgb(200, 240, 225);
+}
+
 .container.slick-job .job-title,
 .container.slick-job .job-description {
   background-color: rgb(247, 243, 243);

@@ -31,7 +31,7 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
     return (
         <Container className="slick-job my-lg-3 px-0 px-lg-3">
 
-            <Row>
+            <Row className="viewed-details">
 
                 <Col sm="8" className="mx-0 px-0 px-lg-5 choosen-job">
 
