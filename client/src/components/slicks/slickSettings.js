@@ -1,11 +1,13 @@
 const settings = {
     dots: false,
+    draggable:true,
     infinite: false,
     lazyLoad: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
+    // rows: 2,
     responsive: [
         {
             breakpoint: 1025,
@@ -35,6 +37,8 @@ const settings = {
         {
             breakpoint: 480,
             settings: {
+                autoplay: true,
+              lazyLoad: true,
                 slidesToShow: 1.1,
                 slidesToScroll: 1,
             }
@@ -42,6 +46,8 @@ const settings = {
         {
           breakpoint: 410,
           settings: {
+              autoplay: true,
+            lazyLoad: true,
               slidesToShow: 1,
               slidesToScroll: 1,
           }
