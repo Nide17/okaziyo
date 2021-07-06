@@ -48,7 +48,7 @@ const CreateScholarship = ({ auth, categories, createScholarship }) => {
         e.preventDefault();
 
         const formData = new FormData();
-        const { title, company, deadline, markdown } = itemState;
+        const { title, company, deadline, markdown, brand_image } = itemState;
 
         // VALIDATE
         if (title.length < 4 || company.length < 4 || deadline.length < 4 || markdown.length < 4) {
@@ -71,7 +71,7 @@ const CreateScholarship = ({ auth, categories, createScholarship }) => {
         // Create new item object
         formData.append('title', title);
         formData.append('brand', company);
-        formData.append('brand_image', itemState.brand_image)
+        formData.append('brand_image', brand_image)
         formData.append('deadline', deadline);
         formData.append('markdown', markdown);
         formData.append('category', categoryToUse._id);
@@ -85,7 +85,6 @@ const CreateScholarship = ({ auth, categories, createScholarship }) => {
         setItemState({
             title: '',
             company: '',
-            brand_image: '',
             deadline: ''
         })
     }

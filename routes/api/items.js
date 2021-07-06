@@ -90,10 +90,9 @@ router.get('/:id', async (req, res) => {
 router.post('/', upload.array('pictures', 12), async (req, res) => {
 
     const pictures = [];
-    const url = req.protocol + '://' + req.get('host')
 
     for (var i = 0; i < req.files.length; i++) {
-        pictures.push(url + '/uploads/items/' + req.files[i].filename)
+        pictures.push(req.files[i].filename)
     }
 
     const { title, description, brand, price, category, sub_category, contactNumber, creator } = req.body;

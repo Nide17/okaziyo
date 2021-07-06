@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 // Uploading images
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, './uploads/scholarships');
+        callback(null, './uploads/scholarships/');
     },
     filename: (req, file, callback) => {
         const fileName = file.originalname.toLowerCase().split(' ').join('-');
@@ -61,8 +61,9 @@ router.get('/', async (req, res) => {
 // @access  Have to be private
 router.post('/', upload.single('brand_image'), async (req, res) => {
 
-    const url = req.protocol + '://' + req.get('host')
-    const brand_image = req.file ? url + '/uploads/scholarships/' + req.file.filename : null
+    // const url = req.protocol + '://' + req.get('host')
+    // const brand_image = req.file ? url + '/uploads/scholarships/' + req.file.filename : null
+    const brand_image = req.file ? req.file.filename : null
 
     const { title, brand, deadline, markdown, category, sub_category, creator } = req.body;
 

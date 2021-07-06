@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import ReactLoading from "react-loading";
 import { connect } from 'react-redux';
 import { getItems } from '../redux/items/items.actions'
+import { useLocation } from 'react-router-dom'
 
 const BrowseItems = ({ items, getItems }) => {
 
@@ -9,6 +10,8 @@ const BrowseItems = ({ items, getItems }) => {
     useEffect(() => {
         getItems();
     }, [getItems]);
+
+    const location = useLocation();
 
     return (
         <section className="container things">
@@ -28,7 +31,7 @@ const BrowseItems = ({ items, getItems }) => {
                                 <div key={item._id} className="col-6 col-md-3 col-xl-2 oneCard">
                                     <div className="item-holder">
                                         <div className="item">
-                                            <img src={item.pictures[0]} alt="sell" />
+                                            <img src={location.pathname + `uploads/items/` + item.pictures[0]} alt="sell" />
                                             <h6>{item.title}</h6>
                                             <p className="price">{item.price}</p>
                                             <p className="desc">{item.description}</p>

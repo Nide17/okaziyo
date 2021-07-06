@@ -43,7 +43,7 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
 
         const formData = new FormData();
 
-        const { name, description, brand, price, contactNumber } = itemState;
+        const { name, description, brand, price, contactNumber, pictures } = itemState;
 
         // VALIDATE
         if (name.length < 4 || description.length < 4 || brand.length < 4) {
@@ -81,7 +81,7 @@ const AddItem = ({ auth, createItem, categoryId, sub_categoryName }) => {
         formData.append('category', categoryId);
         formData.append('sub_category', sub_categoryName);
         formData.append('creator', auth.user ? auth.user._id : '60c5d2a3f7b3082d8c4dadd6');
-        itemState.pictures.forEach((pic) => formData.append('pictures', pic));
+        pictures.forEach((pic) => formData.append('pictures', pic));
 
         // Attempt to create
         createItem(formData);

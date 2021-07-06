@@ -1,7 +1,7 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
 
-const LatestJobs = ({ jobs }) => {
+const LatestJobs = ({ jobs, location }) => {
 
     return (
 
@@ -15,7 +15,7 @@ const LatestJobs = ({ jobs }) => {
                 <Media key={job._id} className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                     <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                        <img src={job.brand_image} alt={job.brand} />
+                        <img src={location.pathname + `uploads/jobs/` + job.brand_image} alt={job.brand} />
                     </Media>
 
                     <Media body>

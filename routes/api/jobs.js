@@ -61,8 +61,7 @@ router.get('/', async (req, res) => {
 // @access  Have to be private
 router.post('/', upload.single('brand_image'), async (req, res) => {
 
-    const url = req.protocol + '://' + req.get('host')
-    const brand_image = req.file ? url + '/uploads/jobs/' + req.file.filename : null
+    const brand_image = req.file ? req.file.filename : null
 
     const { title, brand, deadline, markdown, category, sub_category, creator } = req.body;
 
