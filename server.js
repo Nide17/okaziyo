@@ -32,7 +32,9 @@ const connectDB = async () => {
 
 connectDB().catch(err => console.error(err))
 
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads/items', express.static('uploads/items'));
+app.use('/uploads/jobs', express.static('uploads/jobs'));
+app.use('/uploads/scholarships', express.static('uploads/scholarships'));
 
 // Bring in routes from the api
 //Use routes / All requests going to the api/categories goes the categories variable at the top categories.js file
