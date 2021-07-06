@@ -3,7 +3,7 @@ const settings = {
     draggable:true,
     infinite: false,
     lazyLoad: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
