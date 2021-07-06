@@ -15,11 +15,8 @@ const BrowseItems = ({ items, getItems }) => {
             <div className="row contents">
                 <h4 className="col-12">Browse new products to buy</h4>
 
-                <div className="latest d-flex col-12 text-left font-weight-bolder mb-3">
-                    <h5 className="mr-3 ml-md-5 pl-md-4 font-weight-bolder h-6 h-md-5">Latest items to buy</h5>
-                    <a href="/all-products">
-                        <p className="text-success">See all items</p>
-                    </a>
+                <div className="latest d-flex text-left font-weight-bold">
+                    <h5 className="lead text-left mb-4 font-weight-bold ml-md-5 pl-md-4">Latest items to buy</h5>
                 </div>
 
                 <div className="cards">
@@ -46,7 +43,7 @@ const BrowseItems = ({ items, getItems }) => {
 
                 </div>
                 <div className="col-12 load-more-holder">
-                    <button className="btn load-more" type="button">Load More</button>
+                    <button className="btn load-more" type="button">More items</button>
                 </div>
             </div>
         </section>

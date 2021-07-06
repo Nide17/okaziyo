@@ -20,7 +20,7 @@ const ScholarshipSlick = ({ scholarships, getScholarships }) => {
 
         <section className="container featured">
             <div className="container">
-                <h1 className="lead text-left mb-4">New Scholarships</h1>
+                <h5 className="lead text-left mb-4 ml-md-5 font-weight-bold">New Scholarships</h5>
 
                 {!scholarships.isLoading ?
 

@@ -19,12 +19,12 @@ const SlickScholarshipPlaceholder = ({ slickScholarship, categories, getCategori
                 <img src={slickScholarship.brand_image} alt={slickScholarship.brand} className="card-img-top img-fluid" />
             </div>
 
-            <div className="card-body body-holder">
-                <strong className="card-text slickItem-description text-center mb-0 mt-2 mx-2">
+            <div className="card-body body-holder pt-2">
+                <h6 className="card-text slickItem-description text-center mx-2 my-0 mx-lg-3">
                     {slickScholarship.title}
-                </strong>
+                </h6>
 
-                <div className="card-body text-center pb-1">
+                <div className="card-body text-center pb-1 mx-2 mx-lg-3">
                     <p className="card-text instructor">
                         <span>at </span>
                         <a href="#/">{slickScholarship.brand}</a>
@@ -44,7 +44,7 @@ const SlickScholarshipPlaceholder = ({ slickScholarship, categories, getCategori
 
                 <div className="card-body text-center pb-1">
 
-                    <a href={`/slickScholarship/${slickScholarship._id}`} className="slickItem-button card-link btn btn-primary">View Scholarship</a>
+                    <a href={`/slickScholarship/${slickScholarship._id}`} className="slickItem-button card-link btn btn-primary">View scholarship</a>
 
                     <span href="/" className="card-link ml-lg-5">
                         Posted on {new Date(slickScholarship.updatedAt).toLocaleDateString()}

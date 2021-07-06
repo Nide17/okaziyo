@@ -20,7 +20,7 @@ const JobsSlick = ({ jobs, getJobs }) => {
 
     <section className="container featured">
       <div className="container">
-        <h1 className="lead text-left mb-4">New Jobs</h1>
+        <h5 className="lead text-left mb-4 ml-md-5 font-weight-bold">New Jobs</h5>
 
         {!jobs.isLoading ?
 

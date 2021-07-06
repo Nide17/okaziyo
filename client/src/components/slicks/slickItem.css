@@ -63,6 +63,10 @@ div.slickItem-card:hover {
     height: 7.5rem;
     padding: 0;
     background-color: #f8fafc;
+}
+
+.slick-slider .slickItem-card.card .card-body.body-holder h6 {
+    font-size: .8rem!important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -79,7 +83,7 @@ div.slickItem-card:hover {
 }
 
 .slick-slider .slickItem-card.card .card-body.body-holder p.instructor {
-    font-size: 0.8rem;
+    font-size: .68rem !important;
     font-weight: 400;
     line-height: 1.1rem;
     white-space: nowrap;
@@ -305,5 +309,13 @@ section.container.categories .container {
         background-color: rgba(255, 255, 255, 0.03);
         border-bottom: none;
     }
+
+    .slick-slider .slickItem-card.card .card-body.body-holder h6 {
+        font-size: .75rem;
+    }
+
+        .slick-slider .slickItem-card.card .card-body.body-holder p {
+            font-size: .69rem!important;
+        }
 
 }

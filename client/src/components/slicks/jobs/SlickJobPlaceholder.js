@@ -19,12 +19,12 @@ const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
                 <img src={slickJob.brand_image} alt={slickJob.brand} className="card-img-top img-fluid" />
             </div>
 
-            <div className="card-body body-holder d-flex flex-column align-items-center">
-                <strong className="card-text slickItem-description mb-0 mt-2 mx-2">
+            <div className="card-body body-holder pt-2">
+                <h6 className="card-text slickItem-description text-center mx-2 my-0 mx-lg-3">
                     {slickJob.title}
-                </strong>
+                </h6>
 
-                <div className="card-body text-center pb-1">
+                <div className="card-body text-center py-1 mx-2 mx-lg-3">
                     <p className="card-text instructor">
                         <span>at </span>
                         <a href="#/">{slickJob.brand}</a>
@@ -44,7 +44,7 @@ const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
 
                 <div className="card-body text-center pb-1">
 
-                    <a href={`/slickJob/${slickJob._id}`} className="slickItem-button card-link btn btn-primary">View Job</a>
+                    <a href={`/slickJob/${slickJob._id}`} className="slickItem-button card-link btn btn-primary">View job</a>
 
                     <span href="/" className="card-link ml-lg-5">
                     Posted on {new Date(slickJob.updatedAt).toLocaleDateString()}

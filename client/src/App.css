@@ -390,10 +390,9 @@ a {
 }
 
 .row.contents .load-more {
-  width: 153px;
   color: #ffffff;
   background-color: #499167;
-  font-size: 1.1rem;
+  font-size: .9rem;
   font-weight: 800;
 }
 
@@ -738,8 +737,7 @@ a.forgot-password {
   }
 
   .row.contents .load-more {
-    width: 18.7rem;
-    font-size: 1.1rem;
+    font-size: .8rem;
   }
 
 
@@ -1009,8 +1007,7 @@ a.forgot-password {
   }
 
   .row.contents .load-more {
-    width: 10rem;
-    font-size: .8rem;
+    font-size: .7rem;
   }
 
 

@@ -9,7 +9,7 @@ class Money extends Component {
                 <div className="row moneyRow">
                     <h4>We Value Your Money</h4>
                     <p>Receive your item as described. Or your money back.</p>
-                    <button className="btn terms" type="button">See Terms & Conditions</button>
+                    <button className="btn terms" type="button">Terms & conditions</button>
                 </div>
             </section>
         )
