@@ -15,10 +15,6 @@ const BrowseItems = ({ items, getItems }) => {
             <div className="row contents">
                 <h4 className="col-12">Browse new products to buy</h4>
 
-                <div className="latest d-flex text-left font-weight-bold">
-                    <h5 className="lead text-left mb-4 font-weight-bold ml-md-5 pl-md-4">Latest items to buy</h5>
-                </div>
-
                 <div className="cards">
 
                     {items.isLoading ?
