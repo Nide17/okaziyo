@@ -32,7 +32,7 @@ class Process extends Component {
                         <div className="process-grp">
                             <img src={ship} alt="ship" />
                             <h5>Ship it.</h5>
-                            <p>No meetings. Printable shipping label emailed to seller.</p>
+                            <p>Only necessary physical contacts happen. Talk with the buyer for shipping process.</p>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@ class Process extends Component {
                         <div className="process-grp">
                             <img src={paid} alt="paid" />
                             <h5>Get Paid.</h5>
-                            <p>Listing is free. We only charge a small commission when your sale is complete.</p>
+                            <p>Listing is free. Buying is free. We are happy when your transaction is complete.</p>
                         </div>
                     </div>
 
