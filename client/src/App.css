@@ -128,12 +128,13 @@ a {
 }
 
 .container.slick-job .viewed-details {
-  background-color: rgb(200, 240, 225);
+  background-color: rgb(246, 253, 249);
 }
 
 .container.slick-job .job-title,
 .container.slick-job .job-description {
   background-color: rgb(247, 243, 243);
+  border-radius: .5rem;
 }
 
 .container.slick-job .job-description ul,
