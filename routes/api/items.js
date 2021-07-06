@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 // Uploading images
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, './uploads');
+        callback(null, './uploads/items/');
     },
     filename: (req, file, callback) => {
         const fileName = file.originalname.toLowerCase().split(' ').join('-');
@@ -87,15 +87,13 @@ router.get('/:id', async (req, res) => {
 // @route   POST /api/items
 // @desc    Create item
 // @access  Have to be private
-
-// router.post('/', auth, authRole(['Creator', 'Admin']), async (req, res) => {
 router.post('/', upload.array('pictures', 12), async (req, res) => {
 
     const pictures = [];
     const url = req.protocol + '://' + req.get('host')
 
     for (var i = 0; i < req.files.length; i++) {
-        pictures.push(url + '/uploads/' + req.files[i].filename)
+        pictures.push(url + '/uploads/items/' + req.files[i].filename)
     }
 
     const { title, description, brand, price, category, sub_category, contactNumber, creator } = req.body;

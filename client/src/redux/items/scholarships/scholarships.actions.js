@@ -54,7 +54,7 @@ export const updateScholarship = updatedScholarship => async (dispatch, getState
           type: UPDATE_SCHOLARSHIP,
           payload: updatedScholarship
         }),
-        alert('Updated Successfully!'))
+        alert('Updated successfully!'))
 
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'UPDATE_SCHOLARSHIP_FAIL'));
