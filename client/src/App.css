@@ -132,7 +132,8 @@ a {
   background-color: rgb(247, 243, 243);
 }
 
-.container.slick-job .job-description ul {
+.container.slick-job .job-description ul,
+.container.slick-job .job-description ol {
   margin-left: 1.2rem;
 }
 
@@ -142,6 +143,7 @@ a {
 
 .container.slick-job .job-description h5 {
   font-size: .85rem;
+  color:rgb(57, 105, 209)
 }
 
 .container.slick-job .choosen-job img {
