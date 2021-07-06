@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { getCategories } from '../../../redux/categories/categories.actions'
 import { connect } from 'react-redux';
-import { useLocation } from 'react-router-dom'
 
 const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
 
@@ -11,15 +10,13 @@ const SlickJobPlaceholder = ({ slickJob, categories, getCategories }) => {
         getCategories();
     }, [getCategories]);
 
-    const location = useLocation();
-
     const categoryToUse = categories && categories.allCategories.find(category =>
         category.sub_category.find(subcat => subcat._id === slickJob.sub_category))
 
     return (
         <div className="slickItem-card card mx-auto my-0">
             <div className="img-holder">
-                <img src={location.pathname + `uploads/jobs/` + slickJob.brand_image} alt={slickJob.brand} className="card-img-top img-fluid" />
+                <img src={`/uploads/jobs/` + slickJob.brand_image} alt={slickJob.brand} className="card-img-top img-fluid" />
             </div>
 
             <div className="card-body body-holder pt-2">

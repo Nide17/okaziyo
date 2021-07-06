@@ -1,10 +1,7 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
-import { useLocation } from 'react-router-dom'
 
 const SimilarJobs = ({ jobs, jobToUse, categoryToUse }) => {
-
-    const location = useLocation();
 
     return (
 
@@ -20,7 +17,7 @@ const SimilarJobs = ({ jobs, jobToUse, categoryToUse }) => {
                     <Media key={job._id} className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                         <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                            <img src={location.pathname + `uploads/jobs/` + job.brand_image} alt={job.brand} />
+                            <img src={`/uploads/jobs/` + job.brand_image} alt={job.brand} />
                         </Media>
 
                         <Media body>

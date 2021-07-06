@@ -1,10 +1,7 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
-import { useLocation } from 'react-router-dom'
 
 const LatestJobs = ({ jobs }) => {
-
-    const location = useLocation();
 
     return (
 
@@ -18,7 +15,7 @@ const LatestJobs = ({ jobs }) => {
                 <Media key={job._id} className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                     <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                        <img src={location.pathname + `uploads/jobs/` + job.brand_image} alt={job.brand} />
+                        <img src={`/uploads/jobs/` + job.brand_image} alt={job.brand} />
                     </Media>
 
                     <Media body>

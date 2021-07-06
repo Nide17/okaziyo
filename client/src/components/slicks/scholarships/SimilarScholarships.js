@@ -1,11 +1,8 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
-import { useLocation } from 'react-router-dom'
 
 const SimilarScholarships = ({ scholarships, scholarshipToUse, categoryToUse }) => {
 
-    const location = useLocation();
-    
     return (
 
         <div className="similar-jobs mt-4 mt-lg-2">
@@ -20,7 +17,7 @@ const SimilarScholarships = ({ scholarships, scholarshipToUse, categoryToUse }) 
                     <Media key={scholarship._id} className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                         <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                            <img src={location.pathname + `uploads/scholarships/` + scholarship.brand_image} alt={scholarship.brand} />
+                            <img src={`/uploads/scholarships/` + scholarship.brand_image} alt={scholarship.brand} />
                         </Media>
 
                         <Media body>

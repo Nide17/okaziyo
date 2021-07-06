@@ -6,7 +6,7 @@ import { getCategories } from '../../../redux/categories/categories.actions'
 import { getScholarships } from '../../../redux/items/scholarships/scholarships.actions'
 import { getJobs } from '../../../redux/items/jobs/jobs.actions'
 import ReactLoading from "react-loading";
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Container, Row, Col, Media, Alert } from 'reactstrap';
 import SimilarScholarships from './SimilarScholarships';
 import LatestJobs from './LatestJobs';
@@ -22,7 +22,6 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
 
     // Access route parameters
     const { scholarshipId } = useParams()
-    const location = useLocation();
 
     const scholarshipToUse = scholarships && scholarships.allScholarships.find(scholarship => scholarship._id === scholarshipId)
 
@@ -42,7 +41,7 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
                             <Media className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                                 <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                                    <img src={scholarshipToUse && location.pathname + `uploads/scholarships/` + scholarshipToUse.brand_image} alt="" />
+                                    <img src={scholarshipToUse && `/uploads/scholarships/` + scholarshipToUse.brand_image} alt="" />
                                 </Media>
 
                                 <Media body>
