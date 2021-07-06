@@ -1,8 +1,11 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
+import { useLocation } from 'react-router-dom'
 
-const SimilarScholarships = ({ scholarships, scholarshipToUse, categoryToUse, location }) => {
+const SimilarScholarships = ({ scholarships, scholarshipToUse, categoryToUse }) => {
 
+    const location = useLocation();
+    
     return (
 
         <div className="similar-jobs mt-4 mt-lg-2">

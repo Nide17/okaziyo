@@ -1,7 +1,10 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
+import { useLocation } from 'react-router-dom'
 
-const LatestJobs = ({ jobs, location }) => {
+const LatestJobs = ({ jobs }) => {
+
+    const location = useLocation();
 
     return (
 

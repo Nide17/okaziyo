@@ -1,7 +1,10 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
+import { useLocation } from 'react-router-dom'
 
-const SimilarJobs = ({ jobs, jobToUse, categoryToUse, location }) => {
+const SimilarJobs = ({ jobs, jobToUse, categoryToUse }) => {
+
+    const location = useLocation();
 
     return (
 

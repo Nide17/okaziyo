@@ -93,8 +93,8 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
                 </Col>
 
                 <Col sm="4" className="sidebar-content">
-                    <SimilarScholarships scholarships={scholarships} scholarshipToUse={scholarshipToUse} categoryToUse={categoryToUse} location={location} />
-                    <LatestJobs jobs={jobs && jobs} categories={categories} location={location} />
+                    <SimilarScholarships scholarships={scholarships} scholarshipToUse={scholarshipToUse} categoryToUse={categoryToUse} />
+                    <LatestJobs jobs={jobs && jobs} categories={categories} />
                 </Col>
             </Row>
 

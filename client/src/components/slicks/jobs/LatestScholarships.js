@@ -1,8 +1,10 @@
 import React from 'react'
 import { Media, Alert } from 'reactstrap';
+import { useLocation } from 'react-router-dom'
+const LatestScholarships = ({ scholarships }) => {
 
-const LatestScholarships = ({ scholarships, location }) => {
-
+    const location = useLocation();
+    
     return (
 
         scholarships.isLoading ? null :
