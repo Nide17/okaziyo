@@ -40,7 +40,7 @@ const ViewedJob = ({ jobs, scholarships, categories, getJobs, getCategories, get
                             <Media className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                                 <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                                    <img src={jobToUse && `/uploads/jobs/` + jobToUse.brand_image} alt="" />
+                                    <img src={jobToUse && jobToUse.brand_image} alt="" />
                                 </Media>
 
                                 <Media body>

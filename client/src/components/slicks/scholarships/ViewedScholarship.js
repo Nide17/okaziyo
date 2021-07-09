@@ -41,7 +41,7 @@ const ViewedScholarship = ({ jobs, scholarships, categories, getJobs, getScholar
                             <Media className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                                 <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                                    <img src={scholarshipToUse && `/uploads/scholarships/` + scholarshipToUse.brand_image} alt="" />
+                                    <img src={scholarshipToUse && scholarshipToUse.brand_image} alt="" />
                                 </Media>
 
                                 <Media body>

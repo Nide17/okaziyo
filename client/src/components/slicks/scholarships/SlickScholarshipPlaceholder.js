@@ -16,7 +16,7 @@ const SlickScholarshipPlaceholder = ({ slickScholarship, categories, getCategori
     return (
         <div className="slickItem-card card mx-auto my-0">
             <div className="img-holder">
-                <img src={`/uploads/scholarships/` + slickScholarship.brand_image} alt={slickScholarship.brand} className="card-img-top img-fluid" />
+                <img src={slickScholarship.brand_image} alt={slickScholarship.brand} className="card-img-top img-fluid" />
             </div>
 
             <div className="card-body body-holder pt-2">

@@ -17,7 +17,7 @@ const LatestScholarships = ({ scholarships }) => {
                 <Media key={scholarship._id} className="mt-lg-2 p-3 border-bottom job-title d-flex flex-column flex-lg-row">
 
                     <Media left href="#" className="m-auto d-flex justify-content-center align-items-center">
-                        <img src={`/uploads/scholarships/` + scholarship.brand_image} alt={scholarship.brand} />
+                        <img src={scholarship.brand_image} alt={scholarship.brand} />
                     </Media>
 
                     <Media body>
