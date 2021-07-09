@@ -40,7 +40,7 @@ const settings = {
         autoplay: true,
         lazyLoad: true,
         infinite: true,
-        slidesToShow: 1.1,
+        slidesToShow: 1.025,
         slidesToScroll: 1,
       }
     },
@@ -48,6 +48,7 @@ const settings = {
       breakpoint: 410,
       settings: {
         autoplay: true,
+        infinite: true,
         lazyLoad: true,
         slidesToShow: 1,
         slidesToScroll: 1,

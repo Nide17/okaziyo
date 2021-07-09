@@ -17,39 +17,30 @@ const JobsSlick = ({ jobs, getJobs }) => {
   }, [getJobs]);
 
   return (
+    !jobs.isLoading ?
+      <section className="container featured">
+        <div className="container">
+          <h5 className="lead text-left mb-4 ml-md-5 font-weight-bold">New Jobs</h5>
+          <Slider {...settings}>
+            {
+              jobs && jobs.allJobs.map((job, id) => (
+                <Suspense
+                  key={id}
+                  fallback={
 
-    <section className="container featured">
-      <div className="container">
-        <h5 className="lead text-left mb-4 ml-md-5 font-weight-bold">New Jobs</h5>
-
-        {!jobs.isLoading ?
-
-        <Slider {...settings}>
-          {
-            jobs && jobs.allJobs.map((job, id) => (
-              <Suspense
-                key={id}
-                fallback={
-
-                  <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
-                      <span className="sr-only">Loading...</span>
-                    </div>
-                  </div>
-
-                }>
-
-                <SlickJobPlaceholder slickJob={job} />
-              </Suspense>
-            ))
-          }
-        </Slider> : null}
-
-      </div>
-    </section>
-
-  )
+                    <div className="d-flex justify-content-center">
+                      <div className="spinner-border" role="status">
+                        <span className="sr-only">Loading...</span>
+                      </div>
+                    </div>}>
+                  <SlickJobPlaceholder slickJob={job} />
+                </Suspense>))
+            }
+          </Slider>
+        </div>
+      </section> : null)
 }
+
 // Map  state props
 const mapStateToProps = state => ({
   jobs: state.jobsReducer

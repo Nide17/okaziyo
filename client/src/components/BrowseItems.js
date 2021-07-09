@@ -13,13 +13,13 @@ const BrowseItems = ({ items, getItems }) => {
     return (
         <section className="container things">
             <div className="row contents">
-                <h4 className="col-12">Browse new products to buy</h4>
+                <h4 className="col-12">{!items.isLoading ? "Browse new products to buy" : null}</h4>
 
                 <div className="cards">
 
                     {items.isLoading ?
 
-                        <div className="d-flex justify-content-center align-items-center">
+                        <div className="mx-auto">
                             <ReactLoading type="bars" color="#33FFFC" />
                         </div> :
 
@@ -38,9 +38,11 @@ const BrowseItems = ({ items, getItems }) => {
                         </>}
 
                 </div>
-                <div className="col-12 load-more-holder">
-                    <button className="btn load-more" type="button">More items</button>
-                </div>
+
+                {!items.isLoading ?
+                    <div className="col-12 load-more-holder">
+                        <button className="btn load-more" type="button">More items</button>
+                    </div> : null}
             </div>
         </section>
     )

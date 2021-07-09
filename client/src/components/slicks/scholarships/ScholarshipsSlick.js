@@ -17,39 +17,29 @@ const ScholarshipSlick = ({ scholarships, getScholarships }) => {
     }, [getScholarships]);
 
     return (
-
-        <section className="container featured">
-            <div className="container">
-                <h5 className="lead text-left mb-4 ml-md-5 font-weight-bold">New Scholarships</h5>
-
-                {!scholarships.isLoading ?
-
+        !scholarships.isLoading ?
+            <section className="container featured">
+                <div className="container">
+                    <h5 className="lead text-left mb-4 ml-md-5 font-weight-bold">New Scholarships</h5>
                     <Slider {...settings}>
                         {
                             scholarships && scholarships.allScholarships.map((scholarship, id) => (
                                 <Suspense
                                     key={id}
                                     fallback={
-
                                         <div className="d-flex justify-content-center">
                                             <div className="spinner-border" role="status">
                                                 <span className="sr-only">Loading...</span>
                                             </div>
-                                        </div>
-
-                                    }>
-
+                                        </div>}>
                                     <SlickScholarshipPlaceholder slickScholarship={scholarship} />
-                                </Suspense>
-                            ))
+                                </Suspense>))
                         }
-                    </Slider> : null}
-
-            </div>
-        </section>
-
-    )
+                    </Slider>
+                </div>
+            </section> : null)
 }
+
 // Map  state props
 const mapStateToProps = state => ({
     scholarships: state.scholarshipsReducer
