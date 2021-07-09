@@ -1,38 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const { v4: uuidv4 } = require('uuid');
-
-// Uploading images
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, './uploads/jobs/');
-    },
-    filename: (req, file, callback) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        callback(null, uuidv4() + '-' + fileName)
-    }
-});
-
-const fileFilter = (req, file, callback) => {
-
-    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-
-    if (allowedFileTypes.includes(file.mimetype)) {
-        callback(null, true);
-    } else {
-        callback(null, false);
-    }
-}
-
-var upload = multer({
-    storage,
-    limits: {
-        fileSize: 1000000 // 1000000 Bytes = 1 MB
-    },
-    fileFilter
-});
-
+const { jobUpload } = require('./utils/jobUpload.js');
 
 // Job Model
 const Job = require('../../models/Job');
@@ -57,12 +25,11 @@ router.get('/', async (req, res) => {
 });
 
 // @route   POST /api/jobs
-// @desc    Create Job
+// @desc    Create Job & upload a brand_image
 // @access  Have to be private
-router.post('/', upload.single('brand_image'), async (req, res) => {
+router.post("/", jobUpload.single("brand_image"), async (req, res) => {
 
-    const brand_image = req.file ? req.file.filename : null
-
+    const b_image = req.file ? req.file : null
     const { title, brand, deadline, markdown, category, sub_category, creator } = req.body;
 
     // Simple validation
@@ -74,7 +41,7 @@ router.post('/', upload.single('brand_image'), async (req, res) => {
         const newJob = new Job({
             title,
             brand,
-            brand_image,
+            brand_image: b_image.location,
             deadline,
             markdown,
             category,

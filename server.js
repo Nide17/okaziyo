@@ -1,5 +1,7 @@
 // Bring in all dependencies
 const express = require('express');
+// For image uploads
+const aws = require('aws-sdk');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('config')
@@ -9,6 +11,9 @@ const app = express();
 
 // Express has bodyParser
 app.use(express.json());
+
+// Configure the AWS region of the target bucket.
+aws.config.region = config.get('AWS_Region')
 
 //DB Config
 const dbURI = config.get('mongoURI');

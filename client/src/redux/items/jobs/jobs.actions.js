@@ -54,7 +54,7 @@ export const updateJob = updatedJob => async (dispatch, getState) => {
           type: UPDATE_JOB,
           payload: updatedJob
         }),
-        alert('Updated Successfully!'))
+        alert('Updated successfully!'))
 
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status, 'UPDATE_JOB_FAIL'));
@@ -66,7 +66,7 @@ export const updateJob = updatedJob => async (dispatch, getState) => {
 export const deleteJob = id => async (dispatch, getState) => {
 
   try {
-    if (window.confirm("This Job will be deleted permanently!")) {
+    if (window.confirm("This job will be deleted permanently!")) {
       await axios
         .delete(`/api/jobs/${id}`, tokenConfig(getState))
         .then(res =>
@@ -74,7 +74,7 @@ export const deleteJob = id => async (dispatch, getState) => {
             type: DELETE_JOB,
             payload: id
           }),
-          alert('Deleted Successfully!'))
+          alert('Deleted successfully!'))
     }
 
   } catch (err) {
