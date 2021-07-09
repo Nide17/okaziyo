@@ -1,38 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const { v4: uuidv4 } = require('uuid');
-
-// Uploading images
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, './uploads/items/');
-    },
-    filename: (req, file, callback) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        callback(null, uuidv4() + '-' + fileName)
-    }
-});
-
-const fileFilter = (req, file, callback) => {
-
-    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-
-    if (allowedFileTypes.includes(file.mimetype)) {
-        callback(null, true);
-    } else {
-        callback(null, false);
-    }
-}
-
-var upload = multer({
-    storage,
-    limits: {
-        fileSize: 1000000 // 1000000 Bytes = 1 MB
-    },
-    fileFilter
-});
-
+const { itemUpload } = require('./utils/itemUpload.js');
 
 // Item Model
 const Item = require('../../models/Item');
@@ -46,10 +14,10 @@ router.get('/', async (req, res) => {
 
     try {
         const items = await Item.find()
+
             //sort items by date_created
             .sort({ date_created: -1 })
             .populate('category')
-            .populate('creator')
 
         if (!items) throw Error('No items found');
 
@@ -87,12 +55,11 @@ router.get('/:id', async (req, res) => {
 // @route   POST /api/items
 // @desc    Create item
 // @access  Have to be private
-router.post('/', upload.array('pictures', 12), async (req, res) => {
-
+router.post("/", itemUpload.array('pictures', 12), async (req, res) => {
     const pictures = [];
 
     for (var i = 0; i < req.files.length; i++) {
-        pictures.push(req.files[i].filename)
+        pictures.push(req.files[i].location)
     }
 
     const { title, description, brand, price, category, sub_category, contactNumber, creator } = req.body;

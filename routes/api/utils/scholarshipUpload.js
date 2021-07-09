@@ -53,4 +53,4 @@ const upload = multer({
     }
 })
 
-exports.scholarshipsUpload = upload;
+exports.scholarshipUpload = upload;

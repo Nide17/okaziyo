@@ -1,4 +1,10 @@
 {
         "mongoURI": "mongodb+srv://okaziyo_db:jesus123@cluster0.0pzrf.mongodb.net/okaziyo_db?retryWrites=true&w=majority",
-        "jwtSecret": "sl_myJwtSecret"
+        "jwtSecret": "sl_myJwtSecret",
+        "AWSAccessKeyId": "AKIAUNDOIREWJED54OLZ",
+        "AWSSecretKey": "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",
+        "S3JobsBucket": "okaziyobucket/uploads/jobs",
+        "S3ScholarshipsBucket": "okaziyobucket/uploads/scholarships",
+        "S3ItemsBucket": "okaziyobucket/uploads/items",
+        "AWS_Region": "us-east-2"
 }

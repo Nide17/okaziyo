@@ -1,38 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const { v4: uuidv4 } = require('uuid');
-
-// Uploading images
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, './uploads/scholarships/');
-    },
-    filename: (req, file, callback) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        callback(null, uuidv4() + '-' + fileName)
-    }
-});
-
-const fileFilter = (req, file, callback) => {
-
-    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-
-    if (allowedFileTypes.includes(file.mimetype)) {
-        callback(null, true);
-    } else {
-        callback(null, false);
-    }
-}
-
-var upload = multer({
-    storage,
-    limits: {
-        fileSize: 1000000 // 1000000 Bytes = 1 MB
-    },
-    fileFilter
-});
-
+const { scholarshipUpload } = require('./utils/scholarshipUpload.js');
 
 // Scholarship Model
 const Scholarship = require('../../models/Scholarship');
@@ -59,11 +27,9 @@ router.get('/', async (req, res) => {
 // @route   POST /api/scholarships
 // @desc    Create Scholarship
 // @access  Have to be private
-router.post('/', upload.single('brand_image'), async (req, res) => {
+router.post("/", scholarshipUpload.single("brand_image"), async (req, res) => {
 
-    // const url = req.protocol + '://' + req.get('host')
-    // const brand_image = req.file ? url + '/uploads/scholarships/' + req.file.filename : null
-    const brand_image = req.file ? req.file.filename : null
+    const b_image = req.file ? req.file : null
 
     const { title, brand, deadline, markdown, category, sub_category, creator } = req.body;
 
@@ -76,7 +42,7 @@ router.post('/', upload.single('brand_image'), async (req, res) => {
         const newScholarship = new Scholarship({
             title,
             brand,
-            brand_image,
+            brand_image: b_image.location,
             deadline,
             markdown,
             category,
