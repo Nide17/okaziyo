@@ -1,5 +1,5 @@
 {
-        "mongoURI": "mongodb+srv://okaziyo_db:jesus123@cluster0.0pzrf.mongodb.net/okaziyo_db?retryWrites=true&w=majority",
+        "mongoURI": "mongodb://localhost:27017/okaziyo_db",
         "jwtSecret": "sl_myJwtSecret",
         "AWSAccessKeyId": "AKIAUNDOIREWJED54OLZ",
         "AWSSecretKey": "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",

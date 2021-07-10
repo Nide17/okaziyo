@@ -148,7 +148,7 @@ a {
 
 .container.slick-job .job-description h5 {
   font-size: .85rem;
-  color:rgb(57, 105, 209)
+  color: rgb(57, 105, 209)
 }
 
 .container.slick-job .choosen-job img {
@@ -333,7 +333,7 @@ a {
 
 .cards .oneCard {
   width: 180px;
-  height: 350px;
+  height: 250px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -342,7 +342,7 @@ a {
 
 .cards .item-holder {
   width: 180px;
-  height: 350px;
+  height: 250px;
   background-color: #fefefe;
   display: flex;
   justify-content: center;
@@ -351,7 +351,7 @@ a {
 }
 
 .cards .item {
-  height: 375px;
+  height: 250px;
   width: 160px;
 }
 
@@ -359,7 +359,7 @@ a {
   width: 160px;
   height: 160px;
   background-color: #c3ccac;
-clip-path: polygon(0% 5%, 5% 5%, 5% 0%, 95% 0%, 95% 5%, 100% 5%, 100% 95%, 95% 95%, 95% 100%, 5% 100%, 5% 95%, 0% 95%);
+  clip-path: polygon(0% 5%, 5% 5%, 5% 0%, 95% 0%, 95% 5%, 100% 5%, 100% 95%, 95% 95%, 95% 100%, 5% 100%, 5% 95%, 0% 95%);
   margin: 0 auto;
   display: flex;
 }
@@ -370,18 +370,39 @@ clip-path: polygon(0% 5%, 5% 5%, 5% 0%, 95% 0%, 95% 5%, 100% 5%, 100% 95%, 95% 9
   padding-top: 1rem;
 }
 
-.cards .item .price {
-  color: #499167;
-  font-size: 18px;
+.cards .item .price-phone {
+  color: #000000;
+  font-size: .75rem !important;
   font-weight: 600;
-  line-height: 18px;
-  margin-bottom: 10px;
+  line-height: 15px;
+  margin-bottom: 5px;
+}
+
+.cards .item .price-phone span.contact {
+  color: #499167;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  margin-bottom: 5px;
+}
+
+.cards .item .price-phone span.price {
+  font-size: .72rem;
+  line-height: 1;
+  border-bottom: 2px solid #dc3545 !important;
+}
+
+.cards .item p {
+  margin-bottom: 5px !important;
+  text-align: left !important;
 }
 
 .cards .item .desc {
   width: 160px;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: .7rem !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .row.contents .load-more-holder {
@@ -724,7 +745,7 @@ a.forgot-password {
   }
 
   .cards .item h6 {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.6rem;
   }
 
   .cards .item .desc {
@@ -824,7 +845,7 @@ a.forgot-password {
 
   .cards .item h6,
   .cards .item .desc,
-  .cards .item .price {
+  .cards .item .price-phone {
     text-align: center;
   }
 
@@ -977,6 +998,11 @@ a.forgot-password {
     height: fit-content;
   }
 
+  .cards .oneCard .item-holder {
+    border: .1px solid #ebe9e9;
+    border-radius: 4%;
+  }
+
   .cards .item-holder,
   .cards .item {
     padding: .2rem;
@@ -986,19 +1012,54 @@ a.forgot-password {
 
   .cards .item h6,
   .cards .item .desc,
-  .cards .item .price {
+  .cards .item .price-phone {
     width: 100%;
     font-size: .8rem;
     text-align: center;
   }
 
+  .cards .item .desc {
+    font-size: .7rem;
+  }
+
   .cards .item h6 {
-    margin-bottom: 0.9rem;
+    font-weight: bold;
     text-align: center;
+    font-size: .7rem;
+    padding-top: .8rem;
+  }
+
+  .cards .item .price-phone {
+    font-size: .6rem !important;
+    font-weight: 600;
+    line-height: .65rem;
+    margin-bottom: 3px;
+  }
+
+  .cards .item .price-phone span.contact {
+    font-size: .6rem;
+    font-weight: 600;
+    line-height: .62;
+    margin-bottom: 3px;
+  }
+
+  .cards .item .price-phone span.price {
+    font-size: .55rem;
+    line-height: .6;
+    border-bottom: 1px solid #dc3545 !important;
+  }
+
+
+  .cards .item p {
+    margin-bottom: 3px;
   }
 
   .cards .item .desc {
-    font-size: .7rem;
+    width: 160px;
+    font-size: .65rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .row.contents .load-more-holder {
@@ -1078,5 +1139,13 @@ a.forgot-password {
 
   .w-50 {
     width: 100% !important;
+  }
+}
+
+/* SMALLEST MOBILE */
+@media screen and (max-width: 370px) {
+
+  .cards .oneCard .item-holder {
+    border: none
   }
 }

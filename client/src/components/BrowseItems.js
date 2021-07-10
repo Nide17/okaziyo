@@ -30,7 +30,12 @@ const BrowseItems = ({ items, getItems }) => {
                                         <div className="item">
                                             <img src={item.pictures[0]} alt="sell" />
                                             <h6>{item.title}</h6>
-                                            <p className="price">{item.price}</p>
+                                            <p className="price-phone d-flex justify-content-between">
+                                                <span className="price">{item.price}Rwf</span>
+                                                <span className="contact">
+                                                    <i class="bi bi-telephone-fill text-danger mr-1"></i>
+                                                    {item.contactNumber}
+                                                </span></p>
                                             <p className="desc">{item.description}</p>
                                         </div>
                                     </div>
