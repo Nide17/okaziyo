@@ -16,7 +16,7 @@ const Categories = ({ categories, getCategories }) => {
             <ul className="categories-list">
 
                 {categories.isLoading ?
-                    <div className="d-flex justify-content-center align-items-center">
+                    <div className="d-none d-lg-flex justify-content-center align-items-center">
                         <ReactLoading type="bars" color="#33FFFC" />
                     </div> :
 
