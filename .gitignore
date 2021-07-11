@@ -22,6 +22,7 @@
 *.env.development.local
 *.env.test.local
 *.env.production.local
+*/config
 /config
 /config/default.json
 /config/default copy.json
@@ -42,4 +43,3 @@ default.json
 /client/src/components/* copy 3.js
 /client/src/components/* copy 4.js
 /db
-/config/*
