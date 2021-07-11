@@ -13,10 +13,10 @@ const app = express();
 app.use(express.json());
 
 // Configure the AWS region of the target bucket.
-aws.config.region = config.get('AWS_Region')
+aws.config.region = process.env.AWS_REGION || config.get('AWS_Region')
 
 //DB Config
-const dbURI = config.get('mongoURI');
+const dbURI = process.env.MONGO_URI || config.get('mongoURI');
 
 //connect to Mongo
 const connectDB = async () => {

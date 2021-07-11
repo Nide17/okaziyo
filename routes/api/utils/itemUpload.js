@@ -5,9 +5,9 @@ const multerS3 = require('multer-s3');
 const { v4: uuidv4 } = require('uuid');
 
 const s3Config = new AWS.S3({
-    accessKeyId: config.get('AWSAccessKeyId'),
-    secretAccessKey: config.get('AWSSecretKey'),
-    Bucket: config.get('S3ItemsBucket')
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID || config.get('AWSAccessKeyId'),
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || config.get('AWSSecretKey'),
+    Bucket: process.env.S3_BUCKET_ITEMS || config.get('S3ItemsBucket')
 });
 
 const fileFilter = (req, file, callback) => {
@@ -35,7 +35,7 @@ const storage = multer.diskStorage({
 // Uploading images to aws
 const multerS3Config = multerS3({
     s3: s3Config,
-    bucket: config.get('S3ItemsBucket'),
+    bucket: process.env.S3_BUCKET_ITEMS || config.get('S3ItemsBucket'),
     metadata: (req, file, callback) => {
         callback(null, { fieldName: file.fieldname });
     },
