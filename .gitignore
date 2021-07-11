@@ -24,6 +24,8 @@
 *.env.production.local
 
 /config
+/config/default.json
+/config/default copy.json
 /uploads
 
 
