@@ -50,9 +50,9 @@ const ViewedJob = ({ jobs, scholarships, categories, getJobs, getCategories, get
                                         </strong>
 
                                         <div className="d-flex flex-column flex-lg-row justify-content-between font-weight-bolder text-secondary">
-                                            <h6>{jobToUse && jobToUse.brand}</h6>
+                                            <h6 className="mb-0">{jobToUse && jobToUse.brand}</h6>
 
-                                            <p>{categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === jobToUse.sub_category).name}</p>
+                                            <p className="mb-0">{categoryToUse && categoryToUse.sub_category.find(subcat => subcat._id === jobToUse.sub_category).name}</p>
                                         </div>
 
                                         <div className="d-flex justify-content-between text-muted align-bottom">
