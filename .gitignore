@@ -23,7 +23,7 @@
 *.env.test.local
 *.env.production.local
 */config
-/config
+./config
 /config/default.json
 /config/default copy.json
 
