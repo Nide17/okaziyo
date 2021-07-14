@@ -387,6 +387,7 @@ a {
 }
 
 .cards .item .price-phone span.price {
+  color: #499167;
   font-size: .72rem;
   line-height: 1;
   border-bottom: 2px solid #dc3545 !important;
