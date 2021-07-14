@@ -31,7 +31,7 @@ const BrowseItems = ({ items, getItems }) => {
                                             <img src={item.pictures[0]} alt="sell" />
                                             <h6>{item.title}</h6>
                                             <p className="price-phone d-flex justify-content-between">
-                                                <span className="price">{item.price}Rwf</span>
+                                                <span className="price">{item.price > 0 ? `${item.price}Rwf` : 'Negociable'}</span>
                                                 <span className="contact">
                                                     <i class="bi bi-telephone-fill text-danger mr-1"></i>
                                                     {item.contactNumber}
