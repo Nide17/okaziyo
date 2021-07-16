@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const { auth, authRole } = require('../../middleware/auth');
 const { itemUpload } = require('./utils/itemUpload.js');
 
 // Item Model
 const Item = require('../../models/Item');
-
-const { auth, authRole } = require('../../middleware/auth');
 
 // @route   GET /api/items
 // @desc    Get all items
