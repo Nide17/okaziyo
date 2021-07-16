@@ -11,8 +11,7 @@ const Subscriber = require('../../models/Subscriber');
 // @desc    Get subscribers
 // @access  Private: Accessed by admin only
 
-// router.get('/', auth, authRole(['Admin']), async (req, res) => {
-router.get('/', async (req, res) => {
+router.get('/', auth, authRole(['Admin']), async (req, res) => {
 
   try {
     const subscribers = await Subscriber.find()
@@ -82,8 +81,7 @@ router.post('/', async (req, res) => {
 // @route GET one Subscriber
 // @route Private: Accessed by admin only
 
-// router.get('/:id', auth, authRole(['Admin']), async (req, res) => {
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, authRole(['Admin']), async (req, res) => {
 
   try {
     //Find the subscriber by id
@@ -104,8 +102,7 @@ router.get('/:id', async (req, res) => {
 // @route Private: Accessed by authenticated people only
 
 //:id placeholder, findId=we get it from the parameter in url
-// router.delete('/:uemail', auth, async (req, res) => {
-router.delete('/:uemail', async (req, res) => {
+router.delete('/:uemail', auth, async (req, res) => {
 
   try {
     //Find the subscriber to delete by id first

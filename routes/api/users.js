@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 // @access  Private: Accessed by admin only
 
 // router.get('/:id', auth, authRole(['Admin']), async (req, res) => {
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, authRole(['Admin']), async (req, res) => {
 
   let id = req.params.id;
 
@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
 // @route Private: Accessed by admin only
 
 // router.put('/:id', auth, authRole(['Admin']), async (req, res) => {
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, authRole(['Admin']), async (req, res) => {
 
   try {
 
@@ -75,7 +75,7 @@ router.put('/:id', async (req, res) => {
 // @route Private: Accessed by admin only
 //:id placeholder, findById = we get it from the parameter in url
 // router.delete('/:id', auth, authRole(['Admin']), async (req, res) => {
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, authRole(['Admin']),async (req, res) => {
 
   try {
     const user = await User.findById(req.params.id);

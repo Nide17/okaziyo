@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 // @route   POST /api/jobs
 // @desc    Create Job & upload a brand_image
 // @access  Have to be private
-router.post("/", jobUpload.single("brand_image"), async (req, res) => {
+router.post("/", jobUpload.single("brand_image"), auth, authRole(['Admin']), async (req, res) => {
 
     const b_image = req.file ? req.file : null
     const { title, brand, deadline, markdown, category, sub_category, creator } = req.body;

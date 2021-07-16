@@ -55,7 +55,7 @@ router.get('/:id', async (req, res) => {
 // @route   POST /api/items
 // @desc    Create item
 // @access  Have to be private
-router.post("/", itemUpload.array('pictures', 12), async (req, res) => {
+router.post("/", itemUpload.array('pictures', 12), auth, authRole(['Admin']), async (req, res) => {
     const pictures = [];
 
     for (var i = 0; i < req.files.length; i++) {
@@ -110,7 +110,7 @@ router.post("/", itemUpload.array('pictures', 12), async (req, res) => {
 // @route Private: Accessed by admin only
 
 // router.put('/:id', auth, authRole(['Creator', 'Admin']), async (req, res) => {
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, authRole(['Admin']), async (req, res) => {
 
     try {
         //Find the Item by id
@@ -132,7 +132,7 @@ router.put('/:id', async (req, res) => {
 //:id placeholder, findById = we get it from the parameter in url
 
 // router.delete('/:id', auth, authRole(['Creator', 'Admin']), async (req, res) => {
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, authRole(['Admin']), async (req, res) => {
 
     try {
         const item = await Item.findById(req.params.id);

@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 // @desc    Get one category
 // @access Private: accessed by logged in user
 // router.get('/:id', authRole(['Creator', 'Admin']), async (req, res) => {
-router.get('/:id', async (req, res) => {
+router.get('/:id', authRole(['Creator', 'Admin']), async (req, res) => {
 
     let id = req.params.id;
     try {
@@ -55,7 +55,6 @@ router.get('/:id', async (req, res) => {
 // @access Private: Accessed by admin only
 
 router.post('/', auth, authRole(['Admin']), async (req, res) => {
-    // router.post('/', async (req, res) => {
     const { title, description, date_created, creator } = req.body;
 
     // Simple validation
@@ -94,9 +93,7 @@ router.post('/', auth, authRole(['Admin']), async (req, res) => {
 // @route PUT api/categories/:id
 // @route UPDATE one Category
 // @access Private: Accessed by admin only
-
-// router.put('/:id', auth, authRole(['Admin']), async (req, res) => {
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, authRole(['Admin']), async (req, res) => {
 
     try {
         //Find the Category by id
@@ -116,8 +113,7 @@ router.put('/:id', async (req, res) => {
 // @route Private: Accessed by admin only
 //:id placeholder, findById = we get it from the parameter in url
 
-// router.delete('/:id', auth, authRole(['Admin']), async (req, res) => {
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, authRole(['Admin']), async (req, res) => {
 
     try {
         const category = await Category.findById(req.params.id);

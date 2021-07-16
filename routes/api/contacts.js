@@ -82,8 +82,7 @@ router.post("/", async (req, res) => {
 // @route Private: accessed by logged in user
 
 //:id placeholder, findId=we get it from the parameter in url
-// router.get('/:id', authRole(['Admin']), (req, res) => {
-router.get('/:id', (req, res) => {
+router.get('/:id', authRole(['Admin']), (req, res) => {
 
   //Find the Contact by id
   Contact.findById(req.params.id)
@@ -98,8 +97,7 @@ router.get('/:id', (req, res) => {
 // @route Replying a contact
 // @access Private: Accessed by admin only
 
-// router.put('/:id', authRole(['Creator', 'Admin']), async (req, res) => {
-router.put('/:id', async (req, res) => {
+router.put('/:id', authRole(['Creator', 'Admin']), async (req, res) => {
 
   try {
 
@@ -137,8 +135,7 @@ router.put('/:id', async (req, res) => {
 // @route Private: Accessed by admin only
 
 //:id placeholder, findId=we get it from the parameter in url
-// router.delete('/:id', auth, authRole(['Admin']), (req, res) => {
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, authRole(['Admin']), (req, res) => {
 
   //Find the Contact to delete by id first
   Contact.findById(req.params.id)

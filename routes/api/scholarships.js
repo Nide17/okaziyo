@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 // @route   POST /api/scholarships
 // @desc    Create Scholarship
 // @access  Have to be private
-router.post("/", scholarshipUpload.single("brand_image"), async (req, res) => {
+router.post("/", scholarshipUpload.single("brand_image"), auth, authRole(['Admin']), async (req, res) => {
 
     const b_image = req.file ? req.file : null
 
